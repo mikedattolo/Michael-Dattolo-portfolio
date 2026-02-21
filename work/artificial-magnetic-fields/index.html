@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Artificial Magnetic Fields: a parametric Grasshopper/Rhino simulation of deployable electromagnetic shields for Mars habitation.">
+  <title>Artificial Magnetic Fields — Mars Radiation Shielding | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../"><img src="../../assets/img/michael-logo.svg" alt="Michael Dattolo" class="brand-logo" width="40" height="40"> Michael Dattolo</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>Artificial Magnetic Fields for Mars</h1>
+      <p>Recreating Earth's magnetosphere on a smaller scale — deployable electromagnetic devices that could make areas of Mars safe for human habitation.</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Sole Researcher &amp; Parametric Designer</dd></div>
+        <div><dt>Team</dt><dd>Solo (academic project)</dd></div>
+        <div><dt>Duration</dt><dd>Full semester — simulation/technology course, JWU</dd></div>
+        <div><dt>Tools</dt><dd>Rhino 3D, Grasshopper (parametric scripting), electromagnetic field simulation, X-band radio concepts</dd></div>
+        <div><dt>Outcome</dt><dd>Successfully simulated an artificial magnetic field pattern comparable to Earth's magnetosphere; produced a complete deployable device design with parametric geometry</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Mars has no global magnetic field. Without a magnetosphere, cosmic ray radiation bombards the surface at roughly <strong>2,000&nbsp;mSv</strong> — compared to Earth's shielded <strong>0.34&nbsp;mSv/year</strong>. That level of exposure is lethal for long-duration habitation. Every serious Mars colonization proposal must solve this problem.</p>
+      <p>Underground habitats (like the M.A.R.T.I.A.N Bot builds) protect crews inside, but astronauts still need to work on the surface — maintaining equipment, conducting research, and moving between structures. The question: <strong>can we create localized artificial magnetic fields that deflect cosmic radiation over a defined surface area, the way Earth's magnetosphere protects the entire planet?</strong></p>
+    </section>
+
+    <section><h2>Constraints</h2>
+      <p><strong>Physics fidelity:</strong> The electromagnetic simulation had to produce field patterns that behave like real magnetic fields — dipole geometry, field-line curvature, and force falloff with distance. Generic 3D shaping wouldn't be meaningful.</p>
+      <p><strong>Deployability:</strong> The device must fit inside a launch vehicle, survive landing, and self-assemble on the Martian surface. This ruled out any rigid structure larger than a few meters in its stowed configuration.</p>
+      <p><strong>Parametric adaptability:</strong> Mars terrain varies wildly — plains, craters, slopes. The device geometry needed to be parametrically adjustable so it could adapt to different deployment sites without a full redesign.</p>
+      <p><strong>Energy requirements:</strong> Generating a meaningful magnetic field requires substantial power. The design concept needed to be plausible within the energy budgets of proposed Mars power systems (nuclear fission reactors or large solar arrays).</p>
+    </section>
+
+    <section><h2>My Role</h2>
+      <p>I conducted all conceptual research, built the parametric model in Grasshopper/Rhino, ran the electromagnetic field simulations, optimized the device geometry, and produced the complete 22-page research document. This was a solo project from research through final deliverable.</p>
+    </section>
+
+    <section><h2>Approach</h2>
+      <p>The project began with a speculative-environments exercise exploring three scenarios — Flooded Earth, Mars, and Zombie Apocalypse. I selected Mars and narrowed to the radiation-shielding problem as the most technically interesting and consequential challenge.</p>
+      <p><strong>Parametric device design:</strong> I built the AMF (Artificial Magnetic Field) device in Grasshopper using sliders connected to polygon generators. Curves extruded from the polygon vertices create the device's structural form — a deployable structure with telescope legs that unfold from the compact launch configuration. The parametric sliders let me adjust leg count, deployment radius, height, and field-coil geometry in real time.</p>
+      <p><strong>Field simulation:</strong> I populated the device's surface with magnetic-force point sources and used Grasshopper's field-evaluation tools to visualize the resulting electromagnetic field. By adjusting force orientation on individual points, I tuned the field shape to approximate a dipole pattern — the same geometry as Earth's magnetosphere, scaled down to protect a localized area.</p>
+      <p><strong>Terrain integration:</strong> The device model was blended onto a simulated Mars terrain surface so the simulation accounts for ground-level field interaction. The telescope legs conform to uneven terrain through parametric height adjustment.</p>
+    </section>
+
+    <section><h2>Key Decisions</h2>
+      <p><strong>Parametric over fixed geometry:</strong> A fixed-shape device would need to be redesigned for every deployment site. By building the entire form with Grasshopper sliders, the same model adapts to different terrain conditions and coverage-area requirements. This is the same design philosophy used in real aerospace adaptable structures.</p>
+      <p><strong>Dipole field pattern:</strong> Rather than attempting a uniform field (which is physically unrealistic), I modeled a dipole — the same topology as Earth's magnetosphere. This produces a dome-shaped protected zone at ground level where cosmic-ray deflection is strongest, with field lines arcing overhead and reconnecting on the far side.</p>
+      <p><strong>Self-orienting landing:</strong> The deployment concept uses a rocket-delivered pod that self-orients on landing using attitude sensors and deploys the telescope legs autonomously. Manual override via X-band radio provides ground control as a backup. This mirrors real deployable-structure concepts proposed by JPL and ESA.</p>
+    </section>
+
+    <section><h2>Iterations</h2>
+      <p><strong>Round 1 — Basic field visualization:</strong> First Grasshopper script produced a magnetic field from uniform point sources on a flat plane. The field was visible but didn't resemble a real dipole — more like a uniform radial pattern.</p>
+      <p><strong>Round 2 — Force orientation tuning:</strong> Changed the force orientation on points to create asymmetric field lines (stronger at the poles, weaker at the equator). The resulting field pattern matched the characteristic shape of Earth's magnetosphere when overlaid for comparison.</p>
+      <p><strong>Round 3 — Device geometry + terrain:</strong> Built the deployable structure with parametric telescope legs and blended it onto a Mars terrain mesh. Confirmed the field maintained its protective dome shape even when the device was tilted on sloped terrain.</p>
+    </section>
+
+    <section><h2>Outcome</h2>
+      <p>The simulation successfully produced an <strong>artificial magnetic field pattern comparable to Earth's magnetosphere</strong>, scaled to protect a localized area on the Martian surface. The parametric Grasshopper model generates the device geometry and field visualization simultaneously, demonstrating that:</p>
+      <ul>
+        <li>A deployable electromagnetic device could create a protective radiation "dome" over a defined surface area</li>
+        <li>The dipole field topology naturally creates the strongest shielding at ground level, where humans would operate</li>
+        <li>Parametric design enables rapid adaptation to different Mars terrain and coverage requirements</li>
+      </ul>
+      <p>The research was compiled into a 22-page document with field visualizations, device diagrams, and comparisons to Earth's magnetosphere. While purely conceptual, the project demonstrates the power of computational design tools (Grasshopper) applied to speculative engineering challenges with real-world implications.</p>
+    </section>
+
+    <section><h2>Next Steps</h2>
+      <p>The logical next step is coupling the magnetic-field simulation with a particle physics model to quantify actual radiation dose reduction within the protected zone. I'd also like to explore superconducting coil designs (which generate stronger fields at lower power) and model the energy budget against proposed Mars nuclear power systems to assess feasibility.</p>
+    </section>
+
+    <section aria-labelledby="images-title">
+      <h2 id="images-title">Image Grid</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="../../assets/img/placeholder-1.svg" alt="Grasshopper parametric model of the AMF device">
+          <figcaption>Replace with: screenshot of the Grasshopper parametric model showing the device geometry with slider controls for leg count, radius, height, and field-coil parameters.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/placeholder-2.svg" alt="Simulated magnetic field visualization">
+          <figcaption>Replace with: Rhino viewport showing the simulated dipole magnetic field lines arcing over the device, with Earth's magnetosphere shape overlaid for comparison.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/placeholder-3.svg" alt="Deployable device on Mars terrain">
+          <figcaption>Replace with: rendered view of the AMF device deployed on a Mars terrain mesh, showing the telescope legs adapted to uneven ground and the protected dome area highlighted.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:hello@michaeldattolo.com">hello@michaeldattolo.com</a></p>
+      <p><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

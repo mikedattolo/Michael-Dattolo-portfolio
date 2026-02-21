@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case studies by Michael Dattolo.">
+  <title>Work | Michael Dattolo</title>
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/pages.css">
+  <script src="../scripts/main.js" defer></script>
+  <script src="../scripts/filters.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../"><img src="../assets/img/michael-logo.svg" alt="Michael Dattolo" class="brand-logo" width="40" height="40"> Michael Dattolo</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a aria-current="page" href="./">Work</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main">
+    <header class="page-header">
+      <h1>Work</h1>
+      <p>Selected projects across robotics, sustainability, health-tech, computation, and business.</p>
+    </header>
+
+    <section class="section-space" aria-label="Work filters">
+      <div class="filter-chips" role="group" aria-label="Filter case studies">
+        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
+        <button class="chip" type="button" data-filter="sustainability" aria-pressed="false">Sustainability</button>
+        <button class="chip" type="button" data-filter="health-tech" aria-pressed="false">Health-Tech</button>
+        <button class="chip" type="button" data-filter="ai" aria-pressed="false">AI</button>
+        <button class="chip" type="button" data-filter="space-design" aria-pressed="false">Space Design</button>
+        <button class="chip" type="button" data-filter="computational" aria-pressed="false">Computational</button>
+        <button class="chip" type="button" data-filter="product-design" aria-pressed="false">Product Design</button>
+        <button class="chip" type="button" data-filter="business" aria-pressed="false">Business</button>
+      </div>
+    </section>
+
+    <section aria-label="Case study grid">
+      <div class="card-grid" data-work-grid>
+        <article class="card" data-tags="robotics">
+          <p class="tag-list"><span class="tag">Robotics</span></p>
+          <h2><a href="martian-construction-robot/">The M.A.R.T.I.A.N Bot</a></h2>
+          <p>Autonomous 8-legged Mars construction robot with topology-optimized structure and 5-step DIG workflow. Capstone project.</p>
+        </article>
+
+        <article class="card" data-tags="sustainability">
+          <p class="tag-list"><span class="tag">Sustainability</span></p>
+          <h2><a href="5-axis-3d-printing-waste-reduction/">EcoPrint — 5-Axis 3D Printing</a></h2>
+          <p>Multi-axis toolpath strategies to cut support-material waste and improve additive-manufacturing efficiency.</p>
+        </article>
+
+        <article class="card" data-tags="health-tech sustainability">
+          <p class="tag-list"><span class="tag">Health-Tech</span> <span class="tag">Sustainability</span></p>
+          <h2><a href="bloominbeds-monitoring-system/">BloominBeds Monitoring System</a></h2>
+          <p>Raspberry Pi sensor network and live dashboard keeping raised garden beds within safe growing conditions year‑round.</p>
+        </article>
+
+        <article class="card" data-tags="ai">
+          <p class="tag-list"><span class="tag">AI</span></p>
+          <h2><a href="edison-ai-assistant/">EDISON AI Assistant</a></h2>
+          <p>Fully offline, multi-modal AI platform with multi-GPU LLM inference, RAG memory, voice, and image generation.</p>
+        </article>
+
+        <article class="card" data-tags="health-tech">
+          <p class="tag-list"><span class="tag">Health-Tech</span></p>
+          <h2><a href="total-ergonomics-micropipette/">Total Ergonomics™ Micropipette</a></h2>
+          <p>User-centered ergonomic add-on designed for a lab technician with rheumatoid arthritis. Foot-pedal solution selected via comparative user testing.</p>
+        </article>
+
+        <article class="card" data-tags="robotics">
+          <p class="tag-list"><span class="tag">Robotics</span></p>
+          <h2><a href="artificial-magnetic-fields/">Artificial Magnetic Fields for Mars</a></h2>
+          <p>Parametric Grasshopper/Rhino simulation of deployable electromagnetic shields for Mars radiation protection.</p>
+        </article>
+
+        <article class="card" data-tags="space-design">
+          <p class="tag-list"><span class="tag">Space Design</span></p>
+          <h2><a href="willies-cafe-space-study/">Willie’s Café Space Study</a></h2>
+          <p>Data-driven seating analysis with camera observation, Revit modelling, and ADA-compliant redesign proposals for a university café.</p>
+        </article>
+
+        <article class="card" data-tags="computational">
+          <p class="tag-list"><span class="tag">Computational</span></p>
+          <h2><a href="growth-algorithm-simulation/">Growth Algorithm Simulation</a></h2>
+          <p>Grasshopper/Rhino parametric simulation growing organic structures across 3D model surfaces with collision detection.</p>
+        </article>
+
+        <article class="card" data-tags="product-design">
+          <p class="tag-list"><span class="tag">Product Design</span></p>
+          <h2><a href="storage-concepts/">Storage Concepts</a></h2>
+          <p>Two product explorations: a modular stackable system and a wearable hands-free carry unit.</p>
+        </article>
+
+        <article class="card" data-tags="business">
+          <p class="tag-list"><span class="tag">Business</span></p>
+          <h2><a href="jrm-enterprises-feasibility/">JRM Enterprises Feasibility</a></h2>
+          <p>Business feasibility study for a luxury vehicle conversion shop—market research, tiered pricing, and $2M startup plan.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:hello@michaeldattolo.com">hello@michaeldattolo.com</a></p>
+      <p><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

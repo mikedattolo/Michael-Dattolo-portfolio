@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EDISON: a fully offline, multi-modal AI assistant built with Python, FastAPI, and ComfyUI.">
+  <title>EDISON AI Assistant | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../"><img src="../../assets/img/michael-logo.svg" alt="Michael Dattolo" class="brand-logo" width="40" height="40"> Michael Dattolo</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>EDISON AI Assistant</h1>
+      <p>What if you could run a GPT-4-class AI on your own hardware—100&nbsp;% offline, zero API costs, and fully private?</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Solo Creator — architecture, backend, frontend, deployment</dd></div>
+        <div><dt>Team</dt><dd>Solo (personal project)</dd></div>
+        <div><dt>Duration</dt><dd>Ongoing (v1.3.0 production-ready, Jan 2026)</dd></div>
+        <div><dt>Tools</dt><dd>Python, FastAPI, llama-cpp-python, CUDA, Qdrant, ComfyUI, Qwen 2.5, LLaVA, HTML/CSS/JS</dd></div>
+        <div><dt>Outcome</dt><dd>Production-ready offline AI platform with multi-GPU inference, RAG memory, voice, image generation, and an OpenAI-compatible API</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Cloud AI services like ChatGPT and Claude are powerful, but they come with structural trade-offs: recurring subscription costs ($20–200/month), mandatory internet connectivity, and the unavoidable reality that every prompt you send lives on someone else's server. For creative professionals, researchers, and anyone handling sensitive data, those trade-offs can be deal-breakers.</p>
+      <p>I wanted a system that matched the capability of cloud AI—multi-modal understanding, long-term memory, image generation, code assistance—but ran entirely on local hardware with zero data leaving the machine. Not a toy demo; a production-grade platform I actually use every day.</p>
+    </section>
+
+    <section><h2>Constraints</h2>
+      <p><strong>Fully offline:</strong> No internet dependency at inference time. All models, vector databases, and web UI must run on the local network. This rules out any cloud-hosted embedding service, model API, or telemetry.</p>
+      <p><strong>Consumer-grade hardware:</strong> The system targets a multi-GPU desktop (not a datacenter). Memory, VRAM, and power draw all matter. Model selection had to balance quality against what actually fits.</p>
+      <p><strong>Production reliability:</strong> EDISON isn't a notebook experiment—it runs as <code>systemd</code> services that auto-start on boot, survive crashes, and log cleanly. Uptime matters because I rely on it daily.</p>
+      <p><strong>Extensibility:</strong> The architecture had to support new models, new tools, and new UI modes without rewriting core services. A plugin-style node system (ComfyUI) and a clean REST API were non-negotiable.</p>
+    </section>
+
+    <section><h2>My Role</h2>
+      <p>I designed and built every layer of this system solo: the 4-service microservice architecture, the FastAPI backend for LLM inference and RAG, the Coral TPU intent classifier, the ComfyUI custom nodes, the web UI with voice and agent live-view, the systemd deployment pipeline, and the documentation. From the YAML config schema to the CSS animations on the voice orb—it's all mine.</p>
+    </section>
+
+    <section><h2>Approach</h2>
+      <p>EDISON is a 4-service architecture, each running as an independent systemd unit:</p>
+      <ul>
+        <li><strong>edison-core (port 8811)</strong> — The brain. FastAPI service running Qwen 2.5 14B (fast mode) and 72B (deep mode) via llama-cpp-python with CUDA tensor splitting across multiple GPUs. Also hosts the RAG pipeline (Qdrant vector DB), the agent/tool system, and the work-mode orchestrator.</li>
+        <li><strong>edison-coral (port 8808)</strong> — Intent classification microservice. Uses heuristic pattern matching (40+ keyword patterns across 5 categories) with an optional Coral Edge TPU path for hardware-accelerated classification. Routes every user message to the optimal mode automatically.</li>
+        <li><strong>edison-web (port 8080)</strong> — Modern web UI served via FastAPI. Chat interface with multiple modes (Auto, Chat, Deep, Code, Agent, Work, Swarm), file upload with RAG ingestion, voice assistant with Web Speech API, and real-time agent live-view via SSE/WebSocket.</li>
+        <li><strong>ComfyUI (port 8188)</strong> — Node-based image generation. I wrote custom EDISON nodes (EdisonChatNode, EdisonHealthCheck) so the AI can be invoked directly inside visual workflows.</li>
+      </ul>
+      <p>The key design decision was making every service communicate over REST with a shared OpenAI-compatible <code>/v1/chat/completions</code> endpoint. This means any tool that speaks the OpenAI API—VS Code extensions, CLI scripts, third-party apps—can use EDISON as a drop-in replacement without code changes.</p>
+    </section>
+
+    <section><h2>Key Decisions</h2>
+      <p><strong>Qwen 2.5 over LLaMA:</strong> At the time of model selection, Qwen 2.5 offered the best quality-per-VRAM ratio at both the 14B and 72B parameter points. The 14B model handles casual chat in under 1 second; the 72B model matches GPT-4-class reasoning. Running both simultaneously with tensor splitting lets EDISON route simple queries to the fast model and complex ones to the deep model—no round-trip to the cloud required.</p>
+      <p><strong>Qdrant for RAG over SQLite:</strong> Vector similarity search is the backbone of EDISON's memory system. Qdrant runs as a lightweight local process, supports filtering, and handles the auto-remember pipeline where the system extracts and stores facts from every conversation without the user toggling a checkbox. SQLite could store text, but it can't do semantic recall ("what did we discuss about neural networks last week?").</p>
+      <p><strong>Heuristic intent detection (V1) with TPU upgrade path:</strong> Rather than training a classifier from day one, I shipped a 40+ keyword pattern matcher that achieves &gt;90% routing accuracy for my usage patterns. The architecture cleanly supports swapping in an Edge TPU TFLite model for V2 without touching the API contract—a pragmatic ship-now, optimize-later decision.</p>
+      <p><strong>systemd over Docker:</strong> For a single-machine deployment that needs GPU passthrough and low-overhead process management, systemd services are simpler and more reliable than Docker containers. Each service has its own unit file with restart policies, logging, and dependency ordering.</p>
+    </section>
+
+    <section><h2>Iterations</h2>
+      <p><strong>v1.0 — Core chat + ComfyUI nodes:</strong> Stood up edison-core with a single Qwen 14B model and the ComfyUI custom node. Validated the end-to-end flow: user types in ComfyUI → node calls REST API → LLM responds → text appears in ComfyUI output. Shipped the web UI as a basic chat window.</p>
+      <p><strong>v1.1 — Memory + intent + work mode:</strong> Added the Qdrant RAG pipeline, auto-remember (fact extraction without manual toggles), conversation context awareness (pronoun resolution across turns), enhanced intent detection (40+ patterns), and the work mode that breaks complex tasks into 3–7 actionable steps with visual progress tracking.</p>
+      <p><strong>v1.2 — Voice + agent live view:</strong> Integrated Web Speech API for STT/TTS with a hue-reactive voice orb animation. Added the agent mode with real-time SSE/WebSocket streaming of agent steps, search results, and file diffs. Built the swarm mode for parallel specialized agents.</p>
+      <p><strong>v1.3 — OpenAI compatibility + polish:</strong> Implemented the <code>/v1/chat/completions</code> endpoint with model mapping (gpt-3.5-turbo → fast, gpt-4 → deep), dynamic chat naming, chat history search, and production hardening. Current release: v1.3.0, production-ready.</p>
+    </section>
+
+    <section><h2>Outcome</h2>
+      <p>EDISON is a fully functional, production-grade AI platform that I use every day for writing, coding, research, and image generation—all without an internet connection. Compared to cloud AI:</p>
+      <ul>
+        <li><strong>Cost:</strong> $0/month ongoing (one-time hardware investment)</li>
+        <li><strong>Privacy:</strong> 100% offline—no data leaves the machine</li>
+        <li><strong>Latency:</strong> &lt;1s for fast-mode responses (local inference)</li>
+        <li><strong>Capability:</strong> Text, vision (LLaVA), image generation (ComfyUI/FLUX), code, agent tools, RAG memory, voice—matching or exceeding the feature set of $20/month subscriptions</li>
+      </ul>
+      <p>The OpenAI-compatible API means EDISON integrates with any tool that supports the OpenAI SDK, making it a true drop-in replacement for cloud services across my entire workflow.</p>
+    </section>
+
+    <section><h2>Next Steps</h2>
+      <p>The roadmap includes conversation summarization for very long chats, user-preference learning over time, multi-step work mode with persistent checkpoints, and integration with external task-management tools. I'm also exploring upgrading the intent classifier from heuristic patterns to a fine-tuned Edge TPU model for even faster and more accurate routing.</p>
+    </section>
+
+    <section aria-labelledby="images-title">
+      <h2 id="images-title">Image Grid</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="../../assets/img/placeholder-1.svg" alt="EDISON web UI chat interface">
+          <figcaption>Replace with: screenshot of the EDISON web UI showing a multi-turn conversation with mode badges (Auto/Deep/Code), the sidebar chat history, and the voice orb in idle state.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/placeholder-2.svg" alt="EDISON architecture diagram">
+          <figcaption>Replace with: architecture diagram showing the 4-service layout (edison-web, edison-core, edison-coral, ComfyUI) with port numbers, data flow arrows, and the Qdrant/LLM/GPU components inside edison-core.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/placeholder-3.svg" alt="ComfyUI with EDISON custom nodes">
+          <figcaption>Replace with: ComfyUI node editor screenshot showing the EDISON Chat node wired into an image-generation workflow, with the health-check node displaying service status.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:hello@michaeldattolo.com">hello@michaeldattolo.com</a></p>
+      <p><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>
