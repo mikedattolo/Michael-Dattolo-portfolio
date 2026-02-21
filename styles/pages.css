@@ -6,6 +6,10 @@
   max-width: 18ch;
   margin: var(--space-3) 0;
   font-size: clamp(1.8rem, 4vw, 3rem);
+  background: linear-gradient(135deg, #f8fafc 0%, var(--color-accent-strong) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .lede {
@@ -21,8 +25,9 @@
 
 .credibility {
   padding: var(--space-4);
-  border-left: 4px solid var(--color-accent);
+  border-left: 3px solid var(--color-accent);
   background: var(--color-surface);
+  border-radius: 0 var(--radius-1) var(--radius-1) 0;
 }
 
 .page-header {
@@ -71,11 +76,15 @@
   position:absolute;
   inset:-25%;
   pointer-events:none;
-  background: radial-gradient(circle at 70% 20%,
-    color-mix(in srgb, var(--color-accent) 35%, transparent),
-    transparent 55%);
-  filter: blur(28px);
-  opacity: 0.95;
+  background:
+    radial-gradient(circle at 70% 20%,
+      rgba(59, 130, 246, 0.2),
+      transparent 50%),
+    radial-gradient(circle at 30% 80%,
+      rgba(249, 115, 22, 0.1),
+      transparent 45%);
+  filter: blur(40px);
+  opacity: 1;
 }
 
 .hero-grid{
@@ -99,9 +108,15 @@
   border-radius: var(--radius-2);
   border: 1px solid var(--color-border);
   overflow: hidden;
-  background: var(--color-surface-strong);
+  background: var(--color-surface);
   box-shadow: var(--shadow-soft);
   transform: rotate(-1deg);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.artifact:hover{
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: var(--shadow-glow-blue);
 }
 
 .artifact:nth-child(2){ transform: rotate(1.2deg); }
@@ -129,14 +144,15 @@
 }
 
 .button.primary{
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 80%, var(--color-accent-2)));
   border-color: var(--color-accent);
   color: #fff;
 }
 
 .button.primary:hover{
-  background: color-mix(in srgb, var(--color-accent) 80%, black);
-  border-color: color-mix(in srgb, var(--color-accent) 80%, black);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 90%, white), var(--color-accent));
+  border-color: color-mix(in srgb, var(--color-accent) 90%, white);
+  box-shadow: var(--shadow-glow-blue);
 }
 
 /* ── About headshot layout ── */
@@ -153,8 +169,12 @@
   border-radius: var(--radius-3);
   overflow: hidden;
   border: 1px solid var(--color-border);
-  background: var(--color-surface-strong);
+  background: var(--color-surface);
   box-shadow: var(--shadow-soft);
+  transition: box-shadow 300ms ease;
+}
+.headshot:hover{
+  box-shadow: var(--shadow-glow-blue);
 }
 .headshot img{
   width: 100%;
@@ -186,6 +206,11 @@
   background: var(--color-surface);
   border-radius: var(--radius-2);
   padding: var(--space-5);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.timeline-item:hover{
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: var(--shadow-glow-blue);
 }
 .timeline-role{ margin: 0; }
 .timeline-meta{ margin: var(--space-2) 0 0; color: var(--color-muted); font-size: 0.95rem; }
@@ -203,12 +228,17 @@
 }
 .resume-chip{
   display: inline-block;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-strong);
-  color: var(--color-text);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--color-accent-strong);
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   font-size: 0.9rem;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.resume-chip:hover{
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
 }
 
 .bullet-list{ margin: 0; padding-left: 1.2rem; }

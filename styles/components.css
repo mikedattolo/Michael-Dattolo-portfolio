@@ -12,23 +12,28 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.65rem 1rem;
+  padding: 0.65rem 1.25rem;
   border-radius: var(--radius-1);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 150ms ease;
 }
 
 .button:hover {
-  background: var(--color-accent-strong);
+  background: color-mix(in srgb, var(--color-accent) 85%, white);
   color: #fff;
+  box-shadow: var(--shadow-glow-blue);
+  transform: translateY(-1px);
 }
 
 .button-secondary {
   background: transparent;
   color: var(--color-accent-strong);
+  border-color: var(--color-border);
 }
 
 .button-secondary:hover {
-  background: var(--color-surface);
+  background: var(--color-surface-strong);
   color: var(--color-accent-strong);
+  border-color: var(--color-accent);
 }
 
 .card-grid {
@@ -54,11 +59,12 @@
 
 .tag {
   display: inline-block;
-  background: var(--color-surface-strong);
-  color: var(--color-text-muted);
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--color-accent-strong);
   border-radius: 999px;
   padding: 0.2rem 0.65rem;
   font-size: 0.85rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .process-steps {
@@ -76,6 +82,13 @@
   text-align: center;
   padding: var(--space-3);
   background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.process-steps li:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow-blue);
 }
 
 .filter-chips {
@@ -86,17 +99,24 @@
 
 .chip {
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-text);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.chip:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-strong);
 }
 
 .chip.is-active {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: #fff;
+  box-shadow: var(--shadow-glow-blue);
 }
 
 .tldr {
@@ -152,13 +172,13 @@
   background: var(--color-surface);
   border-radius: var(--radius-2);
   box-shadow: none;
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
 .card:hover{
   transform: translateY(-4px);
-  box-shadow: var(--shadow-soft);
-  border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  box-shadow: var(--shadow-glow-blue);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .card-media{
@@ -176,10 +196,10 @@
   object-fit: cover;
 }
 
-/* "Annotation" callout blocks (use for key decisions) */
+/* "Annotation" callout blocks */
 .callout{
-  border: 1px dashed color-mix(in srgb, var(--color-accent) 55%, var(--color-border));
-  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface));
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  background: rgba(249, 115, 22, 0.06);
   border-radius: var(--radius-2);
   padding: var(--space-5);
 }
@@ -187,7 +207,7 @@
 .kicker{
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-accent-2);
 }
