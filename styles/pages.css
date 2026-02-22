@@ -388,3 +388,15 @@
 .case-rtb .card:hover{
   box-shadow: 0 0 20px rgba(255, 45, 45, 0.15);
 }
+
+/* Photo grid */
+.rtb-photo-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+.rtb-photo-grid img{
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
