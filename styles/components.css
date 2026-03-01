@@ -141,6 +141,27 @@
   color: var(--color-text-muted);
 }
 
+/* ===== Brand logo feature for case studies ===== */
+.brand-logo-feature {
+  margin: var(--space-4) 0 0;
+}
+
+.brand-logo-feature img {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-1);
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  background: var(--color-surface-strong);
+}
+
+.brand-logo-feature figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 /* ===== Featured figure for case studies ===== */
 .featured-figure {
   margin: 0 0 var(--space-6);
