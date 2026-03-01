@@ -16,17 +16,14 @@
   if (!targets.length) return;
 
   targets.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    el.classList.add("will-reveal");
   });
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
+          entry.target.classList.add("is-revealed");
           observer.unobserve(entry.target);
         }
       });

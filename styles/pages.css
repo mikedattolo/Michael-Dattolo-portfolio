@@ -16,6 +16,15 @@
   color: var(--color-text-muted);
 }
 
+.seeking {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) 0;
+  color: var(--color-accent-strong);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .hero-cta {
   margin-top: var(--space-5);
   display: flex;
@@ -399,4 +408,23 @@
 .rtb-photo-grid img{
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* Contact page */
+.contact-page .page-header p {
+  margin-bottom: var(--space-2);
+  font-size: 1.05rem;
+}
+
+.contact-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.contact-note {
+  margin-top: var(--space-5);
+  text-align: center;
+  color: var(--color-text-muted);
 }
