@@ -193,8 +193,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: contain;
-  background: var(--color-surface);
+  object-fit: cover;
 }
 
 /* "Annotation" callout blocks */
