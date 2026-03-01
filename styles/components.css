@@ -162,6 +162,17 @@
   font-size: 0.95rem;
 }
 
+/* ===== Astromech Innovations branding display ===== */
+.astromech-branding {
+  margin: 0 0 var(--space-4) 0;
+}
+
+.astromech-branding img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
 /* ===== Featured figure for case studies ===== */
 .featured-figure {
   margin: 0 0 var(--space-6);
