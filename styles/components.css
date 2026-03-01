@@ -141,6 +141,26 @@
   color: var(--color-text-muted);
 }
 
+/* ===== Featured figure for case studies ===== */
+.featured-figure {
+  margin: 0 0 var(--space-6);
+}
+
+.featured-figure img {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-1);
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--color-surface-strong);
+}
+
+.featured-figure figcaption {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
