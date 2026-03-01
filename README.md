@@ -218,7 +218,7 @@ All components update automatically.
 ### Update Personal Info
 
 Search-replace:
-- Email: `hello@michaeldattolo.com`
+- Email: `mike.dattolo@yahoo.com`
 - LinkedIn: `mikedattolo`
 - Location: `Hackettstown, NJ`
 - Name: `Michael Dattolo`
