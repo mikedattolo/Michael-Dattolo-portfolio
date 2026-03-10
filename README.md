@@ -1,8 +1,22 @@
 # Michael Dattolo — Product Design Portfolio
 
-A modern, semantically-structured portfolio website featuring 11 case studies across product design, robotics, AI, and emerging technologies.
+A modern, **semantically-structured and recruiter-ready portfolio** featuring 11 case studies across product design, robotics, AI, and emerging technologies.
 
 **Live:** `michaeldattolo.com` (or `https://mikedattolo.github.io/Michael-Dattolo-portfolio/` if using GitHub Pages)
+
+---
+
+## 📋 Recent Improvements (March 2026)
+
+This portfolio has been audited and significantly improved for:
+
+- ✅ **Accessibility** — WCAG AA compliant, semantic HTML, keyboard navigation
+- ✅ **Content & UX** — Stronger hero copy, clear CTAs, contact form with validation
+- ✅ **Responsive Design** — Mobile-optimized, prevents layout shift
+- ✅ **SEO** — Rich metadata, recruiter-focused page titles, Open Graph tags
+- ✅ **Professional Presentation** — Resume download, better visual hierarchy
+
+**See:** `IMPROVEMENTS_CHANGELOG.md` and `ACTION_ITEMS.md` for complete details.
 
 ---
 
@@ -10,9 +24,9 @@ A modern, semantically-structured portfolio website featuring 11 case studies ac
 
 A **static HTML/CSS/JavaScript site** (no frameworks, no build step) designed for:
 
-- **Recruiter conversion** — Clear CTAs, outcomes-focused project cards, resume access  
+- **Recruiter conversion** — Clear CTAs, outcomes-focused project cards, resume access, contact form
 - **Rich case studies** — Detailed narratives, process, and measurable results
-- **Accessibility** — Semantic HTML, keyboard nav, focus states, reduced-motion support
+- **Accessibility** — Semantic HTML, keyboard nav, focus states, reduced-motion support, WCAG AA compliance
 - **Maintainability** — Clean code, token-driven CSS, progressive JS enhancements
 
 ---

@@ -1,0 +1,178 @@
+MICHAEL DATTOLO
+Product Designer | Innovation Engineer | Robotics Specialist
+mike.dattolo@yahoo.com | linkedin.com/in/michaeldattolo | Hackettstown, NJ
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROFESSIONAL SUMMARY
+
+Award-winning product designer and innovation engineer specializing in robotics, 
+aerospace, medical devices, and advanced manufacturing. B.S. in Integrated Product 
+Design (GPA 3.9, Dean's List). Proven track record designing and prototyping 
+complex systems from concept through validation. Deep expertise in CAD, topology 
+optimization, design-for-manufacturing, and autonomous systems.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXPERIENCE
+
+Special Operations Specialist
+Techflex | Sparta, NJ | Jun 2025 – Present
+• Setup, operation, and optimization of precision equipment for spooling, 
+  printing, and cutting operations
+• Read and interpret work orders; execute specifications with strict quality 
+  and timing requirements
+• Contribute to manufacturing process improvement and continuous optimization
+
+Retail Sales Manager
+Staples | Hackettstown, NJ | Jul 2024 – Jun 2025
+• Led team sales performance, inventory management, and customer feedback 
+  integration with executive leadership
+• Implemented loss prevention strategies that reduced shrinkage and improved 
+  profitability
+• Coached and developed staff; established individual and team sales goals
+
+Innovation Lab Technician
+Johnson & Wales University | Providence, RI | Aug 2021 – May 2024
+• Supported student projects using laser cutters, vinyl cutters, 3D printers, 
+  and CNC equipment
+• Prepared and optimized files for precision machining; programmed CNC operations
+• Trained new employees on equipment safety and operation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EDUCATION
+
+B.S. Integrated Product Design
+Johnson & Wales University | Providence, RI | May 2024
+GPA: 3.9 | Dean's List (2020–2024)
+
+Relevant Coursework:
+• Product Design Strategy & Development
+• Rapid Prototyping & Advanced Fabrication
+• User Research & Usability Testing
+• Design for Manufacturing
+• Autonomous Systems & Robotics
+• Computational Design & Simulation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CORE COMPETENCIES
+
+Design & Strategy
+• Product design strategy and concept development
+• Problem framing and requirements decomposition
+• Trade-off analysis and decision documentation
+• Design system development and atomic design patterns
+• User experience (UX) strategy and information architecture
+
+Prototyping & Fabrication
+• CAD modeling (SolidWorks, Autodesk Inventor, Rhino 3D, AutoCAD)
+• Topology optimization for strength-to-weight ratio
+• 3-axis and 5-axis additive manufacturing (FDM, SLA)
+• Design-for-fabrication and material selection
+• Functional proof-of-concept builds (scale and full-size)
+
+Research & Testing
+• User research and comparative usability testing
+• Quantitative data collection and analysis
+• Iterative testing with clear pass/fail criteria
+• Dashboard UX and data visualization
+
+Engineering & Simulation
+• ROS 2 and Gazebo simulation for autonomous systems
+• URDF/xacro parametric robot description
+• Parametric design with Grasshopper and Rhino
+• Basic Python scripting and web development (HTML/CSS/JavaScript)
+• Sensor integration (DHT22, LIDAR, depth cameras, optical sensors)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SELECTED PROJECTS & CASE STUDIES
+
+M.A.R.T.I.A.N Bot: Autonomous Mars Construction Robot
+• 8-legged autonomous robot designed to excavate and build underground habitats 
+  on Mars using locally sourced regolith
+• Topology-optimized structural components for maximum strength-to-weight ratio
+• 5-step autonomous DIG workflow (Terrain Assessment → Excavation → Framework → 
+  Habitat Deployment → Burial & Shielding)
+• Full ROS 2 + Gazebo simulation validation with accurate physics and sensor 
+  noise modeling
+• Recognized at JWU Symposium for Technology & Innovation (2024)
+
+EcoPrint: 5-Axis 3D Printing Waste Reduction
+• Investigated multi-axis toolpath strategies to reduce support-material waste 
+  in additive manufacturing
+• Compared 3-axis vs. 5-axis printing across geometry complexity, material usage, 
+  and cost metrics
+• Validated that 5-axis approaches reduce waste by 40–60% on complex geometries
+
+BloominBeds Monitoring System
+• Designed and built a Raspberry Pi sensor network for raised garden bed 
+  temperature and humidity monitoring
+• Implemented DHT22 sensors with real-time web dashboard
+• Kept garden beds within safe growing conditions year-round
+• Recognized at JWU Symposium for Creativity & Design (2024)
+
+Total Ergonomics™ Micropipette
+• User-centered ergonomic add-on designed for a lab technician with rheumatoid 
+  arthritis
+• Conducted comparative user testing across three prototypes
+• Selected foot-pedal design maximized comfort and reduced repetitive strain
+• Demonstrates deep commitment to accessible, human-centered design
+
+EDISON AI Assistant
+• Designed and built a fully offline, multi-modal AI platform with multi-GPU 
+  LLM inference
+• Integrated RAG memory, voice processing, and image generation on local hardware
+• Exposed OpenAI-compatible API for seamless third-party integration
+• Advanced prototyping of emerging AI/ML applications
+
+Additional Case Studies: Artificial Magnetic Fields (Mars radiation shielding 
+simulation), Willie's Café Space Study (data-driven seating analysis with ADA 
+compliance), Growth Algorithm Simulation (parametric organic structure generation), 
+Storage Concepts (modular + wearable personal storage), JRM Enterprises Feasibility 
+Study ($2M business plan), Release the Beast (apparel brand identity & graphics)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RECOGNITION & ACTIVITIES
+
+• JWU Student Research, Design & Innovation Symposium Recognition (2024):
+  - M.A.R.T.I.A.N. Construction Robot (Technology & Innovation category)
+  - BloominBeds (team project, Creativity & Design category)
+• 2nd Place, JWU Sharkfest Competition (2022)
+• FIRST Robotics (2016–2024)
+• Dean's List (2020–2024)
+
+Research & Presentations:
+• BMES Conference (2022): Smart Textile Array Devices for Assistive Communication 
+  (platform presentation)
+• BMES Conference (2022): Game-based Touch-Sensing Devices for Motor Assessment 
+  (poster presentation)
+• JWU Symposium (2023, 2024): Reducing Plastic Waste with 5D Printing; 
+  M.A.R.T.I.A.N.; BloominBeds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TECHNICAL SKILLS
+
+CAD & Modeling: SolidWorks, Autodesk Inventor, AutoCAD, Rhino 3D, Grasshopper
+Simulation & Control: ROS 2, Gazebo, URDF/xacro, MoveIt, basic PID control
+Fabrication: FDM 3D printing, SLA 3D printing, laser cutting, CNC machining
+Programming: Python, HTML5, CSS3, JavaScript, CMake, basic web development
+Data & Analytics: Excel/Google Sheets, Chart.js, quantitative user research
+Robotics & Sensors: Raspberry Pi, DHT22, LIDAR, depth cameras, optical sensors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CERTIFICATIONS & TRAINING
+
+Autodesk Inventor Certification (2019)
+FIRST Robotics Leadership Training
+CNC Machining Safety & Operation Certification
+3D Printing & Additive Manufacturing Fundamentals
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For the full interactive portfolio, visit: mike-dattolo.com
