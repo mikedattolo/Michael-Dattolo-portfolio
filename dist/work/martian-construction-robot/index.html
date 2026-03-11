@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The M.A.R.T.I.A.N Bot: an autonomous Mars construction robot designed as a capstone project at Johnson & Wales University.">
+  <title>M.A.R.T.I.A.N Bot — Mars Construction Robot | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
+</head>
+<body data-page="case-study">
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Home"><img src="../../assets/img/personal-logo-light.png" alt="Personal logo featuring MD, rocket, gear and leaf" class="brand-logo" width="48" height="48"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../about/#resume">Resume</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <figure class="astromech-branding">
+        <img src="../../assets/img/astromech-logo.png" alt="Astromech Innovations logo" width="400" height="200">
+      </figure>
+      <p class="eyebrow">Case Study</p>
+      <h1>The M.A.R.T.I.A.N Bot</h1>
+      <p>Modular Automated Robotic Technology for Infrastructure Assembly &amp; Navigation — an autonomous robot that builds underground habitats on Mars using the planet's own soil.</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Sole Designer & Researcher</dd></div>
+        <div><dt>Team</dt><dd>Solo — Capstone project, Prof. Walter Zesk, JWU</dd></div>
+        <div><dt>Duration</dt><dd>Full semester (Capstone)</dd></div>
+        <div><dt>Tools</dt><dd>ROS 2, Gazebo, URDF/xacro, Rhino 3D, topology optimization, Python, CMake</dd></div>
+        <div><dt>Outcome</dt><dd>Complete robot design with 5-step autonomous construction workflow, topology-optimized structure, and full simulation validation</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Building permanent habitats on Mars is one of the defining design challenges of the next century. Astronauts can’t oversee every weld and joint—communication latency with Earth averages 12–24 minutes one-way, making real-time teleoperation impossible. Meanwhile, surface radiation on Mars reaches roughly 2,000 mSv—compared to Earth’s magnetosphere-protected 0.34 mSv/year—meaning habitats <em>must</em> be buried underground for crew safety.</p>
+      <p>My capstone brief: design an autonomous robotic system that can construct underground shelters on the Martian surface using locally sourced regolith, minimizing payload mass while maximizing construction capability. The robot must operate without real-time human control, collaborating with other units to complete multi-stage builds.</p>
+    </section>
+    <section><h2>Constraints</h2>
+      <p><strong>Communication delay:</strong> No real-time corrections from Earth. The robot must plan, detect faults, and adapt autonomously.</p>
+      <p><strong>Environment:</strong> −60 °C average surface temperature, dust storms, and abrasive regolith that accelerates mechanical wear.</p>
+      <p><strong>Mass budget:</strong> Every kilogram launched to Mars costs roughly $54,000. The design had to minimize actuator count and structural mass while maintaining a useful work envelope.</p>
+      <p><strong>Simulation fidelity:</strong> Physical prototyping in Martian conditions is impossible, so the entire validation loop had to run inside Gazebo with accurate physics, gravity, and sensor noise models.</p>
+    </section>
+    <section><h2>My Role</h2>
+      <p>This was my capstone project under Professor Walter Zesk at Johnson &amp; Wales University. I conceived, designed, and developed the entire robot concept solo—from the initial design charrette (conducted across Prof. Zesk’s capstone class and Prof. Ozzy’s Emerging Design Technologies class) through the final 16×33″ presentation board.</p>
+      <p>I owned every deliverable: problem-space definition, kinematic architecture, sensor-suite selection, the 5-step DIG construction workflow, topology-optimized structural components, URDF/xacro robot description, ROS 2 simulation pipeline, and the “Astromech Innovations” branding.</p>
+    </section>
+    <section><h2>Approach</h2>
+      <figure class="featured-figure">
+        <img src="../../assets/img/martian-board-page1.png" alt="M.A.R.T.I.A.N Bot presentation board with project summary, workflow, and final concept render" loading="lazy" width="1200" height="630">
+        <figcaption>Capstone presentation board used to communicate the complete autonomous construction strategy and DIG workflow.</figcaption>
+      </figure>
+      <p>I started with a design charrette to brainstorm space-exploration prototyping ideas, then narrowed to a minimal-payload philosophy: use naturally available Martian materials (regolith) for construction instead of shipping building materials from Earth.</p>
+      <p>The M.A.R.T.I.A.N Bot is an <strong>8-legged</strong> autonomous robot equipped with <strong>depth cameras, a LIDAR scanner, optical sensors, an excavator arm, and a collection bucket</strong>. It follows a <strong>5-step DIG construction process</strong>:</p>
+      <ol>
+        <li><strong>DIG #1 — Terrain Assessment:</strong> Sensor fusion (LIDAR + depth cameras) generates a 3D terrain map. The robot identifies optimal excavation sites based on soil composition and structural stability.</li>
+        <li><strong>DIG #2 — Excavation:</strong> Optimal dimensions are calculated and the robot digs the underground shelter cavity using its excavator and collection bucket.</li>
+        <li><strong>DIG #3 — Framework:</strong> Structural beam framework is placed inside the cavity to provide the skeleton for the habitat.</li>
+        <li><strong>DIG #4 — Habitat Deployment:</strong> An inflatable habitat module is deployed within the beam structure, creating sealed living space.</li>
+        <li><strong>DIG #5 — Burial:</strong> Excavated Martian soil is piled back over the habitat for thermal insulation, radiation shielding, and structural reinforcement.</li>
+      </ol>
+      <p>The robot’s structural components were run through <strong>topology optimization</strong> to maximize strength-to-weight ratio—critical when every gram costs $54,000 to launch. The design supports multiple M.A.R.T.I.A.N units working collaboratively on the same site via X-band radio communication.</p>
+    </section>
+    <section><h2>Key Decisions</h2>
+      <p><strong>8 legs over wheels:</strong> Mars terrain is rocky and uneven. An 8-legged walking platform provides superior stability on slopes and the ability to step over obstacles that would immobilize wheeled rovers. Each leg is independently actuated, giving the robot stable footing during excavation loads.</p>
+      <p><strong>Underground construction over surface domes:</strong> Surface structures require massive radiation shielding shipped from Earth. By digging underground and backfilling with regolith, the M.A.R.T.I.A.N Bot leverages the natural shielding properties of Martian soil—an approach that dramatically reduces payload mass.</p>
+      <p><strong>Topology optimization on structural members:</strong> Every bracket, joint housing, and leg segment went through topology optimization to remove unnecessary material while maintaining load paths. This process informed the organic, lattice-like aesthetic of the final design.</p>
+      <p><strong>xacro parameterization for simulation:</strong> The URDF model uses xacro macros so each leg segment, joint limit, and sensor mount can be tuned by changing a single variable. This enabled rapid A/B testing in Gazebo without rewriting hundreds of lines of XML.</p>
+    </section>
+    <section><h2>Iterations</h2>
+      <p><strong>Round 1 — Design Charrette:</strong> Brainstormed space-exploration concepts with classmates across two courses. Narrowed from 12 initial ideas to the autonomous underground construction robot based on feasibility, novelty, and alignment with minimal-payload philosophy.</p>
+      <p><strong>Round 2 — Concept Development:</strong> Defined the sensor suite (LIDAR, depth cameras, optical sensors), locomotion strategy (8-legged walking), and the 5-step DIG workflow. Sketched the full construction sequence, identified interchangeable tool-head requirements, and established the Astromech Innovations brand identity.</p>
+      <p><strong>Round 3 — Topology Optimization &amp; Simulation:</strong> Ran topology optimization on all structural members using load cases derived from excavation forces. Built the parametric URDF/xacro model and validated kinematics in Gazebo with Martian gravity. Tuned sensor noise models and confirmed autonomous terrain-mapping worked end-to-end.</p>
+      <p><strong>Round 4 — Final Presentation:</strong> Produced a 16×33″ presentation board and a full capstone presentation demonstrating the complete design, construction workflow, and future roadmap (regolith 3D printing, adaptive AI learning, multiple specialized robot types).</p>
+    </section>
+    <section><h2>Outcome</h2>
+      <p>The M.A.R.T.I.A.N Bot is a complete, production-concept robot design with a validated 5-step autonomous construction workflow, topology-optimized structure, and full ROS 2/Gazebo simulation pipeline. The project demonstrates that underground habitat construction using locally sourced regolith is a viable strategy for reducing Mars mission payload by an order of magnitude compared to surface-dome approaches.</p>
+      <p>The capstone was presented at Johnson &amp; Wales University and represents the intersection of everything I care about: systems-level design thinking, fabrication-aware product development, and autonomous robotics serving a real human need—making Mars habitable.</p>
+    </section>
+    <section><h2>Next Steps</h2>
+      <p>Future development includes regolith 3D printing (sintering excavated soil into structural components on-site), interchangeable tool heads for different construction tasks, adaptive AI learning so the robot improves excavation strategy over time, and multiple specialized robot types working as a coordinated swarm. I’d also like to integrate MoveIt 2 closed-loop path planning for real-time terrain adaptation.</p>
+    </section>
+
+    <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/martian-robot-render.png" alt="M.A.R.T.I.A.N Bot 3D render showing the 8-legged robot with excavator arm">
+            <img data-carousel-item src="../../assets/img/dig-0.png" alt="DIG workflow image 0 from construction sequence">
+            <img data-carousel-item src="../../assets/img/dig-1.png" alt="DIG workflow image 1 from construction sequence">
+            <img data-carousel-item src="../../assets/img/dig-2.png" alt="DIG workflow image 2 from construction sequence">
+            <img data-carousel-item src="../../assets/img/dig-3.png" alt="DIG workflow image 3 from construction sequence">
+            <img data-carousel-item src="../../assets/img/dig-4.png" alt="DIG workflow image 4 from construction sequence">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> M.A.R.T.I.A.N 3D hero render plus the full DIG image sequence from your uploaded archive. Use arrow buttons or arrow keys to navigate through project visuals.
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:mike.dattolo@yahoo.com">mike.dattolo@yahoo.com</a></p>
+      <p><a href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

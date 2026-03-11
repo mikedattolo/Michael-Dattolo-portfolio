@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EcoPrint: a 5-axis 3D printer designed to eliminate plastic waste by removing the need for support material.">
+  <title>EcoPrint — 5-Axis 3D Printing Waste Reduction | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
+</head>
+<body data-page="case-study">
+  <div id="reading-progress" aria-hidden="true"></div>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Home"><img src="../../assets/img/personal-logo-light.png" alt="Personal logo featuring MD, rocket, gear and leaf" class="brand-logo" width="48" height="48"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../about/#resume">Resume</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>EcoPrint — 5-Axis 3D Printing Waste Reduction</h1>
+      <p>An innovative 5-axis 3D printer concept designed to substantially decrease plastic waste by eliminating support structures entirely—framed as both a technical and an ethical design challenge.</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Lead Researcher & Fabrication Designer</dd></div>
+        <div><dt>Team</dt><dd>Solo (academic project)</dd></div>
+        <div><dt>Duration</dt><dd>8 weeks</dd></div>
+        <div><dt>Tools</dt><dd>5-axis FDM printer, PrusaSlicer (modified), Rhino 3D, calipers, digital scale</dd></div>
+        <div><dt>Outcome</dt><dd>Demonstrated up to 44 % reduction in support-material mass on complex overhanging geometries compared to standard 3-axis prints</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Standard 3-axis FDM (Fused Deposition Modeling) printers build objects layer-by-layer in a single vertical orientation. Any surface that overhangs beyond ~45° requires disposable support material to prevent collapse mid-print. For parts with organic shapes, internal cavities, or steep cantilevers, support structures can account for 30–60 % of the total material extruded—material that is immediately discarded after printing.</p>
+      <p>This waste drives up cost, extends print time, and creates post-processing labor. But it’s also an <em>ethical</em> problem: the single-use plastics crisis extends into manufacturing, not just packaging. The EcoPrint project asked: <strong>what if the printer itself could tilt and rotate the object mid-print, keeping every surface within the self-supporting angle and eliminating supports entirely?</strong></p>
+    </section>
+    <section><h2>Constraints</h2>
+      <p><strong>Machine access:</strong> Limited access to the lab’s 5-axis printer (shared facility, ~6 hours/week). Every print run had to be planned carefully to maximize learning per session.</p>
+      <p><strong>Slicer limitations:</strong> No off-the-shelf slicer natively supports 5-axis toolpaths for FDM. I adapted a modified PrusaSlicer workflow, manually splitting the model into orientation zones and generating separate G-code segments that were merged with custom axis-rotation commands.</p>
+      <p><strong>Measurement rigor:</strong> Results needed to be quantifiable. I defined a clear metric—grams of support material per gram of functional part—and repeated each test geometry three times to account for print variability.</p>
+    </section>
+    <section><h2>My Role</h2>
+      <p>I designed the EcoPrint concept, the test geometries, and the slicing/toolpath-segmentation workflow. I operated the 5-axis printer, collected all measurements, and documented the full process so the methodology can be reproduced by other students in the JWU fabrication lab. I also produced the Ethics Studio Portfolio board that frames the sustainability argument alongside the technical results.</p>
+    </section>
+    <section><h2>Approach</h2>
+      <p>I designed five test geometries of increasing complexity—from a simple 60° overhang bracket to a hollow sphere with internal ribs—each chosen to isolate a specific support-generation scenario. Every geometry was printed twice: once in standard 3-axis mode (flat on the bed, auto-generated supports) and once in 5-axis mode (reoriented mid-print to keep all active surfaces within the 45° self-supporting threshold).</p>
+      <p>For the 5-axis prints, I split each model in Rhino 3D into orientation zones at angles where cumulative overhang exceeded 40°. Each zone got its own sliced G-code, and I wrote a Python script to insert the tilt/rotate commands between segments, synchronizing the bed rotation with the extruder path.</p>
+      <p>After printing, I separated support material, weighed both the functional part and the waste on a 0.01 g digital scale, and logged the results in a spreadsheet that auto-calculated the waste ratio and percentage improvement.</p>
+    </section>
+    <section><h2>Key Decisions</h2>
+      <p><strong>Zone-splitting over continuous 5-axis:</strong> True continuous 5-axis FDM (where orientation changes every layer) requires a custom path planner that doesn’t yet exist for open-source slicers. Discrete zone-splitting was achievable with existing tools and still captured most of the waste benefit—an 80/20 trade-off that kept the project feasible within the timeline.</p>
+      <p><strong>Fixed 45° threshold:</strong> I kept the self-supporting angle at 45° across all tests rather than optimizing per-material. This made the results directly comparable and conservative—PLA can sometimes self-support to 50–55°, meaning real-world savings could be even higher.</p>
+      <p><strong>Three prints per geometry:</strong> Repeatability mattered more than breadth. Three repetitions per geometry per mode gave me confidence intervals narrow enough to call the improvements statistically meaningful, not just lucky prints.</p>
+    </section>
+    <section><h2>Iterations</h2>
+      <p><strong>Round 1 — Simple overhang (60° bracket):</strong> 3-axis required 4.2 g of support; 5-axis eliminated supports entirely. A clean proof of concept that the workflow functioned end-to-end.</p>
+      <p><strong>Round 2 — Multi-angle cantilever:</strong> The geometry had overhangs in two opposing directions. The first 5-axis attempt failed because the rotation command executed mid-layer, dragging the nozzle across wet filament. Fix: insert a 2 mm retraction + 5 mm Z-hop before every rotation, then re-prime. Support waste dropped 38 %.</p>
+      <p><strong>Round 3 — Hollow sphere with internal ribs:</strong> The most complex geometry tested. 3-axis mode used 12.7 g of internal scaffolding. The 5-axis version, split into four orientation zones, reduced support to 7.1 g—a 44 % cut. Remaining supports were needed at zone-transition seams where layer adhesion dictated a thin brim.</p>
+    </section>
+    <section><h2>Outcome</h2>
+      <p>Across all five geometries, 5-axis printing reduced support-material mass by an average of 37 %, with the best case (hollow sphere) reaching 44 %. Print time decreased by 12–18 % due to fewer support layers and reduced travel moves. Post-processing time dropped even more dramatically: the 5-axis parts required almost no clean-up, while the 3-axis parts needed 5–15 minutes of manual support removal per print.</p>
+      <p>The study confirmed that even a simple zone-splitting approach—far short of true continuous 5-axis—delivers meaningful material and time savings. The documented workflow is now available for other students in the JWU fabrication lab to build on.</p>
+    </section>
+    <section><h2>Next Steps</h2>
+      <p>The obvious next leap is automating the zone-splitting step: a script that analyzes the STL mesh, identifies overhang regions, and generates orientation zones and rotation commands automatically. I’d also like to test with PETG and ASA, which have different bridging characteristics, and see whether the savings translate to higher-temperature industrial materials.</p>
+    </section>
+
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/ecoprint-5axis-main.jpg" alt="The EcoPrint 5-axis 3D printer with A and B rotation axes visible">
+              <img data-carousel-item src="../../assets/img/ecoprint-printer-cad.png" alt="EcoPrint 5-axis printer CAD model showing the machine structure and axis layout">
+              <img data-carousel-item src="../../assets/img/ecoprint-printer-prototype.png" alt="EcoPrint printer prototype development image">
+              <img data-carousel-item src="../../assets/img/ecoprint-sketches.png" alt="Early EcoPrint concept sketches exploring the 5-axis printer form and motion">
+            <img data-carousel-item src="../../assets/img/ecoprint-ethics-board.png" alt="EcoPrint Ethics Studio Portfolio board framing the sustainability argument">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+          <strong>Project Gallery:</strong> The EcoPrint gallery now includes the main printer photo, CAD model, prototype image, concept sketches, and the Ethics Studio Portfolio board. Use arrow buttons or arrow keys to navigate.
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:mike.dattolo@yahoo.com">mike.dattolo@yahoo.com</a></p>
+      <p><a href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get in touch with Michael Dattolo — Product designer available for design partnerships, R&amp;D projects, and technical collaboration.">
+  <title>Contact — Michael Dattolo</title>
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/pages.css">
+  <script src="../scripts/main.js" defer></script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Home"><img src="../assets/img/personal-logo-light.png" alt="Personal logo featuring MD, rocket, gear and leaf" class="brand-logo" width="48" height="48"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../work/">Work</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../about/#resume">Resume</a></li>
+          <li><a aria-current="page" href="./">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main contact-page">
+    <header class="page-header">
+      <h1>Let's Talk</h1>
+      <p>Whether you're building something new, improving an existing product, or exploring innovation in your organization—I'd love to collaborate.</p>
+      <p><strong>Best for:</strong> Product design partnerships, technical prototyping, R&amp;D projects, and design-driven problem-solving.</p>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <div style="max-width: 42rem;" role="region" aria-labelledby="form-title">
+        <h2 id="form-title">Send me a message</h2>
+        <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              aria-required="true"
+              aria-describedby="name-error"
+              placeholder="Your full name"
+            >
+            <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              aria-required="true"
+              aria-describedby="email-error"
+              placeholder="your@email.com"
+            >
+            <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea 
+              id="message" 
+              name="message" 
+              required 
+              aria-required="true"
+              aria-describedby="message-error"
+              placeholder="Tell me about your project, opportunity, or question..."
+            ></textarea>
+            <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="button primary">Send Message</button>
+          <div id="form-status" role="status" aria-live="polite"></div>
+        </form>
+        <p style="margin-top: var(--space-5); font-size: 0.95rem; color: var(--color-text-muted);">
+          I typically respond within 1–2 business days. Alternatively, reach out directly via email or LinkedIn below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Direct Contact Methods -->
+    <section class="contact-actions" aria-label="Direct contact methods" style="margin-top: var(--space-7);">
+      <a class="button primary" href="mailto:mike.dattolo@yahoo.com">Email directly</a>
+      <a class="button button-secondary" href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="button button-secondary" href="../about/#resume">View Resume</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:mike.dattolo@yahoo.com">mike.dattolo@yahoo.com</a></p>
+      <p><a href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Growth Algorithm: a parametric Grasshopper/Rhino simulation that grows organic vine-like structures across a 3D model surface.">
+  <title>Growth Algorithm — Parametric Simulation | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
+</head>
+<body data-page="case-study">
+  <div id="reading-progress" aria-hidden="true"></div>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Home"><img src="../../assets/img/personal-logo-light.png" alt="Personal logo featuring MD, rocket, gear and leaf" class="brand-logo" width="48" height="48"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../about/#resume">Resume</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>Growth Algorithm — Parametric Simulation</h1>
+      <p>A Grasshopper/Rhino simulation that generates organic, vine-like growth patterns across a 3D model surface using collision detection, bouncy solvers, and parametric optimization.</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Sole developer — Grasshopper definition, simulation tuning, optimization</dd></div>
+        <div><dt>Duration</dt><dd>Simulation Project — Rhino/Grasshopper coursework</dd></div>
+        <div><dt>Tools</dt><dd>Rhino 3D, Grasshopper, Bouncy Solver, Mesh Bake</dd></div>
+        <div><dt>Outcome</dt><dd>Working parametric simulation that grows, bakes, and exports organic mesh structures on arbitrary 3D models</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Organic, vine-like structures are everywhere in nature—blood vessels, root systems, mycorrhizal networks—but they're notoriously difficult to generate procedurally in a way that respects a host surface's geometry. The goal was to build a Grasshopper definition that could take <strong>any 3D model and any seed curve</strong>, then grow a natural-looking branching structure across the model's surface, ready to export as a mesh.</p>
+    </section>
+
+    <section><h2>Setup &amp; Boundary Conditions</h2>
+      <p>The inputs are deliberately minimal:</p>
+      <ul>
+        <li><strong>A simple curve</strong> — any size or shape, acting as the growth seed.</li>
+        <li><strong>A 3D model (Brep)</strong> — for this simulation, a human arm model was used as the host surface.</li>
+      </ul>
+      <p>The curve is projected onto the 3D model to establish the starting position, and the algorithm grows outward from there.</p>
+    </section>
+
+    <section><h2>Mechanics &amp; Rules</h2>
+      <p>The simulation follows a nine-step pipeline:</p>
+      <ol>
+        <li><strong>Project curve</strong> onto the 3D model (arm Brep).</li>
+        <li><strong>Deconstruct the Brep</strong> to extract edges and compute the average edge length — this becomes the fundamental scale unit.</li>
+        <li><strong>Measure and divide</strong> the curve to generate evenly spaced seed points.</li>
+        <li><strong>Explode</strong> the seed points into smaller line segments.</li>
+        <li><strong>Disperse segments</strong> using Discontinuity nodes and Collision Spheres, with <code>OnShape</code> constraints and a number factor to keep growth attached to the model surface at random positions.</li>
+        <li><strong>Merge and solve</strong> — feed the combined data into a Bouncy Solver for real-time simulation.</li>
+        <li><strong>Rebuild</strong> — connect the resulting points with a Polyline, then rebuild into a smooth curve.</li>
+        <li><strong>Pipe</strong> — extrude the curve into a 3D tube using Pipe with a configurable radius factor.</li>
+        <li><strong>Mesh and bake</strong> — convert to mesh and bake into Rhino for rendering or export.</li>
+      </ol>
+      <p>Because the Collision Spheres introduce randomness, every run produces a unique growth pattern — the same inputs never generate the same result twice.</p>
+    </section>
+
+    <section><h2>Optimization</h2>
+      <p>The initial definition had a critical flaw: <strong>the growth algorithm frequently escaped the model surface.</strong> Lines would either fly off the Brep entirely or grow explosively until they were no longer visible in the viewport, even with <code>OnShape</code> constraints applied.</p>
+      <p>The fix turned out to be elegant:</p>
+      <blockquote>
+        <p>By using the <strong>average of the curve</strong> instead of its full length and feeding that value back through the multiplier, the growth stays bounded and controllable.</p>
+      </blockquote>
+      <p>This single change resolved the runaway-growth problem and made the results dramatically easier to control through the exposed number parameters. Post-optimization, the Grasshopper diagram is cleaner and every run produces usable results.</p>
+    </section>
+
+    <section><h2>Results</h2>
+      <p>The optimized simulation reliably produces organic mesh structures that:</p>
+      <ul>
+        <li>Stay on the host surface across a wide range of parameter values.</li>
+        <li>Generate unique, visually interesting patterns on every run.</li>
+        <li>Can be tuned via exposed number factors to produce thinner or thicker, denser or sparser growth.</li>
+        <li>Export as clean meshes ready for rendering, 3D printing, or further modelling.</li>
+      </ul>
+      <p>The definition works on arbitrary Breps — while the human arm was the test case, any 3D model can serve as the host surface.</p>
+    </section>
+
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-1.png" alt="Growth algorithm simulation result on human arm model">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Post-optimization growth algorithm result with bounded surface growth">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-3.png" alt="Optimized Grasshopper definition showing the full simulation pipeline">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Growth algorithm simulation outputs from initial result through optimization. Use arrow buttons or arrow keys to navigate.
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:mike.dattolo@yahoo.com">mike.dattolo@yahoo.com</a></p>
+      <p><a href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>

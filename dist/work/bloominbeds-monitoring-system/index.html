@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BloominBeds Monitoring System case study template.">
+  <title>BloominBeds Monitoring System | Michael Dattolo</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/pages.css">
+  <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
+</head>
+<body data-page="case-study">
+  <div id="reading-progress" aria-hidden="true"></div>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Home"><img src="../../assets/img/personal-logo-light.png" alt="Personal logo featuring MD, rocket, gear and leaf" class="brand-logo" width="48" height="48"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../about/#resume">Resume</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-main case-study">
+    <header class="page-header">
+      <p class="eyebrow">Case Study</p>
+      <h1>BloominBeds Monitoring System</h1>
+      <p>Raised garden beds overheat in summer and freeze in winter. We built a sensor network and ventilation system to keep them growing year-round.</p>
+    </header>
+
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl>
+        <div><dt>Role</dt><dd>Product Designer & Prototyper — active prototypes, 3D simulation, integrated control systems</dd></div>
+        <div><dt>Team</dt><dd>10+ members (JWU Design, Innovation &amp; Entrepreneurship course, Prof. Harris)</dd></div>
+        <div><dt>Duration</dt><dd>2 semesters (2023–2024)</dd></div>
+        <div><dt>Tools</dt><dd>Raspberry Pi, Python, DHT22 & soil-moisture sensors, Rhino 3D, Grasshopper, HTML/CSS/JS, Chart.js</dd></div>
+        <div><dt>Outcome</dt><dd>Working prototype that grew turnips through a full cycle; team recognized at the JWU Research Symposium 2024 for Creativity &amp; Design</dd></div>
+      </dl>
+    </section>
+
+    <section><h2>Problem</h2>
+      <p>Raised garden beds are increasingly popular for urban and suburban food production, but they have a critical thermal vulnerability: their above-ground walls absorb and radiate heat far more than in-ground plots. In summer, soil temperatures can spike past 40 °C—killing root systems. In winter, the same beds freeze solid weeks before ground-level soil does.</p>
+      <p>Community gardeners and small-scale growers lack affordable, data-driven tools to monitor these conditions in real time, let alone automated systems that respond to them. The BloominBeds project set out to close that gap: a sensor-driven monitoring platform paired with a ventilation system that keeps bed conditions within healthy growing ranges, year-round.</p>
+    </section>
+    <section><h2>Constraints</h2>
+      <p><strong>Budget:</strong> As a university project, every component had to be low-cost and commercially available. We set a target BOM under $120 per bed unit.</p>
+      <p><strong>Outdoor durability:</strong> Electronics would live outdoors in New England weather—rain, frost, direct sun. Enclosures and wiring had to be IP54-rated or better.</p>
+      <p><strong>Non-technical users:</strong> The end users are gardeners, not technicians. The dashboard had to surface actionable information ("bed is too hot") without requiring sensor-calibration knowledge.</p>
+      <p><strong>Power:</strong> No guaranteed outlet access in community garden plots. The system needed to run on solar-charged batteries with a power budget under 2 W continuous.</p>
+    </section>
+    <section><h2>My Role</h2>
+      <p>Within the 10+ person team, I owned three workstreams: <strong>active prototyping</strong> (building and wiring the physical sensor rigs and ventilation mechanism), <strong>3D simulation</strong> (modeling heat flow and airflow in Rhino 3D and Grasshopper to predict where vents should go before cutting wood), and <strong>integrated control systems</strong> (writing the Python firmware on the Raspberry Pi that reads sensor data, evaluates threshold logic, and triggers the ventilation actuator).</p>
+      <p>I was also the primary contributor to the real-time web dashboard, building the front-end with HTML/CSS/JS and Chart.js to visualize temperature, humidity, and soil-moisture trends over time.</p>
+    </section>
+    <section><h2>Approach</h2>
+      <p>We tackled ventilation in two parallel tracks: <strong>passive</strong> and <strong>active</strong> solutions.</p>
+      <p><em>Passive track:</em> We explored thermo-reactive wire (shape-memory alloy that opens a vent flap at a set temperature) and bi-metal strip actuators. These require zero power but offer limited control precision. I built scale-model test rigs for both and measured vent-open temperatures under heat-lamp simulation.</p>
+      <p><em>Active track:</em> We designed a rotating shade mechanism and a pneumatic-lift vent panel. I modeled both in Rhino 3D, ran Grasshopper airflow simulations to compare CFM at different vent placements and opening angles, and selected the rotating shade for its mechanical simplicity and low part count.</p>
+      <p>On the monitoring side, I wired DHT22 temperature/humidity sensors and capacitive soil-moisture probes to a Raspberry Pi, wrote a Python data-collection daemon that samples every 60 seconds, and served the readings to a local web dashboard via a lightweight HTTP server. Chart.js renders live-updating line charts so the grower can spot trends at a glance.</p>
+    </section>
+    <section><h2>Key Decisions</h2>
+      <p><strong>Grasshopper simulation before physical build:</strong> Running airflow simulations first saved us from cutting vent holes in the wrong places. The simulation showed that a single top vent was insufficient—we needed opposing side vents at soil level to create cross-flow. This insight changed the bed’s construction plan before a single board was cut.</p>
+      <p><strong>DHT22 over BME280:</strong> The BME280 is more accurate, but the DHT22 is $3 vs. $12 and its ±0.5 °C accuracy is well within the tolerance gardeners need. For a system designed to be replicated cheaply, the cost difference across multiple sensor nodes mattered more than lab-grade precision.</p>
+      <p><strong>Chart.js over a custom charting approach:</strong> We considered a Python-side data-viz pipeline (matplotlib rendering PNGs on a cron job). Chart.js running in the browser was lighter, interactive, and let us add zoom and tooltip features with zero backend overhead.</p>
+    </section>
+    <section><h2>Iterations</h2>
+      <p><strong>Round 1 — Trapped heat discovery:</strong> Our first enclosed scale model hit 52 °C under a heat lamp in 30 minutes—far worse than an open bed. This “trapped heat” problem redirected the entire project toward ventilation as the primary design challenge, not just monitoring.</p>
+      <p><strong>Round 2 — Passive vent prototypes:</strong> Thermo-reactive wire worked but opened too slowly (8–12 minutes to full deflection). Bi-metal strips were faster but couldn’t generate enough force to open a full-size panel. We documented both and moved forward with the active rotating-shade mechanism as the primary solution.</p>
+      <p><strong>Round 3 — Full-scale prototype:</strong> We built a full-size raised bed with integrated sensor mounts, the rotating-shade vent, and a Raspberry Pi control unit. Planted turnips as the test crop. Over a 6-week grow cycle, the bed maintained soil temperature within 18–28 °C—the target range—and the turnips matured to harvest size, confirming the system’s viability.</p>
+    </section>
+    <section><h2>Outcome</h2>
+      <p>The final BloominBeds system is a working, sub-$120 monitoring-and-ventilation platform that kept a raised garden bed within healthy growing conditions through a complete crop cycle. The web dashboard logged over 60,000 sensor readings across the test period, and the threshold-triggered ventilation responded within 90 seconds of a temperature exceedance.</p>
+      <p>The project was presented at the <strong>JWU Research Symposium 2024</strong>, where the team received recognition for <strong>Creativity &amp; Design</strong>—acknowledged for bridging technical prototyping with measurable agricultural impact. The full codebase, wiring diagrams, and build instructions are open-sourced on GitHub so other community gardens can replicate the system.</p>
+    </section>
+    <section><h2>Next Steps</h2>
+      <p>The immediate priorities are adding a solar-charging module (to eliminate the need for an extension cord) and integrating soil-nutrient sensors (NPK) so the dashboard can recommend fertilization timing. Longer-term, I’d like to add a machine-learning layer that predicts temperature spikes 2–4 hours ahead based on weather-API data and pre-opens the vents proactively, rather than reacting to thresholds.</p>
+    </section>
+
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/willies-portfolio.png" alt="BloominBeds web dashboard showing sensor readings">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Sensor and vent hardware mounted on raised bed">
+            <img data-carousel-item src="../../assets/img/dig-4-habitat-deployment.png" alt="Turnip harvest from the test bed">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> BloominBeds dashboard, hardware installation, and harvest results. Use arrow buttons or arrow keys to navigate.
+      </div>
+    </section>
+
+    <p><a class="button button-secondary" href="../">Back to Work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="mailto:mike.dattolo@yahoo.com">mike.dattolo@yahoo.com</a></p>
+      <p><a href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      <p>&copy; <span data-year></span> Michael Dattolo</p>
+    </div>
+  </footer>
+</body>
+</html>
