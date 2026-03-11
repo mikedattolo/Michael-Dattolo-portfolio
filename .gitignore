@@ -1,2 +1,9 @@
 portfolio projects.zip
 rtb_web_assets.zip
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
