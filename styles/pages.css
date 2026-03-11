@@ -12,6 +12,13 @@
   color: var(--color-accent-2);
 }
 
+.hero-name {
+  margin: 0 0 var(--space-2);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #111827;
+}
+
 .lede {
   color: var(--color-text-muted);
 }
