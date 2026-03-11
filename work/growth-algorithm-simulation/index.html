@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -95,21 +96,26 @@
       <p>The definition works on arbitrary Breps — while the human arm was the test case, any 3D model can serve as the host surface.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/growth-algorithm-1.png" alt="Growth algorithm simulation result on human arm model">
-          <figcaption>Growth algorithm result — organic vine-like structure generated across the human arm 3D model.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/growth-algorithm-2.png" alt="Optimized growth algorithm result">
-          <figcaption>Post-optimization result — the growth stays bounded on the model surface with controllable density.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/growth-algorithm-3.png" alt="Growth algorithm Grasshopper diagram">
-          <figcaption>The optimized Grasshopper definition showing the full simulation pipeline from seed curve to baked mesh.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-1.png" alt="Growth algorithm simulation result on human arm model">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Post-optimization growth algorithm result with bounded surface growth">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-3.png" alt="Optimized Grasshopper definition showing the full simulation pipeline">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Growth algorithm simulation outputs from initial result through optimization. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

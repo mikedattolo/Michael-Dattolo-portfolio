@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -105,21 +106,26 @@
       <p>For the portfolio, this project demonstrates the ability to think beyond design artifacts — to evaluate <strong>markets, margins, staffing, and startup economics</strong> with the same rigor applied to product design.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/jrm-hero.png" alt="JRM Enterprises presentation cover">
-          <figcaption>JRM Enterprises feasibility study — team presentation covering market analysis, financials, and startup plan.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/jrm-tiered-pricing.png" alt="JRM tiered pricing model">
-          <figcaption>Tiered pricing structure determined during design consultation, with material budgets scaling by tier.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/jrm-income.png" alt="JRM income statement projection">
-          <figcaption>Projected income statement demonstrating the path to profitability for JRM Enterprises.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/jrm-hero.png" alt="JRM Enterprises feasibility study presentation cover">
+            <img data-carousel-item src="../../assets/img/jrm-tiered-pricing.png" alt="JRM tiered pricing model with material budgets scaling by tier">
+            <img data-carousel-item src="../../assets/img/jrm-income.png" alt="JRM projected income statement demonstrating path to profitability">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> JRM Enterprises feasibility study — presentation, pricing model, and financials. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

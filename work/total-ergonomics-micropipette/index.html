@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -103,21 +104,26 @@
       <p>The immediate priority is a refined functional prototype with adjustable cable tension, a broader range of pedal angles, and compatibility testing across the five most common micropipette brands. Clinical trials with a broader user group (beyond Hannah) would strengthen the evidence base for commercialization.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/ergonomics-foot-pedal.jpg" alt="Total Ergonomics foot pedal prototype">
-          <figcaption>The foot pedal prototype — the selected solution that transfers the micropipette plunger action to the foot, completely eliminating hand strain.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/ergonomics-pistol-grip.jpg" alt="Total Ergonomics pistol grip prototype">
-          <figcaption>The pistol grip concept — distributes pressing force across the palm and fingers instead of concentrating it on the thumb.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/ergonomics-palm-grip.jpg" alt="Total Ergonomics palm grip prototype">
-          <figcaption>The palm grip concept — encases the micropipette in an ergonomic shell controlled by subtle palm movements.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/ergonomics-foot-pedal.jpg" alt="Total Ergonomics foot pedal prototype — selected solution eliminating hand strain">
+            <img data-carousel-item src="../../assets/img/ergonomics-pistol-grip.jpg" alt="Total Ergonomics pistol grip prototype — distributes force across palm and fingers">
+            <img data-carousel-item src="../../assets/img/ergonomics-palm-grip.jpg" alt="Total Ergonomics palm grip prototype — ergonomic shell controlled by palm movements">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Three micropipette ergonomic concepts: foot pedal, pistol grip, and palm grip prototypes. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

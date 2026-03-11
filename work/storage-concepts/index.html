@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -55,17 +56,25 @@
       <p>The design prioritizes weight distribution, quick access, and a secure closure that doesn't slow you down. It's aimed at situations where a full bag is overkill but pockets aren't enough — commuting, walking the dog, quick errands.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Portfolio Boards</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/modular-storage.png" alt="Modular storage concept portfolio board">
-          <figcaption>Modular storage concept — stackable, nestable modules that snap together in configurable arrangements.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/wearable-storage.png" alt="Wearable storage concept portfolio board">
-          <figcaption>Wearable storage concept — a body-mounted unit for hands-free everyday carry.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/modular-storage.png" alt="Modular storage concept portfolio board — stackable nestable modules">
+            <img data-carousel-item src="../../assets/img/wearable-storage.png" alt="Wearable storage concept portfolio board — body-mounted hands-free carry unit">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Storage concept portfolio boards: modular and wearable designs. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

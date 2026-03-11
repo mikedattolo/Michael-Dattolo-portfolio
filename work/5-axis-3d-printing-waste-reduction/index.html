@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -82,21 +83,25 @@
       <p>The obvious next leap is automating the zone-splitting step: a script that analyzes the STL mesh, identifies overhang regions, and generates orientation zones and rotation commands automatically. I’d also like to test with PETG and ASA, which have different bridging characteristics, and see whether the savings translate to higher-temperature industrial materials.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/ecoprint-5axis-printer.jpg" alt="The EcoPrint 5-axis 3D printer">
-          <figcaption>The EcoPrint 5-axis printer with its A and B rotation axes visible, enabling the print head to approach the workpiece from any angle.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/ecoprint-ethics-board.png" alt="EcoPrint Ethics Studio Portfolio board">
-          <figcaption>Ethics Studio Portfolio board framing the sustainability argument: how eliminating support material reduces single-use plastic waste in manufacturing.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/dig-4-habitat-deployment.png" alt="Waste reduction data chart">
-          <figcaption>Replace with: bar chart showing support-material mass (grams) for each test geometry in 3-axis vs. 5-axis mode, with percentage-reduction labels.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/ecoprint-5axis-main.jpg" alt="The EcoPrint 5-axis 3D printer with A and B rotation axes visible">
+            <img data-carousel-item src="../../assets/img/ecoprint-ethics-board.png" alt="EcoPrint Ethics Studio Portfolio board framing the sustainability argument">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> The EcoPrint 5-axis printer and Ethics Studio Portfolio board. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

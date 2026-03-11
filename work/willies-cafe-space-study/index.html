@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -102,33 +103,29 @@
       <p>The key insight—that <strong>the problem isn't too few seats, it's the wrong kind of seats for how the space is actually used</strong>—reframed the conversation from "add more furniture" to "redesign the experience."</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/willies-portfolio.png" alt="Willie's Café collaboration portfolio board">
-          <figcaption>Team portfolio board showing the research process, data analysis, and design proposals for the Willie's Café space study.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/willies-portfolio-2.png" alt="Willie's Café collaboration portfolio board — page 2">
-          <figcaption>Second portfolio board with additional seating configuration concepts and ADA compliance analysis.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/willies-revit-model.png" alt="Revit scale model of Willie's Café">
-          <figcaption>The Revit scale model of Willie's Café with numbered table chart used for systematic data collection.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/willies-heatmap.png" alt="Favourite table heatmap visualization">
-          <figcaption>Occupancy heatmap highlighting the most popular tables and congestion zones during peak hours.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/willies-waiting-area.png" alt="Waiting area concept">
-          <figcaption>Proposed waiting area concept to reduce standing congestion in the main dining space.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/willies-seating-concept.png" alt="Seating redesign concepts">
-          <figcaption>Cafeteria-style and bar-style seating concepts derived from the observational data.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/willies-portfolio.png" alt="Willie's Café collaboration portfolio board showing research process and proposals">
+            <img data-carousel-item src="../../assets/img/willies-portfolio-2.png" alt="Willie's Café collaboration portfolio board page 2 with seating concepts and ADA analysis">
+            <img data-carousel-item src="../../assets/img/willies-revit-model.png" alt="Revit scale model of Willie's Café with numbered table chart for data collection">
+            <img data-carousel-item src="../../assets/img/willies-heatmap.png" alt="Occupancy heatmap highlighting most popular tables and congestion zones during peak hours">
+            <img data-carousel-item src="../../assets/img/willies-waiting-area.png" alt="Proposed waiting area concept to reduce standing congestion in the main dining space">
+            <img data-carousel-item src="../../assets/img/willies-seating-concept.png" alt="Cafeteria-style and bar-style seating concepts derived from observational data">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Willie's Café portfolio boards, Revit model, occupancy heatmap, and seating redesign concepts. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -96,21 +97,26 @@
       <p>The logical next step is coupling the magnetic-field simulation with a particle physics model to quantify actual radiation dose reduction within the protected zone. I'd also like to explore superconducting coil designs (which generate stronger fields at lower power) and model the energy budget against proposed Mars nuclear power systems to assess feasibility.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/willies-portfolio.png" alt="Grasshopper parametric model of the AMF device">
-          <figcaption>Replace with: screenshot of the Grasshopper parametric model showing the device geometry with slider controls for leg count, radius, height, and field-coil parameters.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/growth-algorithm-2.png" alt="Simulated magnetic field visualization">
-          <figcaption>Replace with: Rhino viewport showing the simulated dipole magnetic field lines arcing over the device, with Earth's magnetosphere shape overlaid for comparison.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/dig-4-habitat-deployment.png" alt="Deployable device on Mars terrain">
-          <figcaption>Replace with: rendered view of the AMF device deployed on a Mars terrain mesh, showing the telescope legs adapted to uneven ground and the protected dome area highlighted.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/willies-portfolio.png" alt="Grasshopper parametric model of the AMF device">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Simulated magnetic field visualization">
+            <img data-carousel-item src="../../assets/img/dig-4-habitat-deployment.png" alt="Deployable AMF device on Mars terrain">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Artificial Magnetic Fields device models and field simulations. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 

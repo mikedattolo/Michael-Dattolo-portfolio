@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body class="case-rtb" data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -175,6 +176,36 @@
           <li>Build a small product landing page + store-ready visual kit.</li>
         </ul>
       </section>
+
+
+
+    <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/rtb/webassetbeast.webp" alt="Release the Beast web banner asset">
+            <img data-carousel-item src="../../assets/img/rtb/context-1.webp" alt="Release the Beast brand in context applied to apparel">
+            <img data-carousel-item src="../../assets/img/rtb/rtb-photo-1.webp" alt="Person wearing Release the Beast shirt — photo 1">
+            <img data-carousel-item src="../../assets/img/rtb/rtb-photo-2.webp" alt="Person wearing Release the Beast shirt — photo 2">
+            <img data-carousel-item src="../../assets/img/rtb/rtb-photo-3.webp" alt="Person wearing Release the Beast shirt — photo 3">
+            <img data-carousel-item src="../../assets/img/rtb/beastlogo-no-back.webp" alt="Release the Beast logo on transparent background">
+            <img data-carousel-item src="../../assets/img/rtb/shorts1.webp" alt="Release the Beast shorts design — option 1">
+            <img data-carousel-item src="../../assets/img/rtb/shorts2.webp" alt="Release the Beast shorts design — option 2">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> Release the Beast brand assets, apparel photography, and product designs. Use arrow buttons or arrow keys to navigate.
+      </div>
+    </section>
 
       <p><a class="button button-secondary" href="../">Back to Work</a></p>
     </div>

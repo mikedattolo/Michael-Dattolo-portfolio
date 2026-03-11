@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../styles/components.css">
   <link rel="stylesheet" href="../../styles/pages.css">
   <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/carousel.js" defer></script>
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
@@ -85,21 +86,26 @@
       <p>The immediate priorities are adding a solar-charging module (to eliminate the need for an extension cord) and integrating soil-nutrient sensors (NPK) so the dashboard can recommend fertilization timing. Longer-term, I’d like to add a machine-learning layer that predicts temperature spikes 2–4 hours ahead based on weather-API data and pre-opens the vents proactively, rather than reacting to thresholds.</p>
     </section>
 
-    <section aria-labelledby="images-title">
-      <h2 id="images-title">Image Grid</h2>
-      <div class="image-grid">
-        <figure>
-          <img src="../../assets/img/willies-portfolio.png" alt="BloominBeds web dashboard">
-          <figcaption>Replace with: screenshot of the live Chart.js dashboard showing temperature, humidity, and soil-moisture line charts over a 48-hour window with threshold bands highlighted.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/growth-algorithm-2.png" alt="Sensor and vent hardware mounted on raised bed">
-          <figcaption>Replace with: photo of the full-scale raised bed showing the DHT22 sensor mount, soil-moisture probe inserted into soil, and the rotating-shade vent mechanism in the open position.</figcaption>
-        </figure>
-        <figure>
-          <img src="../../assets/img/dig-4-habitat-deployment.png" alt="Turnip harvest from the test bed">
-          <figcaption>Replace with: photo of the harvested turnips beside the raised bed, demonstrating that the system maintained viable growing conditions through a full crop cycle.</figcaption>
-        </figure>
+        <section aria-labelledby="images-title">
+      <h2 id="images-title">Project Gallery</h2>
+      <div data-carousel role="region" aria-label="Project image carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/willies-portfolio.png" alt="BloominBeds web dashboard showing sensor readings">
+            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Sensor and vent hardware mounted on raised bed">
+            <img data-carousel-item src="../../assets/img/dig-4-habitat-deployment.png" alt="Turnip harvest from the test bed">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Project Gallery:</strong> BloominBeds dashboard, hardware installation, and harvest results. Use arrow buttons or arrow keys to navigate.
       </div>
     </section>
 
