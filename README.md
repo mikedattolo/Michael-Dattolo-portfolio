@@ -1,12 +1,14 @@
 # Michael Dattolo — Product Design Portfolio
 
+**Portfolio Version:** v2.0.0
+
 A modern, **semantically-structured and recruiter-ready portfolio** featuring 11 case studies across product design, robotics, AI, and emerging technologies.
 
 **Live:** `michaeldattolo.com` (or `https://mikedattolo.github.io/Michael-Dattolo-portfolio/` if using GitHub Pages)
 
 ---
 
-## 📋 Recent Improvements (March 2026)
+## 📋 Recent Improvements (v2.0.0 — March 2026)
 
 This portfolio has been audited and significantly improved for:
 

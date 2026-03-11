@@ -1,5 +1,7 @@
 # ACTION ITEMS FOR MIKE — Portfolio Improvements
 
+**Action Plan Version:** v2.0.0
+
 ## 🎯 Critical (Required Before Launch)
 
 - [ ] **Resume PDF**: Upload your actual resume as `/about/resume.pdf`
