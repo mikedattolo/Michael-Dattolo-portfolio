@@ -99,7 +99,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 4rem;
+  min-height: 4.5rem;
   gap: var(--space-2);
 }
 
@@ -110,19 +110,19 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 999px;
-  border: 1px solid rgba(30, 58, 138, 0.18);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 58, 138, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   white-space: nowrap;
 }
 
 .brand:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 14px rgba(15, 23, 42, 0.12);
   border-color: rgba(249, 115, 22, 0.45);
 }
 
@@ -142,8 +142,21 @@ select:focus-visible {
 
 .brand-logo {
   display: block;
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
+  filter: saturate(1.15) contrast(1.08) drop-shadow(0 2px 4px rgba(15, 23, 42, 0.2));
+}
+
+@media (max-width: 42rem) {
+  .brand {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
 }
 
 .nav-list {
