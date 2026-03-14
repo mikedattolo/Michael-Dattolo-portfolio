@@ -1,8 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
 :root {
   --bg: #000000;
-  --fg: #f2f2f2;
+  --fg: #f4f4f2;
 
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: #0f0f0f;
+  --color-surface-strong: #151515;
+  --color-surface-elevated: #1b1b1b;
+  --color-text: var(--fg);
+  --color-heading: #ffffff;
+  --color-text-muted: #c8c8c6;
+  --color-muted: var(--color-text-muted);
+  --color-border: #2d2d2d;
+  --color-border-strong: #464646;
+  --color-accent: #f4f4f2;
+  --color-accent-2: #ffffff;
+  --color-accent-strong: #ffffff;
+  --color-focus: #ffffff;
+  --color-primary: #f4f4f2;
+  --color-secondary: #d7d7d5;
+
+  --font-sans: "Space Grotesk", "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
   --space-1: 0.25rem;
@@ -19,10 +38,10 @@
   --radius-2: 14px;
   --radius-3: 22px;
 
-  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.12);
-  --shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
-  --shadow-glow-blue: 0 0 30px rgba(59, 130, 246, 0.15);
-  --shadow-glow-orange: 0 0 30px rgba(249, 115, 22, 0.12);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.35);
+  --shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
+  --shadow-glow-blue: 0 0 0 transparent;
+  --shadow-glow-orange: 0 0 0 transparent;
 
   --container: 72rem;
 }

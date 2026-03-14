@@ -6,6 +6,25 @@
   });
 })();
 
+/* ===== Footer CTA + cleanup ===== */
+(function () {
+  const footerInner = document.querySelector(".site-footer .footer-inner");
+  if (footerInner && !footerInner.querySelector(".footer-cta")) {
+    const footerCta = document.createElement("div");
+    footerCta.className = "footer-cta";
+    footerCta.innerHTML =
+      '<p>Interested in product design, manufacturing innovation, or medical device collaboration? <a href="/contact/">Let\'s connect.</a></p>';
+    footerInner.prepend(footerCta);
+  }
+
+  const progressBars = document.querySelectorAll("#reading-progress");
+  if (progressBars.length > 1) {
+    progressBars.forEach((bar, index) => {
+      if (index > 0) bar.remove();
+    });
+  }
+})();
+
 /* ===== Active nav highlight ===== */
 (function () {
   const current = window.location.pathname.replace(/index\.html$/, "");

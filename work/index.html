@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../styles/components.css">
   <link rel="stylesheet" href="../styles/pages.css">
   <script src="../scripts/main.js" defer></script>
-  <script src="../scripts/filters.js" defer></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -32,95 +31,101 @@
   <main id="main-content" class="container page-main">
     <header class="page-header">
       <h1>Work</h1>
-      <p>Selected projects across robotics, sustainability, health-tech, computation, and business.</p>
+      <p class="work-intro">A focused portfolio of product design work across manufacturing technologies, medical and health-tech tools, and applied robotics systems.</p>
     </header>
 
-    <section class="section-space" aria-label="Work filters">
-      <div class="filter-chips" role="group" aria-label="Filter case studies">
-        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" type="button" data-filter="robotics" aria-pressed="false">Robotics</button>
-        <button class="chip" type="button" data-filter="sustainability" aria-pressed="false">Sustainability</button>
-        <button class="chip" type="button" data-filter="health-tech" aria-pressed="false">Health-Tech</button>
-        <button class="chip" type="button" data-filter="ai" aria-pressed="false">AI</button>
-        <button class="chip" type="button" data-filter="space-design" aria-pressed="false">Space Design</button>
-        <button class="chip" type="button" data-filter="computational" aria-pressed="false">Computational</button>
-        <button class="chip" type="button" data-filter="product-design" aria-pressed="false">Product Design</button>
-        <button class="chip" type="button" data-filter="business" aria-pressed="false">Business</button>
+    <section class="work-section" aria-labelledby="priority-title">
+      <h2 id="priority-title">Featured / Priority Projects</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/ecoprint-5axis-printer.jpg" srcset="../assets/img/ecoprint-5axis-printer.jpg 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="EcoPrint 5-axis 3D printer prototype demonstrating support-material reduction workflow" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Manufacturing</span> <span class="tag">Additive</span></p>
+          <h3><a href="5-axis-3d-printing-waste-reduction/">EcoPrint — 5-Axis 3D Printing</a></h3>
+          <p>Manufacturing innovation study in multi-axis additive workflows with measured 37-44% support-material reduction.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/ergonomics-foot-pedal.jpg" srcset="../assets/img/ergonomics-foot-pedal.jpg 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Total Ergonomics medical-lab micropipette ergonomic foot pedal prototype" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Medical</span> <span class="tag">Ergonomics</span></p>
+          <h3><a href="total-ergonomics-micropipette/">Total Ergonomics™ Micropipette</a></h3>
+          <p>User-centered medical product concept for repetitive strain reduction through ergonomic control redesign and prototype testing.</p>
+        </article>
       </div>
     </section>
 
-    <section aria-label="Case study grid">
-      <div class="card-grid" data-work-grid>
-        <article class="card" data-tags="robotics">
-          <div class="card-media"><img src="../assets/img/astromech-logo.png" srcset="../assets/img/astromech-logo.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Astromech Innovations M.A.R.T.I.A.N Bot logo" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Robotics</span></p>
-          <h3><a href="martian-construction-robot/">The M.A.R.T.I.A.N Bot</a></h3>
-          <p>Autonomous 8-legged Mars construction robot with topology-optimized structure and 5-step DIG workflow. Capstone project. <span class="metric">- 5-phase DIG build process</span></p>
-        </article>
-
-        <article class="card" data-tags="sustainability">
-          <div class="card-media"><img src="../assets/img/ecoprint-5axis-printer.jpg" srcset="../assets/img/ecoprint-5axis-printer.jpg 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="EcoPrint 5-axis 3D printer prototype demonstrating multi-axis toolpath optimization" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Sustainability</span></p>
-          <h3><a href="5-axis-3d-printing-waste-reduction/">EcoPrint — 5-Axis 3D Printing</a></h3>
-          <p>Multi-axis toolpath strategies to cut support-material waste and improve additive-manufacturing efficiency. <span class="metric">- 40% support waste reduction</span></p>
-        </article>
-
-        <article class="card" data-tags="health-tech sustainability">
-          <div class="card-media"><img src="../assets/img/willies-portfolio.png" srcset="../assets/img/willies-portfolio.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="BloominBeds Raspberry Pi sensor monitoring system dashboard" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Health-Tech</span> <span class="tag">Sustainability</span></p>
-          <h3><a href="bloominbeds-monitoring-system/">BloominBeds Monitoring System</a></h3>
-          <p>Raspberry Pi sensor network and live dashboard keeping raised garden beds within safe growing conditions year-round. <span class="metric">- Automated temperature and humidity control</span></p>
-        </article>
-
-        <article class="card" data-tags="ai">
-          <div class="card-media"><img src="../assets/img/growth-algorithm-2.png" srcset="../assets/img/growth-algorithm-2.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="EDISON AI Assistant offline multi-modal platform with GPU inference" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">AI</span></p>
-          <h3><a href="edison-ai-assistant/">EDISON AI Assistant</a></h3>
-          <p>Fully offline, multi-modal AI platform with multi-GPU LLM inference, RAG memory, voice, and image generation. <span class="metric">- Offline-first multi-modal stack</span></p>
-        </article>
-
-        <article class="card" data-tags="health-tech">
-          <div class="card-media"><img src="../assets/img/ergonomics-foot-pedal.jpg" srcset="../assets/img/ergonomics-foot-pedal.jpg 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Total Ergonomics micropipette foot pedal ergonomic add-on prototype" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Health-Tech</span></p>
-          <h3><a href="total-ergonomics-micropipette/">Total Ergonomics™ Micropipette</a></h3>
-          <p>User-centered ergonomic add-on designed for a lab technician with rheumatoid arthritis. Foot-pedal solution selected via comparative user testing. <span class="metric">- 3 prototypes compared in testing</span></p>
-        </article>
-
-        <article class="card" data-tags="robotics">
-          <div class="card-media"><img src="../assets/img/dig-4-habitat-deployment.png" srcset="../assets/img/dig-4-habitat-deployment.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Artificial magnetic field deployment for Mars radiation protection simulation" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Robotics</span></p>
-          <h3><a href="artificial-magnetic-fields/">Artificial Magnetic Fields for Mars</a></h3>
-          <p>Parametric Grasshopper/Rhino simulation of deployable electromagnetic shields for Mars radiation protection. <span class="metric">- Parametric field-shield simulation</span></p>
-        </article>
-
-        <article class="card" data-tags="space-design">
-          <div class="card-media"><img src="../assets/img/willies-waiting-area.png" srcset="../assets/img/willies-waiting-area.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Willie's Cafe waiting area redesign proposal for improved seating" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Space Design</span></p>
-          <h3><a href="willies-cafe-space-study/">Willie's Café Space Study</a></h3>
-          <p>Data-driven seating analysis with camera observation, Revit modelling, and ADA-compliant redesign proposals for a university cafe. <span class="metric">- ADA-informed layout optimization</span></p>
-        </article>
-
-        <article class="card" data-tags="computational">
-          <div class="card-media"><img src="../assets/img/growth-algorithm-1.png" srcset="../assets/img/growth-algorithm-1.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Growth algorithm simulation showing organic vine-like structures" loading="lazy" width="400" height="250"></div>
-          <p class="tag-list"><span class="tag">Computational</span></p>
-          <h3><a href="growth-algorithm-simulation/">Growth Algorithm Simulation</a></h3>
-          <p>Grasshopper/Rhino parametric simulation growing organic structures across 3D model surfaces with collision detection. <span class="metric">- Organic growth solver system</span></p>
-        </article>
-
-        <article class="card" data-tags="product-design">
-          <div class="card-media"><img src="../assets/img/modular-storage.png" srcset="../assets/img/modular-storage.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Modular storage concept for personal storage solutions" loading="lazy" width="400" height="250"></div>
+    <section class="work-section" aria-labelledby="manufacturing-title">
+      <h2 id="manufacturing-title">Manufacturing + Fabrication</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/modular-storage.png" srcset="../assets/img/modular-storage.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Modular storage concept render with stackable product components" loading="lazy" width="400" height="250"></div>
           <p class="tag-list"><span class="tag">Product Design</span></p>
           <h3><a href="storage-concepts/">Storage Concepts</a></h3>
-          <p>Two product explorations: a modular stackable system and a wearable hands-free carry unit. <span class="metric">- Dual concept portfolio</span></p>
+          <p>Physical product concepting focused on modularity, manufacturability, and practical everyday use.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" aria-labelledby="medical-title">
+      <h2 id="medical-title">Medical / Health-Tech</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/willies-portfolio.png" srcset="../assets/img/willies-portfolio.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="BloominBeds sensor dashboard for environmental monitoring and health-oriented plant growth conditions" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Health-Tech</span> <span class="tag">Monitoring</span></p>
+          <h3><a href="bloominbeds-monitoring-system/">BloominBeds Monitoring System</a></h3>
+          <p>Sensor-driven monitoring platform combining hardware and dashboard UX for stable growing conditions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" aria-labelledby="robotics-title">
+      <h2 id="robotics-title">Robotics + Systems</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/astromech-logo.png" srcset="../assets/img/astromech-logo.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="M.A.R.T.I.A.N. autonomous construction robot identity graphic" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Robotics</span></p>
+          <h3><a href="martian-construction-robot/">The M.A.R.T.I.A.N Bot</a></h3>
+          <p>Autonomous legged construction robot concept with structured DIG workflow and system-level prototyping.</p>
         </article>
 
-        <article class="card" data-tags="business">
-          <div class="card-media"><img src="../assets/img/jrm-hero.png" srcset="../assets/img/jrm-hero.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="JRM Enterprises feasibility study for luxury vehicle conversion" loading="lazy" width="400" height="250"></div>
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/dig-4-habitat-deployment.png" srcset="../assets/img/dig-4-habitat-deployment.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Artificial magnetic field simulation for deployable shielding system" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Systems</span></p>
+          <h3><a href="artificial-magnetic-fields/">Artificial Magnetic Fields for Mars</a></h3>
+          <p>Parametric simulation work exploring deployable shielding systems and complex field-control geometry.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/growth-algorithm-2.png" srcset="../assets/img/growth-algorithm-2.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="EDISON AI assistant interface and model workflow visualization" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Systems</span> <span class="tag">AI Platform</span></p>
+          <h3><a href="edison-ai-assistant/">EDISON AI Assistant</a></h3>
+          <p>Offline multimodal platform integrating inference, retrieval, and automation in one cohesive system.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" aria-labelledby="archive-title">
+      <h2 id="archive-title">Explorations / Archive</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/growth-algorithm-1.png" srcset="../assets/img/growth-algorithm-1.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Parametric growth algorithm pattern simulation across a surface" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Computational</span></p>
+          <h3><a href="growth-algorithm-simulation/">Growth Algorithm Simulation</a></h3>
+          <p>Computational design exploration in procedural growth, collision logic, and form generation.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/willies-waiting-area.png" srcset="../assets/img/willies-waiting-area.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="Willie's Cafe seating layout redesign concept" loading="lazy" width="400" height="250"></div>
+          <p class="tag-list"><span class="tag">Space Study</span></p>
+          <h3><a href="willies-cafe-space-study/">Willie's Cafe Space Study</a></h3>
+          <p>Observation-led spatial redesign project focused on layout flow and seating access.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-media"><img src="../assets/img/jrm-hero.png" srcset="../assets/img/jrm-hero.png 400w" sizes="(max-width: 768px) 100vw, 30vw" alt="JRM Enterprises market and feasibility research visual" loading="lazy" width="400" height="250"></div>
           <p class="tag-list"><span class="tag">Business</span></p>
           <h3><a href="jrm-enterprises-feasibility/">JRM Enterprises Feasibility</a></h3>
-          <p>Business feasibility study for a luxury vehicle conversion shop-market research, tiered pricing, and $2M startup plan. <span class="metric">- $2M modeled launch plan</span></p>
+          <p>Business modeling and launch planning exercise for a specialty conversion-service concept.</p>
         </article>
-
       </div>
     </section>
   </main>
