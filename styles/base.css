@@ -101,7 +101,7 @@ select:focus-visible {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   min-height: 4.5rem;
   gap: var(--space-2);
 }

@@ -1,7 +1,7 @@
 # Portfolio Audit & Improvements — Complete Changelog
 
 **Date:** March 11, 2026  
-**Version:** v2.0.3  
+**Version:** v2.0.4  
 **Scope:** Accessibility, UX/Content, Performance, Responsive Design, Routing, SEO  
 **Status:** ✅ Implementation Complete (see "Still Needed" section for outstanding items)
 

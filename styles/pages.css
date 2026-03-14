@@ -385,12 +385,21 @@ body::after,
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.24;
+  z-index: 0;
+  opacity: 0.5;
   background:
-    radial-gradient(circle at 18% 24%, rgba(205, 205, 205, 0.16), transparent 28%),
-    radial-gradient(circle at 82% 72%, rgba(190, 190, 190, 0.12), transparent 34%),
-    repeating-linear-gradient(0deg, rgba(222, 222, 222, 0.11) 0 1px, transparent 1px 44px),
-    repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.11) 0 1px, transparent 1px 44px);
+    radial-gradient(circle at 18% 24%, rgba(230, 230, 230, 0.2), transparent 30%),
+    radial-gradient(circle at 82% 72%, rgba(208, 208, 208, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 38%),
+    repeating-linear-gradient(0deg, rgba(235, 235, 235, 0.15) 0 1px, transparent 1px 36px),
+    repeating-linear-gradient(90deg, rgba(235, 235, 235, 0.15) 0 1px, transparent 1px 36px);
+}
+
+.page-home .site-header,
+.page-home main,
+.page-home .site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 p,
