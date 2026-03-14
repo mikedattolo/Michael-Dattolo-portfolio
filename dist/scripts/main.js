@@ -22,6 +22,13 @@
 
 /* ===== Smooth page transitions ===== */
 (function () {
+  const resetFadeState = () => {
+    document.body.classList.remove("fade-out");
+  };
+
+  resetFadeState();
+  window.addEventListener("pageshow", resetFadeState);
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   document.addEventListener("click", (event) => {

@@ -548,6 +548,18 @@ select:focus-visible,
   gap: var(--space-6);
 }
 
+.page-home #main-content h1,
+.page-home #main-content h2,
+.page-home #main-content h3,
+.page-home #main-content p {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.page-home .card {
+  text-align: center;
+}
+
 @media (max-width: 52rem) {
   .card-grid-featured {
     grid-template-columns: 1fr;
