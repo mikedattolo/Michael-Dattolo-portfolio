@@ -1,13 +1,13 @@
 MICHAEL DATTOLO
-Product Designer | Innovation Engineer | Robotics Specialist
+Product Designer | Innovator | Robotics Specialist
 mike.dattolo@yahoo.com | linkedin.com/in/michaeldattolo | Hackettstown, NJ
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 PROFESSIONAL SUMMARY
 
-Award-winning product designer and innovation engineer specializing in robotics, 
-aerospace, medical devices, and advanced manufacturing. B.S. in Integrated Product 
+Award-winning product designer and innovator specializing in robotics, 
+medical devices, and advanced manufacturing. B.S. in Integrated Product 
 Design (GPA 3.9, Dean's List). Proven track record designing and prototyping 
 complex systems from concept through validation. Deep expertise in CAD, topology 
 optimization, design-for-manufacturing, and autonomous systems.
@@ -79,7 +79,7 @@ Research & Testing
 • Iterative testing with clear pass/fail criteria
 • Dashboard UX and data visualization
 
-Engineering & Simulation
+Systems & Simulation
 • ROS 2 and Gazebo simulation for autonomous systems
 • URDF/xacro parametric robot description
 • Parametric design with Grasshopper and Rhino
@@ -132,7 +132,7 @@ Additional Case Studies: Artificial Magnetic Fields (Mars radiation shielding
 simulation), Willie's Café Space Study (data-driven seating analysis with ADA 
 compliance), Growth Algorithm Simulation (parametric organic structure generation), 
 Storage Concepts (modular + wearable personal storage), JRM Enterprises Feasibility 
-Study ($2M business plan), Release the Beast (apparel brand identity & graphics)
+Study ($2M business plan)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
