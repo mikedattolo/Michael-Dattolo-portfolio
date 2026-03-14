@@ -445,6 +445,13 @@ dt {
   text-align: center;
 }
 
+.hero-logo {
+  display: block;
+  width: clamp(120px, 22vw, 220px);
+  height: auto;
+  margin: 0 auto var(--space-4);
+}
+
 .hero-copy-simple h1 {
   margin: 0 0 var(--space-4);
   color: #ffffff;
