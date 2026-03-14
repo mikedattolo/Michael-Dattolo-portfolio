@@ -446,10 +446,8 @@ dt {
 }
 
 .hero-logo-crop {
-  width: clamp(270px, 44vw, 520px);
-  aspect-ratio: 1 / 1;
-  margin: 0 auto 0.2rem;
-  overflow: hidden;
+  width: clamp(300px, 58vw, 760px);
+  margin: 0 auto var(--space-3);
 }
 
 .hero-logo {
@@ -457,8 +455,6 @@ dt {
   width: 100%;
   height: auto;
   margin: 0;
-  transform: scale(1.28);
-  transform-origin: center;
 }
 
 .hero-copy-simple h1 {
