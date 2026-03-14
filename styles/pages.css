@@ -217,15 +217,16 @@
 }
 
 .button.primary{
-  background: linear-gradient(135deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 80%, var(--color-secondary)));
-  border-color: var(--color-primary);
-  color: #fff;
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #000;
 }
 
 .button.primary:hover{
-  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 90%, white), var(--color-accent));
-  border-color: color-mix(in srgb, var(--color-accent) 90%, white);
-  box-shadow: var(--shadow-glow-blue);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000;
+  box-shadow: none;
 }
 
 /* ── About headshot layout ── */
@@ -376,6 +377,20 @@ body::before,
 body::after,
 .page-home .hero::after {
   display: none;
+}
+
+.page-home::before {
+  content: "";
+  display: block;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(205, 205, 205, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 72%, rgba(190, 190, 190, 0.12), transparent 34%),
+    repeating-linear-gradient(0deg, rgba(222, 222, 222, 0.11) 0 1px, transparent 1px 44px),
+    repeating-linear-gradient(90deg, rgba(222, 222, 222, 0.11) 0 1px, transparent 1px 44px);
 }
 
 p,
