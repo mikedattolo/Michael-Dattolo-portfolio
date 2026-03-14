@@ -156,7 +156,7 @@
     field.addEventListener("blur", () => validateField(field));
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     let valid = true;
     fields.forEach((field) => {
       if (!validateField(field)) {
@@ -166,6 +166,57 @@
 
     if (!valid) {
       event.preventDefault();
+      return;
+    }
+
+    event.preventDefault();
+
+    const status = document.getElementById("form-status");
+    const submitButton = form.querySelector('button[type="submit"]');
+    const action = form.getAttribute("action");
+
+    if (!action) {
+      if (status) {
+        status.textContent = "Form submission is temporarily unavailable. Please email mike.dattolo@yahoo.com.";
+      }
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("submit_failed");
+      }
+
+      if (status) {
+        status.textContent = "Message sent successfully. Mike will be notified by email right away.";
+      }
+      form.reset();
+      fields.forEach((field) => field.setAttribute("aria-invalid", "false"));
+      form.querySelectorAll(".form-error").forEach((el) => {
+        el.textContent = "";
+      });
+    } catch (_error) {
+      if (status) {
+        status.textContent = "Unable to send right now. Please email mike.dattolo@yahoo.com directly.";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }
     }
   });
 })();
