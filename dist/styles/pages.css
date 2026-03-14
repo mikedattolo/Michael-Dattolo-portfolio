@@ -447,9 +447,9 @@ dt {
 
 .hero-logo {
   display: block;
-  width: clamp(120px, 22vw, 220px);
+  width: clamp(220px, 36vw, 420px);
   height: auto;
-  margin: 0 auto var(--space-4);
+  margin: 0 auto var(--space-3);
 }
 
 .hero-copy-simple h1 {
