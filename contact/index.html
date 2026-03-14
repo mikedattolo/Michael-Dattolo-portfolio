@@ -39,13 +39,7 @@
     <section class="contact-form-section">
       <div style="max-width: 42rem;" role="region" aria-labelledby="form-title">
         <h2 id="form-title">Send me a message</h2>
-        <form id="contact-form" method="POST" action="https://formsubmit.co/mike.dattolo@yahoo.com" novalidate>
-          <input type="hidden" name="_subject" value="New portfolio message from mike-dattolo.com">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_honey" value="">
-          <input type="hidden" name="_cc" value="9087983760@vtext.com,9087983760@tmomail.net,9087983760@txt.att.net,9087983760@messaging.sprintpcs.com">
-          <input type="hidden" name="portfolio_alert" value="someone is messaging you from your portfolio">
+        <form id="contact-form" method="POST" action="/api/contact" novalidate>
           <div class="form-group">
             <label for="name">Name <span class="required">*</span></label>
             <input 
