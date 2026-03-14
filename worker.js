@@ -96,19 +96,19 @@ async function handleContactForm(request, env) {
       text: `New portfolio message\n\nFrom: ${name} <${email}>\n\nMessage:\n${message}`,
     });
 
-    // SMS notification — fire-and-forget via carrier email-to-SMS gateways
-    // Best-effort: works if the number is on Verizon, T-Mobile, or AT&T
-    const smsGateways = [
-      '9087983760@vtext.com',
-      '9087983760@tmomail.net',
-      '9087983760@txt.att.net',
-    ];
-    sendEmail(env.RESEND_API_KEY, {
-      from: 'Portfolio <noreply@mike-dattolo.com>',
-      to: smsGateways,
-      subject: 'Portfolio alert',
-      text: 'Someone is messaging you from your portfolio.',
-    }).catch((err) => console.warn('SMS gateway (non-critical):', err.message));
+    // SMS notification via TextBelt (free tier: 1 SMS/day, no account needed)
+    fetch('https://textbelt.com/text', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        phone: '9087983760',
+        message: 'Someone is messaging you from your portfolio.',
+        key: 'textbelt',
+      }),
+    })
+      .then((r) => r.json())
+      .then((d) => { if (!d.success) console.warn('TextBelt SMS failed:', d.error); })
+      .catch((err) => console.warn('TextBelt SMS error:', err.message));
 
     return new Response(JSON.stringify({ success: true }), { headers: JSON_HEADERS });
   } catch (err) {
