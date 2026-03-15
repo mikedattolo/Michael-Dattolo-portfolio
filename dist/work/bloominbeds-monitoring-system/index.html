@@ -17,7 +17,6 @@
 </head>
 <body data-page="case-study">
   <div id="reading-progress" aria-hidden="true"></div>
-  <div id="reading-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -36,7 +35,7 @@
     <header class="page-header">
       <p class="eyebrow">Case Study</p>
       <h1>BloominBeds Monitoring System</h1>
-      <p>Raised garden beds overheat in summer and freeze in winter. We built a sensor network and ventilation system to keep them growing year-round.</p>
+      <p>A Johnson &amp; Wales Directed Experimental Education project using sensor data and software-controlled ventilation to keep raised beds productive year-round.</p>
     </header>
 
     <section class="tldr" aria-labelledby="tldr-title">
@@ -50,52 +49,75 @@
       </dl>
     </section>
 
-    <section><h2>Problem</h2>
-      <p>Raised garden beds are increasingly popular for urban and suburban food production, but they have a critical thermal vulnerability: their above-ground walls absorb and radiate heat far more than in-ground plots. In summer, soil temperatures can spike past 40 °C—killing root systems. In winter, the same beds freeze solid weeks before ground-level soil does.</p>
-      <p>Community gardeners and small-scale growers lack affordable, data-driven tools to monitor these conditions in real time, let alone automated systems that respond to them. The BloominBeds project set out to close that gap: a sensor-driven monitoring platform paired with a ventilation system that keeps bed conditions within healthy growing ranges, year-round.</p>
+    <section>
+      <h2>Project Overview</h2>
+      <p>BloominBeds is an educational and applied R&amp;D platform created in Professor Jonathan Lyle Harris's class at Johnson &amp; Wales University. The goal: solve heat-trapping and seasonal instability in covered raised beds by combining real-time environmental sensing with controllable ventilation.</p>
+      <p>The system integrates Raspberry Pi hardware, sensor collection, and a web interface so students and growers can monitor temperature, humidity, soil conditions, and environmental trends in one place.</p>
+      <figure class="featured-figure brand-logo-feature">
+        <img src="../../assets/img/bloominbeds/logo.png" alt="BloominBeds project logo">
+        <figcaption>BloominBeds identity used across the web interface and research materials.</figcaption>
+      </figure>
     </section>
-    <section><h2>Constraints</h2>
-      <p><strong>Budget:</strong> As a university project, every component had to be low-cost and commercially available. We set a target BOM under $120 per bed unit.</p>
-      <p><strong>Outdoor durability:</strong> Electronics would live outdoors in New England weather—rain, frost, direct sun. Enclosures and wiring had to be IP54-rated or better.</p>
-      <p><strong>Non-technical users:</strong> The end users are gardeners, not technicians. The dashboard had to surface actionable information ("bed is too hot") without requiring sensor-calibration knowledge.</p>
-      <p><strong>Power:</strong> No guaranteed outlet access in community garden plots. The system needed to run on solar-charged batteries with a power budget under 2 W continuous.</p>
+
+    <section>
+      <h2>Mission &amp; Features</h2>
+      <p>Our mission is to enable year-round sustainable gardening through technology and education. BloominBeds supports culinary programs, students, and community growers with a practical, data-informed way to maintain healthier growing conditions.</p>
+      <ul>
+        <li>Software-controlled ventilation to reduce overheating and improve winter usability.</li>
+        <li>Real-time monitoring of temperature, humidity, and soil data.</li>
+        <li>Historical trend tracking for growth and climate decisions.</li>
+        <li>Responsive, user-friendly web interface for desktop and mobile.</li>
+        <li>Educational foundation for hands-on agricultural technology learning.</li>
+      </ul>
     </section>
+
     <section><h2>My Role</h2>
       <p>Within the 10+ person team, I owned three workstreams: <strong>active prototyping</strong> (building and wiring the physical sensor rigs and ventilation mechanism), <strong>3D simulation</strong> (modeling heat flow and airflow in Rhino 3D and Grasshopper to predict where vents should go before cutting wood), and <strong>integrated control systems</strong> (writing the Python firmware on the Raspberry Pi that reads sensor data, evaluates threshold logic, and triggers the ventilation actuator).</p>
       <p>I was also the primary contributor to the real-time web dashboard, building the front-end with HTML/CSS/JS and Chart.js to visualize temperature, humidity, and soil-moisture trends over time.</p>
     </section>
-    <section><h2>Approach</h2>
-      <p>We tackled ventilation in two parallel tracks: <strong>passive</strong> and <strong>active</strong> solutions.</p>
-      <p><em>Passive track:</em> We explored thermo-reactive wire (shape-memory alloy that opens a vent flap at a set temperature) and bi-metal strip actuators. These require zero power but offer limited control precision. I built scale-model test rigs for both and measured vent-open temperatures under heat-lamp simulation.</p>
-      <p><em>Active track:</em> We designed a rotating shade mechanism and a pneumatic-lift vent panel. I modeled both in Rhino 3D, ran Grasshopper airflow simulations to compare CFM at different vent placements and opening angles, and selected the rotating shade for its mechanical simplicity and low part count.</p>
-      <p>On the monitoring side, I wired DHT22 temperature/humidity sensors and capacitive soil-moisture probes to a Raspberry Pi, wrote a Python data-collection daemon that samples every 60 seconds, and served the readings to a local web dashboard via a lightweight HTTP server. Chart.js renders live-updating line charts so the grower can spot trends at a glance.</p>
-    </section>
-    <section><h2>Key Decisions</h2>
-      <p><strong>Grasshopper simulation before physical build:</strong> Running airflow simulations first saved us from cutting vent holes in the wrong places. The simulation showed that a single top vent was insufficient—we needed opposing side vents at soil level to create cross-flow. This insight changed the bed’s construction plan before a single board was cut.</p>
-      <p><strong>DHT22 over BME280:</strong> The BME280 is more accurate, but the DHT22 is $3 vs. $12 and its ±0.5 °C accuracy is well within the tolerance gardeners need. For a system designed to be replicated cheaply, the cost difference across multiple sensor nodes mattered more than lab-grade precision.</p>
-      <p><strong>Chart.js over a custom charting approach:</strong> We considered a Python-side data-viz pipeline (matplotlib rendering PNGs on a cron job). Chart.js running in the browser was lighter, interactive, and let us add zoom and tooltip features with zero backend overhead.</p>
-    </section>
-    <section><h2>Iterations</h2>
-      <p><strong>Round 1 — Trapped heat discovery:</strong> Our first enclosed scale model hit 52 °C under a heat lamp in 30 minutes—far worse than an open bed. This “trapped heat” problem redirected the entire project toward ventilation as the primary design challenge, not just monitoring.</p>
-      <p><strong>Round 2 — Passive vent prototypes:</strong> Thermo-reactive wire worked but opened too slowly (8–12 minutes to full deflection). Bi-metal strips were faster but couldn’t generate enough force to open a full-size panel. We documented both and moved forward with the active rotating-shade mechanism as the primary solution.</p>
-      <p><strong>Round 3 — Full-scale prototype:</strong> We built a full-size raised bed with integrated sensor mounts, the rotating-shade vent, and a Raspberry Pi control unit. Planted turnips as the test crop. Over a 6-week grow cycle, the bed maintained soil temperature within 18–28 °C—the target range—and the turnips matured to harvest size, confirming the system’s viability.</p>
-    </section>
-    <section><h2>Outcome</h2>
-      <p>The final BloominBeds system is a working, sub-$120 monitoring-and-ventilation platform that kept a raised garden bed within healthy growing conditions through a complete crop cycle. The web dashboard logged over 60,000 sensor readings across the test period, and the threshold-triggered ventilation responded within 90 seconds of a temperature exceedance.</p>
-      <p>The project was presented at the <strong>JWU Research Symposium 2024</strong>, where the team received recognition for <strong>Creativity &amp; Design</strong>—acknowledged for bridging technical prototyping with measurable agricultural impact. The full codebase, wiring diagrams, and build instructions are open-sourced on GitHub so other community gardens can replicate the system.</p>
-    </section>
-    <section><h2>Next Steps</h2>
-      <p>The immediate priorities are adding a solar-charging module (to eliminate the need for an extension cord) and integrating soil-nutrient sensors (NPK) so the dashboard can recommend fertilization timing. Longer-term, I’d like to add a machine-learning layer that predicts temperature spikes 2–4 hours ahead based on weather-API data and pre-opens the vents proactively, rather than reacting to thresholds.</p>
+
+    <section><h2>Research &amp; Development</h2>
+      <p>The original campus need was clear: during winter months and bright daytime sun, covered beds can trap heat aggressively and require active intervention. The team split into two focused paths to explore possible solutions.</p>
+      <p><strong>Passive path:</strong> mechanical ventilation concepts with no electronics.</p>
+      <p><strong>Active path:</strong> sensors, threshold logic, and software-based airflow control.</p>
+      <div class="image-grid">
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/trappedheat.png" alt="Trapped heat visualization in covered raised bed">
+          <figcaption>Heat trapping identified as the core risk that drove the project scope.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/prototypebed.png" alt="Scale prototype raised bed used for ventilation testing">
+          <figcaption>Scale model used for fast iteration before full-size deployment.</figcaption>
+        </figure>
+      </div>
     </section>
 
-        <section aria-labelledby="images-title">
-      <h2 id="images-title">Project Gallery</h2>
-      <div data-carousel role="region" aria-label="Project image carousel">
+    <section><h2>Passive Prototypes</h2>
+      <p>Two no-power concepts were tested as temperature-reactive mechanisms for automated vent behavior.</p>
+      <div class="image-grid">
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/test.png" alt="Thermo-reactive wire passive ventilation test setup">
+          <figcaption>Test 1: thermo-reactive wire to open/close vent flaps based on temperature.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/test2.png" alt="Bi-metal strip passive ventilation prototype">
+          <figcaption>Test 2: bi-metal strip mechanism using differential expansion to actuate vents.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section><h2>Active System &amp; 3D Simulation</h2>
+      <p>The active system integrated real-time sensors, web monitoring, and software-triggered ventilation. My contributions included a rotating shade/open mechanism, a pneumatic lift concept, and Rhino/Grasshopper simulations validating airflow improvements from side and top vent placement.</p>
+      <div data-carousel role="region" aria-label="BloominBeds Rhino and ventilation simulation carousel">
         <div class="carousel-container">
           <div class="carousel-viewport">
-            <img data-carousel-item src="../../assets/img/willies-portfolio.png" alt="BloominBeds web dashboard showing sensor readings">
-            <img data-carousel-item src="../../assets/img/growth-algorithm-2.png" alt="Sensor and vent hardware mounted on raised bed">
-            <img data-carousel-item src="../../assets/img/dig-4-habitat-deployment.png" alt="Turnip harvest from the test bed">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/ViewCapture20231006_194429.jpg" alt="Rhino simulation complete assembly of the BloominBeds system">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/ViewCapture20231006_194604.jpg" alt="Rhino ventilation subsystem detail view">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/Capture.PNG" alt="Rhino component render one">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/Capture2.PNG" alt="Rhino component render two">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/Capture3.PNG" alt="Rhino component render three">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/Capture4.PNG" alt="Rhino component render four">
+            <img data-carousel-item src="../../assets/img/bloominbeds/rhino-simulations/Capture5.PNG" alt="Rhino system overview render">
           </div>
           <div class="carousel-controls">
             <div class="carousel-nav">
@@ -107,8 +129,83 @@
         </div>
       </div>
       <div class="carousel-caption">
-        <strong>Project Gallery:</strong> BloominBeds dashboard, hardware installation, and harvest results. Use arrow buttons or arrow keys to navigate.
+        <strong>Simulation Gallery:</strong> Rhino and Grasshopper studies used to optimize airflow pathways, structural integration, and sensor placement before fabrication.
       </div>
+    </section>
+
+    <section aria-labelledby="images-title">
+      <h2 id="images-title">Interface &amp; Data Dashboard</h2>
+      <div data-carousel role="region" aria-label="BloominBeds interface screenshots carousel">
+        <div class="carousel-container">
+          <div class="carousel-viewport">
+            <img data-carousel-item src="../../assets/img/bloominbeds/screenshots/screenshot-2-cropped.png" alt="BloominBeds system dashboard with sensor metrics">
+            <img data-carousel-item src="../../assets/img/bloominbeds/screenshots/screenshot-3-cropped.png" alt="BloominBeds ventilation control interface">
+            <img data-carousel-item src="../../assets/img/bloominbeds/screenshots/screenshot-4-cropped.png" alt="BloominBeds historical environmental trend charts">
+            <img data-carousel-item src="../../assets/img/bloominbeds/screenshots/screenshot-5-cropped.png" alt="BloominBeds mobile interface layout">
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-nav">
+              <button data-carousel-prev aria-label="Previous image">←</button>
+              <button data-carousel-next aria-label="Next image">→</button>
+            </div>
+            <span data-carousel-counter aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+        <strong>Interface Gallery:</strong> Real-time dashboard, ventilation controls, trend views, and mobile-friendly monitoring.
+      </div>
+    </section>
+
+    <section><h2>Real-World Build &amp; Outcome</h2>
+      <p>The project moved from simulation and model testing to a full-size operational bed at the JWU Harborside campus. Turnips were used as a live crop validation for system performance.</p>
+      <div class="image-grid">
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/jwu-gardenbed.jpg" alt="Original JWU Harborside garden bed that informed the project">
+          <figcaption>Operational campus bed that exposed the real ventilation challenge.</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/img/bloominbeds/research/finalgardenbed.jpg" alt="Final BloominBeds prototype with integrated ventilation and live plants">
+          <figcaption>Final prototype with integrated controls and successful crop growth.</figcaption>
+        </figure>
+      </div>
+      <p>The final system stayed within healthy plant ranges over the test cycle and demonstrated that low-cost, sensor-driven bed control can improve year-round usability.</p>
+    </section>
+
+    <section><h2>Team Contributors</h2>
+      <p>The BloominBeds effort was intentionally multidisciplinary across product design, prototyping, sensors, coding, and communication design.</p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Project Lead</h3>
+          <p><strong>Jonathan Lyle Harris</strong> — Educator and designer focused on safer, human-scale public environments and practical design education.</p>
+        </article>
+        <article class="card">
+          <h3>Core Team</h3>
+          <p>Michael Dattolo, Liz Virian, Tyler Perreault, Peikang Fan, Zak Vallee, Marshall Hayduk, Chris Dimovski, Keely Doyle, Joshua Keene, Mathew Hartung, and Cassandra R.</p>
+        </article>
+      </div>
+      <div class="image-grid">
+        <figure><img src="../../assets/img/bloominbeds/contributors/harris.jfif" alt="Jonathan Lyle Harris portrait"><figcaption>Jonathan Lyle Harris</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/mike.jfif" alt="Michael Dattolo portrait"><figcaption>Michael Dattolo</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/mat.jpg" alt="Mathew Hartung portrait"><figcaption>Mathew Hartung</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/keely.jfif" alt="Keely Doyle portrait"><figcaption>Keely Doyle</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/zak.jpeg" alt="Zak Vallee portrait"><figcaption>Zak Vallee</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/chris.jfif" alt="Chris Dimovski portrait"><figcaption>Chris Dimovski</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/josh.jfif" alt="Joshua Keene portrait"><figcaption>Joshua Keene</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/marshall.jfif" alt="Marshall Hayduk portrait"><figcaption>Marshall Hayduk</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/PF.jfif" alt="Peikang Fan portrait"><figcaption>Peikang Fan</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/tyler.jfif" alt="Tyler Perreault portrait"><figcaption>Tyler Perreault</figcaption></figure>
+        <figure><img src="../../assets/img/bloominbeds/contributors/head.png" alt="Team contributor headshot placeholder"><figcaption>Cassandra R and Liz Virian</figcaption></figure>
+      </div>
+    </section>
+
+    <section><h2>Recognition</h2>
+      <p>BloominBeds received the <strong>JWU Research Symposium 2024 Award for Creativity and Design</strong> for combining passive and active ventilation approaches, accessible UX, and measurable real-world impact.</p>
+      <figure class="featured-figure">
+        <img src="../../assets/img/bloominbeds/achievements/award.jpg" alt="JWU Research Symposium 2024 award for Creativity and Design">
+        <figcaption>Recognition at the Johnson &amp; Wales University Research Symposium 2024.</figcaption>
+      </figure>
+      <p><a href="https://github.com/mikedattolo/BloominBeds" target="_blank" rel="noreferrer">View the original BloominBeds repository</a> for full historical materials and source files.</p>
     </section>
 
     <p><a class="button button-secondary" href="../">Back to Work</a></p>
