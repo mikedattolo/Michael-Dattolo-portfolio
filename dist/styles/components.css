@@ -299,6 +299,14 @@
   font-size: 0.95rem;
 }
 
+.team-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* ===== Poster-style cards + artifact media ===== */
 
 .card{

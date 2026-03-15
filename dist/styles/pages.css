@@ -625,6 +625,23 @@ dt {
   padding-top: var(--space-3);
 }
 
+.bloominbeds-case-study .image-grid img {
+  object-fit: contain;
+  background: #0f0f0f;
+}
+
+.bloominbeds-case-study [data-carousel-item] {
+  object-fit: contain;
+  background: #0f0f0f;
+}
+
+.bloominbeds-case-study .team-grid img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+  background: #0f0f0f;
+}
+
 .scroll-progress,
 #reading-progress {
   background: #f2f2f2;
