@@ -450,7 +450,7 @@ dt {
 
 .hero-logo-crop {
   width: min(100%, clamp(380px, 70vw, 980px));
-  margin: 0 auto calc(var(--space-2) * -1);
+  margin: 0 auto var(--space-2);
   display: flex;
   justify-content: center;
 }
