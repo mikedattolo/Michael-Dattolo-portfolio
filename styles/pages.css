@@ -443,11 +443,16 @@ dt {
   margin-inline: auto;
   max-width: 46rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-logo-crop {
-  width: clamp(320px, 62vw, 820px);
-  margin: 0 auto var(--space-1);
+  width: clamp(360px, 68vw, 940px);
+  margin: 0 auto calc(var(--space-2) * -1);
+  display: flex;
+  justify-content: center;
 }
 
 .hero-logo {
