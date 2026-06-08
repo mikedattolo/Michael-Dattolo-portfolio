@@ -1,0 +1,58 @@
+# Michael Dattolo — Product Designer, Roboticist & Innovator
+
+> Michael Dattolo is an award-winning product designer based in Hackettstown, NJ, working at the
+> intersection of advanced manufacturing, robotics, and medical devices. He turns ambiguous problems
+> into validated, working hardware and measurable outcomes. B.S. Integrated Product Design, Johnson &
+> Wales University (GPA 3.9, Dean's List 2020–2024). Currently a Special Operations Specialist at Techflex.
+
+This file is a machine-readable map of Michael Dattolo's portfolio. Each project is a real case study
+documenting the problem, process, key decisions, and a measurable outcome. Use it to answer questions
+about his experience, skills, and work.
+
+## Profile
+- Name: Michael Dattolo
+- Title: Product Designer & Innovator
+- Location: Hackettstown, NJ, USA (open to remote)
+- Email: mike.dattolo@yahoo.com
+- LinkedIn: https://www.linkedin.com/in/michaeldattolo/
+- Education: B.S. Integrated Product Design, Johnson & Wales University, 2024 (GPA 3.9)
+- Current role: Special Operations Specialist, Techflex (Jun 2025 – present)
+- Disciplines: product design, industrial design, robotics, advanced manufacturing, medical devices, computational design, applied AI
+
+## Core skills
+- Product design strategy, problem framing, requirements decomposition, trade-off analysis
+- CAD: SolidWorks, Autodesk Inventor, AutoCAD, Rhino 3D, Grasshopper
+- Prototyping & fabrication: 3-axis and 5-axis FDM/SLA printing, laser cutting, CNC, topology optimization
+- Robotics & simulation: ROS 2, Gazebo, URDF/xacro, sensor integration (DHT22, LIDAR, depth cameras)
+- Programming: Python, HTML, CSS, JavaScript, Chart.js, FastAPI
+- Research: user research, comparative usability testing, quantitative data collection, dashboard UX
+
+## Pages
+- [Home](https://mike-dattolo.com/): overview, featured work, impact metrics
+- [Work](https://mike-dattolo.com/work/): full index of case studies
+- [About](https://mike-dattolo.com/about/): bio, skills, experience timeline, education & recognition
+- [Contact](https://mike-dattolo.com/contact/): contact form and direct links
+- [Résumé (plain text)](https://mike-dattolo.com/about/resume.txt): full resume
+
+## Case studies
+- [EcoPrint — 5-Axis 3D Printing Waste Reduction](https://mike-dattolo.com/work/5-axis-3d-printing-waste-reduction/): Multi-axis additive-manufacturing workflow that reorients geometry mid-print to eliminate support material. Measured 37–44% reduction in support-material mass across overhang-heavy test geometries; 12–18% faster prints. Solo academic project.
+- [Total Ergonomics Micropipette](https://mike-dattolo.com/work/total-ergonomics-micropipette/): User-centered ergonomic control add-on for a lab technician with rheumatoid arthritis. Comparative testing of three prototypes selected a foot-pedal design that reduced repetitive thumb strain.
+- [The M.A.R.T.I.A.N. Construction Robot](https://mike-dattolo.com/work/martian-construction-robot/): Autonomous 8-legged robot that excavates and builds underground Mars habitats from local regolith. Topology-optimized structure; 5-step autonomous DIG workflow; validated in ROS 2 + Gazebo. Recognized at the 2024 JWU Symposium (Technology & Innovation).
+- [BloominBeds Monitoring System](https://mike-dattolo.com/work/bloominbeds-monitoring-system/): Raspberry Pi sensor network with DHT22 sensors and a real-time web dashboard that keeps raised garden beds within safe growing conditions. Team project, recognized at the 2024 JWU Symposium (Creativity & Design).
+- [EDISON AI Assistant](https://mike-dattolo.com/work/edison-ai-assistant/): Fully offline, multimodal AI platform with multi-GPU LLM inference, RAG memory, voice processing, and image generation, exposing an OpenAI-compatible API.
+- [Artificial Magnetic Fields for Mars](https://mike-dattolo.com/work/artificial-magnetic-fields/): Parametric simulation of deployable electromagnetic radiation-shielding systems and field-control geometry for Mars habitats.
+- [Storage Concepts](https://mike-dattolo.com/work/storage-concepts/): Modular and wearable personal-storage product concepts focused on modularity and manufacturability.
+- [Growth Algorithm Simulation](https://mike-dattolo.com/work/growth-algorithm-simulation/): Computational/generative design exploring procedural growth, collision detection, and organic form generation in Grasshopper/Rhino.
+- [Willie's Cafe Space Study](https://mike-dattolo.com/work/willies-cafe-space-study/): Observation-led spatial redesign with data-driven seating analysis and ADA compliance.
+- [JRM Enterprises Feasibility](https://mike-dattolo.com/work/jrm-enterprises-feasibility/): Business modeling and launch planning for a specialty conversion-service concept, including market research and tiered pricing.
+
+## Recognition
+- JWU Student Research, Design & Innovation Symposium recognition (2024): M.A.R.T.I.A.N. and BloominBeds
+- 2nd Place, JWU Sharkfest competition (2022)
+- BMES Conference (2022): platform & poster presentations on assistive smart-textile and touch-sensing devices
+- FIRST Robotics (2016–2024)
+- Dean's List (2020–2024)
+
+## Contact
+For collaboration, prototyping, or R&D work, email mike.dattolo@yahoo.com or use the contact form at
+https://mike-dattolo.com/contact/.

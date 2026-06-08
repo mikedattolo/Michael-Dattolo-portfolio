@@ -1,0 +1,9 @@
+# Michael Dattolo — portfolio
+# All crawlers, including AI/LLM agents, are welcome to index this site.
+User-agent: *
+Allow: /
+
+# Machine-readable site summary for LLM agents (see https://llmstxt.org)
+# /llms.txt
+
+Sitemap: https://mike-dattolo.com/sitemap.xml

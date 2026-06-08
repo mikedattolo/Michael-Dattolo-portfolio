@@ -3,22 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Get in touch with Michael Dattolo — Product designer available for design partnerships, R&amp;D projects, and technical collaboration.">
-  <title>Contact — Michael Dattolo</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon.png?v=20260414">
-  <link rel="shortcut icon" href="../assets/icons/favicon.png?v=20260414">
-  <link rel="apple-touch-icon" href="../assets/icons/favicon.png?v=20260414">
-  <link rel="stylesheet" href="../styles/tokens.css">
-  <link rel="stylesheet" href="../styles/base.css">
-  <link rel="stylesheet" href="../styles/components.css">
-  <link rel="stylesheet" href="../styles/pages.css">
-  <script src="../scripts/main.js" defer></script>
+  <meta name="version" content="3.0.0">
+  <title>Contact — Michael Dattolo | Product Designer</title>
+  <meta name="description" content="Get in touch with Michael Dattolo — product designer available for design partnerships, technical prototyping, R&amp;D projects, and design-driven problem-solving.">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="canonical" href="https://mike-dattolo.com/contact/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Michael Dattolo">
+  <meta property="og:title" content="Contact — Michael Dattolo | Product Designer">
+  <meta property="og:description" content="Available for product design partnerships, technical prototyping, and R&amp;D collaboration.">
+  <meta property="og:url" content="https://mike-dattolo.com/contact/">
+  <meta property="og:image" content="https://mike-dattolo.com/assets/img/og-card.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon.png?v=20260608">
+  <link rel="shortcut icon" href="../assets/icons/favicon.png?v=20260608">
+  <link rel="apple-touch-icon" href="../assets/icons/favicon.png?v=20260608">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../styles/tokens.css?v=20260608">
+  <link rel="stylesheet" href="../styles/base.css?v=20260608">
+  <link rel="stylesheet" href="../styles/components.css?v=20260608">
+  <link rel="stylesheet" href="../styles/pages.css?v=20260608">
+  <script src="../scripts/main.js?v=20260608" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://mike-dattolo.com/contact/",
+    "about": {
+      "@type": "Person",
+      "name": "Michael Dattolo",
+      "email": "mailto:mike.dattolo@yahoo.com",
+      "url": "https://mike-dattolo.com/",
+      "sameAs": ["https://www.linkedin.com/in/michaeldattolo/"]
+    }
+  }
+  </script>
 </head>
-<body>
-  <div class="scroll-progress" aria-hidden="true"></div>
+<body class="contact-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header" id="top">
     <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Michael Dattolo — home">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-text">
+          <span class="brand-name">Michael Dattolo</span>
+          <span class="brand-sub">Product Designer</span>
+        </span>
+      </a>
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../">Home</a></li>
@@ -30,74 +64,71 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-main contact-page">
-    <header class="page-header">
-      <h1>Let's Talk</h1>
-      <p>Whether you're building something new, improving an existing product, or exploring innovation in your organization—I'd love to collaborate.</p>
-      <p><strong>Best for:</strong> Product design partnerships, technical prototyping, R&amp;D projects, and design-driven problem-solving.</p>
+  <main id="main-content" class="container page-main">
+    <header class="page-header reveal">
+      <p class="eyebrow"><span class="pill-dot" aria-hidden="true" style="margin-right:.2rem"></span> Currently open to new projects</p>
+      <h1>Let's build something <span class="grad-text">worth holding</span>.</h1>
+      <p>Whether you're starting something new, improving an existing product, or exploring innovation in your organization — I'd love to collaborate. Best for product design partnerships, technical prototyping, R&amp;D projects, and design-driven problem-solving.</p>
     </header>
 
-    <!-- Contact Form -->
-    <section class="contact-form-section">
-      <div style="max-width: 42rem;" role="region" aria-labelledby="form-title">
+    <div class="contact-layout">
+      <section class="contact-form-section reveal" role="region" aria-labelledby="form-title">
         <h2 id="form-title">Send me a message</h2>
         <form id="contact-form" method="POST" action="/api/contact" novalidate>
           <div class="form-group">
             <label for="name">Name <span class="required">*</span></label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required 
-              aria-required="true"
-              aria-describedby="name-error"
-              placeholder="Your full name"
-            >
+            <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" placeholder="Your full name">
             <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
           </div>
-
           <div class="form-group">
             <label for="email">Email <span class="required">*</span></label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              aria-required="true"
-              aria-describedby="email-error"
-              placeholder="your@email.com"
-            >
+            <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error" placeholder="your@email.com">
             <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
           </div>
-
           <div class="form-group">
             <label for="message">Message <span class="required">*</span></label>
-            <textarea 
-              id="message" 
-              name="message" 
-              required 
-              aria-required="true"
-              aria-describedby="message-error"
-              placeholder="Tell me about your project, opportunity, or question..."
-            ></textarea>
+            <textarea id="message" name="message" required aria-required="true" aria-describedby="message-error" placeholder="Tell me about your project, opportunity, or question…"></textarea>
             <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
           </div>
-
-          <button type="submit" class="button primary">Send Message</button>
-          <div id="form-status" role="status" aria-live="polite" style="margin-top: var(--space-3); color: var(--color-text-muted);"></div>
+          <button type="submit" class="button primary" data-magnetic>Send Message</button>
+          <div id="form-status" role="status" aria-live="polite" style="margin-top: var(--space-3); color: var(--text-dim);"></div>
         </form>
-        <p style="margin-top: var(--space-5); font-size: 0.95rem; color: var(--color-text-muted);">
-          I typically respond within 1–2 business days. Alternatively, reach out directly via email or LinkedIn below.
+        <p style="margin-top: var(--space-5); font-size: 0.95rem; color: var(--text-dim);">
+          I typically respond within 1–2 business days.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Direct Contact Methods -->
-    <section class="contact-actions" aria-label="Direct contact methods" style="margin-top: var(--space-7);">
-      <a class="button primary" href="mailto:mike.dattolo@yahoo.com">Email directly</a>
-      <a class="button button-secondary" href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="button button-secondary" href="../about/">About Michael</a>
-    </section>
+      <aside class="contact-aside" aria-label="Direct contact methods">
+        <a class="contact-method reveal" href="mailto:mike.dattolo@yahoo.com">
+          <span class="feature-icon" aria-hidden="true">✉</span>
+          <span>
+            <h3>Email</h3>
+            <p>mike.dattolo@yahoo.com</p>
+          </span>
+        </a>
+        <a class="contact-method reveal" data-delay="1" href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer">
+          <span class="feature-icon" aria-hidden="true">in</span>
+          <span>
+            <h3>LinkedIn</h3>
+            <p>in/michaeldattolo</p>
+          </span>
+        </a>
+        <a class="contact-method reveal" data-delay="2" href="../about/">
+          <span class="feature-icon" aria-hidden="true">◑</span>
+          <span>
+            <h3>About Michael</h3>
+            <p>Background, skills &amp; résumé</p>
+          </span>
+        </a>
+        <div class="contact-method reveal" data-delay="3" style="cursor:default">
+          <span class="feature-icon" aria-hidden="true">⌖</span>
+          <span>
+            <h3>Based in</h3>
+            <p>Hackettstown, NJ · open to remote</p>
+          </span>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="site-footer">

@@ -1,23 +1,23 @@
 # Michael Dattolo — Product Design Portfolio
 
-**Portfolio Version:** v2.0.5
+**Portfolio Version:** v3.0.0
 
-A modern, **semantically-structured and recruiter-ready portfolio** featuring 11 case studies across product design, robotics, AI, and emerging technologies.
+A modern, **semantically-structured and recruiter-ready portfolio** featuring 10 case studies across product design, robotics, AI, and emerging technologies — built on a custom "engineering-meets-design" dark theme with a molten-amber signature accent.
 
-**Live:** `michaeldattolo.com` (or `https://mikedattolo.github.io/Michael-Dattolo-portfolio/` if using GitHub Pages)
+**Live:** `mike-dattolo.com`
 
 
-## 📋 Recent Improvements (v2.0.5 — March 2026)
+## 📋 Redesign (v3.0.0 — June 2026)
 
-This portfolio has been audited and significantly improved for:
+A ground-up visual + discoverability overhaul:
 
-- ✅ **Accessibility** — WCAG AA compliant, semantic HTML, keyboard navigation
-- ✅ **Content & UX** — Stronger hero copy, clear CTAs, contact form with validation
-- ✅ **Responsive Design** — Mobile-optimized, prevents layout shift
-- ✅ **SEO** — Rich metadata, recruiter-focused page titles, Open Graph tags
-- ✅ **Professional Presentation** — Resume download, better visual hierarchy
+- 🎨 **New design system** — Token-driven dark theme, molten-amber accent, fluid type scale, Space Grotesk / Inter pairing
+- ✨ **Motion & depth** — Animated aurora hero, pointer-driven spotlight cards, animated stat counters, role rotator, tools marquee, scroll reveals (all reduced-motion safe)
+- 🤖 **AI / machine discoverability** — `llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD structured data (`Person`, `WebSite`, `ItemList`, per-project `CreativeWork`), canonical URLs, and a branded Open Graph card
+- ♿ **Accessibility** — WCAG AA contrast, semantic HTML, keyboard nav, visible focus, `prefers-reduced-motion`
+- 📱 **Responsive** — Mobile-first, fluid layouts, no layout shift
 
-**See:** `IMPROVEMENTS_CHANGELOG.md` and `ACTION_ITEMS.md` for complete details.
+**See:** `IMPROVEMENTS_CHANGELOG.md` for prior history.
 
 ---
 
@@ -37,8 +37,11 @@ A **static HTML/CSS/JavaScript site** (no frameworks, no build step) designed fo
 ```
 .
 ├── index.html                              # Home / featured work
+├── llms.txt                                # Machine-readable site map for LLM/AI agents
+├── robots.txt                              # Crawler directives + sitemap pointer
+├── sitemap.xml                             # XML sitemap
 ├── about/
-│   └── index.html                          # About + skills + resume
+│   └── index.html                          # About + skills + experience + resume
 ├── contact/
 │   └── index.html                          # Contact methods
 ├── work/
@@ -180,16 +183,15 @@ Work  |  About  |  Resume  |  Contact
 
 ## Features
 
-✅ Dark futuristic theme (dark bg, blue/orange accents)  
-✅ Scroll-reveal animations (cards fade in as you scroll)  
-✅ Reading progress bar (case study pages)  
-✅ Work grid with tag-based filtering  
-✅ Responsive images (webp, object-fit: contain)  
-✅ Unified navigation across all pages  
-✅ "Seeking" roles displayed on homepage  
-✅ Keyboard accessible + reduced-motion support  
-✅ Image optimization (webp, proper alt text)  
-✅ Contact page with email/LinkedIn/resume CTAs  
+✅ Custom dark theme with molten-amber signature accent  
+✅ Animated aurora hero + pointer-driven spotlight cards  
+✅ Animated stat counters, role rotator, tools marquee  
+✅ Scroll-reveal animations + reading progress bar  
+✅ JSON-LD structured data + `llms.txt` for AI discoverability  
+✅ Branded Open Graph / Twitter card  
+✅ Unified navigation + brand mark across all pages  
+✅ Keyboard accessible + `prefers-reduced-motion` support  
+✅ Contact form with validation (Cloudflare Worker + Resend)  
 
 ---
 
@@ -201,16 +203,18 @@ Edit `styles/tokens.css`:
 
 ```css
 :root {
-  --color-bg: #0b0f1a;              /* Dark background */
-  --color-accent: #3b82f6;          /* Blue primary */
-  --color-accent-2: #f97316;        /* Orange secondary */
-  --color-text: #f8fafc;            /* Light text */
-  --color-text-muted: #94a3b8;      /* Dimmed text */
-  /* ... */
+  --bg: #0a0a0c;            /* Deep graphite canvas */
+  --accent: #ff7a45;        /* Molten amber signature */
+  --accent-bright: #ffb15c; /* Lighter amber */
+  --accent-deep: #ff5a36;   /* Deep orange */
+  --text-heading: #ffffff;  /* Headings */
+  --text-body: #b6b6c0;     /* Body copy */
+  --text-dim: #85858f;      /* Secondary text */
+  /* legacy --color-* aliases are kept and repointed for back-compat */
 }
 ```
 
-All components update automatically.
+The accent is also exposed as `--accent-gradient`. All components update automatically.
 
 ### Add a Case Study
 

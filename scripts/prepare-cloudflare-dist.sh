@@ -16,4 +16,9 @@ cp -R "$ROOT_DIR/scripts" "$DIST_DIR/"
 cp -R "$ROOT_DIR/styles" "$DIST_DIR/"
 cp -R "$ROOT_DIR/work" "$DIST_DIR/"
 
+# Root-level files for SEO + AI discoverability
+for f in llms.txt robots.txt sitemap.xml; do
+  [ -f "$ROOT_DIR/$f" ] && cp "$ROOT_DIR/$f" "$DIST_DIR/"
+done
+
 find "$DIST_DIR" -type f \( -name '*.zip' -o -name '*.md' \) -delete

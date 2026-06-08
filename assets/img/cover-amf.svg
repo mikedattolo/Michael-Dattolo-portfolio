@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Artificial magnetic field — dipole field lines around a planetary core">
+  <defs>
+    <linearGradient id="amf-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc46b"/>
+      <stop offset="0.5" stop-color="#ff7a45"/>
+      <stop offset="1" stop-color="#ff5436"/>
+    </linearGradient>
+    <radialGradient id="amf-core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff9a5a"/>
+      <stop offset="0.6" stop-color="#ff5436"/>
+      <stop offset="1" stop-color="#3a1407"/>
+    </radialGradient>
+    <radialGradient id="amf-bg" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#15151b"/>
+      <stop offset="1" stop-color="#0a0a0c"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#amf-bg)"/>
+  <g stroke="#ffffff" stroke-opacity="0.04">
+    <path d="M0 60H640M0 120H640M0 180H640M0 240H640M0 300H640"/>
+    <path d="M80 0V360M160 0V360M240 0V360M320 0V360M400 0V360M480 0V360M560 0V360"/>
+  </g>
+  <g transform="translate(320 180)" fill="none" stroke="url(#amf-g)" stroke-linecap="round">
+    <ellipse rx="60" ry="120" stroke-width="2" opacity="0.95"/>
+    <ellipse rx="110" ry="150" stroke-width="1.6" opacity="0.6"/>
+    <ellipse rx="165" ry="178" stroke-width="1.3" opacity="0.4"/>
+    <ellipse rx="225" ry="205" stroke-width="1" opacity="0.24"/>
+    <ellipse rx="290" ry="232" stroke-width="1" opacity="0.14"/>
+  </g>
+  <circle cx="320" cy="180" r="34" fill="url(#amf-core)"/>
+  <circle cx="320" cy="180" r="34" fill="none" stroke="#ffb15c" stroke-opacity="0.5"/>
+  <circle cx="320" cy="60" r="4" fill="#ffb15c"/>
+  <circle cx="320" cy="300" r="4" fill="#ffb15c"/>
+  <text x="28" y="334" fill="#9a9aa2" font-family="ui-monospace, Menlo, monospace" font-size="13" letter-spacing="3">ARTIFICIAL MAGNETIC FIELDS · MARS SHIELDING</text>
+</svg>

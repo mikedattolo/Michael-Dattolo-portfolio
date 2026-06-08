@@ -1,47 +1,117 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+/*! Michael Dattolo Portfolio — stylesheet v3.0.0 · 2026-06-08 */
+/* ============================================================
+   DESIGN TOKENS — Michael Dattolo Portfolio
+   "Engineering meets design" — molten amber on deep graphite.
+   Backward-compatible: legacy --color-* names retained + repointed.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg: #000000;
-  --fg: #f4f4f2;
+  /* ---- Core canvas ---- */
+  --bg: #0a0a0c;
+  --bg-2: #0d0d10;
+  --bg-grain: #08080a;
+  --fg: #ededf0;
 
-  --color-bg: var(--bg);
-  --color-surface: #0f0f0f;
-  --color-surface-strong: #151515;
-  --color-surface-elevated: #1b1b1b;
-  --color-text: var(--fg);
-  --color-heading: #ffffff;
-  --color-text-muted: #c8c8c6;
-  --color-muted: var(--color-text-muted);
-  --color-border: #2d2d2d;
-  --color-border-strong: #464646;
-  --color-accent: #f4f4f2;
-  --color-accent-2: #ffffff;
-  --color-accent-strong: #ffffff;
-  --color-focus: #ffffff;
-  --color-primary: #f4f4f2;
-  --color-secondary: #d7d7d5;
+  /* ---- Surfaces (elevation) ---- */
+  --surface-1: #121216;
+  --surface-2: #17171c;
+  --surface-3: #1e1e25;
+  --surface-glass: rgba(22, 22, 27, 0.6);
 
-  --font-sans: "Space Grotesk", "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  /* ---- Text ---- */
+  --text: #ededf0;
+  --text-heading: #ffffff;
+  --text-body: #b6b6c0;
+  --text-dim: #85858f;
 
+  /* ---- Borders ---- */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(255, 122, 69, 0.35);
+
+  /* ---- Signature accent (molten amber) ---- */
+  --accent: #ff7a45;
+  --accent-bright: #ffb15c;
+  --accent-deep: #ff5a36;
+  --accent-soft: rgba(255, 122, 69, 0.14);
+  --accent-line: rgba(255, 122, 69, 0.4);
+  --accent-gradient: linear-gradient(120deg, #ffc46b 0%, #ff7a45 48%, #ff5436 100%);
+  --accent-gradient-soft: linear-gradient(120deg, rgba(255, 196, 107, 0.18), rgba(255, 84, 54, 0.12));
+
+  /* ---- Cool counterpoint (used sparingly) ---- */
+  --cool: #6ea8ff;
+  --cool-soft: rgba(110, 168, 255, 0.12);
+
+  /* ---- Glows / shadows ---- */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 30px 70px -20px rgba(0, 0, 0, 0.7);
+  --glow-accent: 0 0 0 1px rgba(255, 122, 69, 0.25), 0 18px 50px -12px rgba(255, 90, 54, 0.35);
+  --glow-accent-soft: 0 14px 44px -16px rgba(255, 122, 69, 0.4);
+
+  /* ---- Typography ---- */
+  --font-display: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  --font-sans: "Inter", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* Fluid type scale */
+  --fs-display: clamp(3rem, 1.6rem + 6.4vw, 8.5rem);
+  --fs-h1: clamp(2.3rem, 1.5rem + 3.4vw, 4.4rem);
+  --fs-h2: clamp(1.6rem, 1.2rem + 1.7vw, 2.6rem);
+  --fs-h3: clamp(1.18rem, 1rem + 0.7vw, 1.5rem);
+  --fs-body: clamp(1rem, 0.96rem + 0.22vw, 1.1rem);
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.78rem;
+
+  /* ---- Spacing scale ---- */
   --space-1: 0.25rem;
-  --space-2: 0.625rem;
+  --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1.25rem;
-  --space-5: 1.5rem;
+  --space-5: 1.75rem;
   --space-6: 2.5rem;
-  --space-7: 3rem;
+  --space-7: 3.5rem;
   --space-8: 5rem;
-  --space-12: 7.5rem;
+  --space-9: 7rem;
+  --space-12: 9rem;
 
-  --radius-1: 8px;
-  --radius-2: 14px;
-  --radius-3: 22px;
+  /* ---- Radii ---- */
+  --radius-1: 10px;
+  --radius-2: 16px;
+  --radius-3: 26px;
+  --radius-pill: 999px;
 
-  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.35);
-  --shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
-  --shadow-glow-blue: 0 0 0 transparent;
-  --shadow-glow-orange: 0 0 0 transparent;
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 160ms;
+  --dur-2: 280ms;
+  --dur-3: 500ms;
 
-  --container: 72rem;
+  --container: 74rem;
+  --container-wide: 84rem;
+
+  /* ============================================================
+     LEGACY ALIASES — keep existing case-study / page CSS working
+     ============================================================ */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface-1);
+  --color-surface-strong: var(--surface-2);
+  --color-surface-elevated: var(--surface-3);
+  --color-text: var(--text-body);
+  --color-heading: var(--text-heading);
+  --color-text-muted: var(--text-body);
+  --color-muted: var(--text-dim);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-bright);
+  --color-accent-strong: var(--accent);
+  --color-focus: var(--accent-bright);
+  --color-primary: var(--accent);
+  --color-secondary: var(--accent-bright);
+  --shadow-glow-blue: var(--glow-accent-soft);
+  --shadow-glow-orange: var(--glow-accent-soft);
 }
