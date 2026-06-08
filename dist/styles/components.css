@@ -1,4 +1,4 @@
-/*! Michael Dattolo Portfolio — stylesheet v3.0.1 · 2026-06-08 */
+/*! Michael Dattolo Portfolio — stylesheet v3.0.2 · 2026-06-08 */
 /* ============================================================
    COMPONENTS — buttons, cards, tags, stats, marquee, forms
    ============================================================ */
@@ -202,6 +202,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: var(--space-2);
+  width: min(100%, 72rem);
   max-width: 72rem;
   margin-inline: auto;
   border: 1px solid var(--border);
@@ -288,10 +289,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--space-4);
+  width: min(100%, 72rem);
   max-width: 72rem;
   margin-inline: auto;
 }
 .feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   padding: var(--space-5);
   border: 1px solid var(--border);
   border-radius: var(--radius-2);
