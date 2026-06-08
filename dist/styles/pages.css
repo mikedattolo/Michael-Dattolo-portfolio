@@ -1,4 +1,4 @@
-/*! Michael Dattolo Portfolio — stylesheet v3.0.2 · 2026-06-08 */
+/*! Michael Dattolo Portfolio — stylesheet v3.0.3 · 2026-06-08 */
 /* ============================================================
    PAGES — hero, home sections, work, about, contact, case study
    ============================================================ */
@@ -137,7 +137,7 @@
 /* ============================================================
    HOME — section rhythm
    ============================================================ */
-.home-section { margin: var(--space-9) 0; }
+.home-section { margin-block: var(--space-9); }
 .home-section > .container > .section-head,
 .section-head { margin-bottom: var(--space-6); }
 .section-head {
