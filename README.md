@@ -1,13 +1,13 @@
 # Michael Dattolo — Product Design Portfolio
 
-**Portfolio Version:** v3.0.0
+**Portfolio Version:** v3.0.1
 
 A modern, **semantically-structured and recruiter-ready portfolio** featuring 10 case studies across product design, robotics, AI, and emerging technologies — built on a custom "engineering-meets-design" dark theme with a molten-amber signature accent.
 
 **Live:** `mike-dattolo.com`
 
 
-## 📋 Redesign (v3.0.0 — June 2026)
+## 📋 Redesign (v3.0.1 — June 2026)
 
 A ground-up visual + discoverability overhaul:
 
