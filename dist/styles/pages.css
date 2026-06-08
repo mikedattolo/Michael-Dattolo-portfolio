@@ -140,6 +140,10 @@
 .home-section { margin: var(--space-9) 0; }
 .home-section > .container > .section-head,
 .section-head { margin-bottom: var(--space-6); }
+.section-head {
+  margin-inline: auto;
+  text-align: center;
+}
 
 .section-title-row {
   display: flex;

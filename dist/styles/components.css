@@ -202,6 +202,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: var(--space-2);
+  max-width: 72rem;
+  margin-inline: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-3);
   background:
@@ -286,6 +288,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--space-4);
+  max-width: 72rem;
+  margin-inline: auto;
 }
 .feature {
   padding: var(--space-5);
