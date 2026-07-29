@@ -1,0 +1,12 @@
+{
+  "name": "michael-dattolo-portfolio",
+  "version": "3.0.6",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/prepare-cloudflare-dist.sh",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}
