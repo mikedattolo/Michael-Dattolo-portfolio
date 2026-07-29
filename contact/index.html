@@ -72,30 +72,14 @@
     </header>
 
     <div class="contact-layout">
-      <section class="contact-form-section reveal" role="region" aria-labelledby="form-title">
-        <h2 id="form-title">Send me a message</h2>
-        <form id="contact-form" method="POST" action="/api/contact" novalidate>
-          <div class="form-group">
-            <label for="name">Name <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" placeholder="Your full name">
-            <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
-          </div>
-          <div class="form-group">
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error" placeholder="your@email.com">
-            <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
-          </div>
-          <div class="form-group">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" required aria-required="true" aria-describedby="message-error" placeholder="Tell me about your project, opportunity, or question…"></textarea>
-            <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
-          </div>
-          <button type="submit" class="button primary" data-magnetic>Send Message</button>
-          <div id="form-status" role="status" aria-live="polite" style="margin-top: var(--space-3); color: var(--text-dim);"></div>
-        </form>
-        <p style="margin-top: var(--space-5); font-size: 0.95rem; color: var(--text-dim);">
-          I typically respond within 1–2 business days.
+      <section class="contact-form-section reveal" role="region" aria-labelledby="linkedin-title">
+        <h2 id="linkedin-title">Connect with me</h2>
+        <p style="margin-bottom: var(--space-5); color: var(--text-dim);">
+          Visit my LinkedIn profile to connect, discuss opportunities, or learn more about my professional experience.
         </p>
+        <a class="button primary" data-magnetic href="https://www.linkedin.com/in/michaeldattolo/" target="_blank" rel="noreferrer" aria-label="Connect with Michael Dattolo on LinkedIn">
+          Connect on LinkedIn
+        </a>
       </section>
 
       <aside class="contact-aside" aria-label="Direct contact methods">
