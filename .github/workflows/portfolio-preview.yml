@@ -1,0 +1,38 @@
+name: Portfolio preview checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [portfolio-rebuild-2026-09-21]
+    paths-ignore: ['README.md']
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build noindex preview and check generated files
+        run: npm run build && npm test
+      - name: Install browser test tooling
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test preview (no deployment)
+        run: python tests/browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-preview
+          path: dist/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-browser-qa
+          path: qa-output/
+          retention-days: 14
