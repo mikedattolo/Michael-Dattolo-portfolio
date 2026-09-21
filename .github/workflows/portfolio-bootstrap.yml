@@ -1,0 +1,85 @@
+name: Assemble portfolio review branch
+on:
+  push:
+    branches: [portfolio-rebuild-2026-09-21]
+    paths: ['.github/workflows/portfolio-bootstrap.yml']
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-rebuild-2026-09-21
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and extract reviewed source
+        run: |
+          test "$GITHUB_REF" = "refs/heads/portfolio-rebuild-2026-09-21"
+          python - <<'PY'
+          import base64, hashlib, io, lzma, tarfile
+          from pathlib import Path
+          chunks=[Path(f'.rebuild-transport/part-{i:02}.txt').read_text().strip() for i in range(5)]
+          data=base64.b64decode(''.join(chunks),validate=True)
+          actual=hashlib.sha256(data).hexdigest()
+          assert actual=='7d158176dfee9e17d3cd0bae715a7ab6632e5a9f594f7212f867a977eab67db4',actual
+          allowed=set('content/site.json content/projects.json content/media.json src/site.css src/site.js scripts/build.mjs scripts/check.mjs scripts/serve.mjs scripts/prepare-media.py scripts/deploy-approved.mjs scripts/prepare-cloudflare-dist.sh tests/browser.py README.md package.json worker.js wrangler.jsonc .gitignore .github/workflows/portfolio-preview.yml assets/documents/Michael_Dattolo_Resume_2026.pdf'.split())
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(data)),mode='r:') as archive:
+              assert set(archive.getnames())==allowed
+              for member in archive.getmembers():
+                  assert member.isfile() and member.name in allowed
+                  destination=Path(member.name)
+                  destination.parent.mkdir(parents=True,exist_ok=True)
+                  destination.write_bytes(archive.extractfile(member).read())
+          print('Verified all 19 reviewed files, including the unchanged supplied PDF.')
+          PY
+      - name: Remove superseded publishing files from review branch only
+        run: |
+          git rm -r --ignore-unmatch dist about contact work styles
+          git rm --ignore-unmatch index.html llms.txt robots.txt sitemap.xml ACTION_ITEMS.md IMPROVEMENTS_CHANGELOG.md scripts/carousel.js scripts/filters.js scripts/main.js
+          git rm -r --ignore-unmatch .rebuild-transport
+          git rm --ignore-unmatch .github/workflows/portfolio-review.yml .github/workflows/portfolio-bootstrap.yml
+      - name: Prepare genuine existing project media and check build
+        run: |
+          python -m pip install Pillow==11.3.0
+          python scripts/prepare-media.py
+          npm run build
+          npm test
+      - name: Save assembled source to review branch (never main)
+        run: |
+          test "$GITHUB_REF" = "refs/heads/portfolio-rebuild-2026-09-21"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content src scripts tests assets/documents assets/portfolio README.md package.json worker.js wrangler.jsonc .gitignore .github/workflows/portfolio-preview.yml
+          git commit -m "Rebuild evidence-led Mike Dattolo portfolio for review; production approval required"
+          git push origin HEAD:portfolio-rebuild-2026-09-21
+          mkdir -p /tmp/review-source
+          git archive --format=tar.gz HEAD > /tmp/review-source/portfolio-source.tar.gz
+      - name: Install browser test tooling
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Test navigation, layouts, downloads and contact actions
+        run: python tests/browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-preview
+          path: dist/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-browser-qa
+          path: qa-output/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-reviewed-source
+          path: /tmp/review-source/portfolio-source.tar.gz
+          retention-days: 14
