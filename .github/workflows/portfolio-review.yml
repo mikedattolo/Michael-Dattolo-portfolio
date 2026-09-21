@@ -1,0 +1,57 @@
+name: Portfolio review artifacts
+on:
+  push:
+    branches: [portfolio-rebuild-2026-09-21]
+    paths: ['.github/workflows/portfolio-review.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export source snapshot (never deploy)
+        run: |
+          mkdir -p /tmp/portfolio-review
+          git archive --format=tar.gz HEAD > /tmp/portfolio-review/source.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-source-review
+          path: /tmp/portfolio-review/source.tar.gz
+          retention-days: 7
+      - name: Install browser for current-site review
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Capture existing site without interaction or submission
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from playwright.sync_api import sync_playwright
+          out = Path('/tmp/portfolio-review/live'); out.mkdir(parents=True, exist_ok=True)
+          report = []
+          routes = {'home':'/', 'work':'/work/', 'about':'/about/', 'contact':'/contact/', 'ecoprint':'/work/5-axis-3d-printing-waste-reduction/', 'pipetting':'/work/total-ergonomics-micropipette/', 'bloominbeds':'/work/bloominbeds-monitoring-system/'}
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              for label, viewport in [('desktop', {'width':1440,'height':1000}), ('mobile', {'width':390,'height':844})]:
+                  page = browser.new_page(viewport=viewport, reduced_motion='reduce')
+                  for name, route in routes.items():
+                      try:
+                          response = page.goto('https://mike-dattolo.com'+route, wait_until='networkidle', timeout=45000)
+                          page.screenshot(path=str(out/f'{name}-{label}.png'), full_page=True)
+                          (out/f'{name}-{label}.html').write_text(page.content())
+                          report.append({'page':name,'viewport':label,'status':response.status,'title':page.title(),'overflow':page.evaluate('document.documentElement.scrollWidth > innerWidth'),'broken_images':page.locator('img').evaluate_all('(imgs)=>imgs.filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src)')})
+                      except Exception as exc:
+                          report.append({'page':name,'viewport':label,'error':str(exc)})
+                  page.close()
+              browser.close()
+          (out/'report.json').write_text(json.dumps(report,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-live-review
+          path: /tmp/portfolio-review/live
+          retention-days: 7
