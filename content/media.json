@@ -1,0 +1,82 @@
+{
+  "printing-mechanism": {
+    "source": "assets/img/ecoprint-printer-prototype.png",
+    "alt": "Wooden two-pivot mechanism with stepper motors, wiring, and a controller on a workbench."
+  },
+  "printing-machine": {
+    "source": "assets/img/ecoprint-5axis-main.jpg",
+    "alt": "Physical printer hardware photographed for the printing research project."
+  },
+  "printing-cad": {
+    "source": "assets/img/ecoprint-printer-cad.png",
+    "alt": "CAD concept of a printer with a detail view of the proposed motion mechanism."
+  },
+  "printing-sketch": {
+    "source": "assets/img/ecoprint-sketches.png",
+    "alt": "Early sketches comparing printer motion and print-orientation concepts."
+  },
+  "pipette": {
+    "source": "assets/img/ergonomics-foot-pedal.jpg",
+    "alt": "Blue fabricated Total Ergonomics prototype assembly positioned beside a micropipette."
+  },
+  "pistol": {
+    "source": "assets/img/ergonomics-pistol-grip.jpg",
+    "alt": "White pistol-grip pipetting concept model showing its handle and upper linkage."
+  },
+  "palm": {
+    "source": "assets/img/ergonomics-palm-grip.jpg",
+    "alt": "White palm-grip pipetting concept model with finger contours."
+  },
+  "garden": {
+    "source": "assets/img/bloominbeds/research/finalgardenbed.jpg",
+    "alt": "BloominBeds physical garden-bed prototype with a clear hinged cover, circular vents, and wiring."
+  },
+  "garden-mockup": {
+    "source": "assets/img/bloominbeds/research/prototypebed.png",
+    "alt": "Small covered-bed model with a curved clear lid, photographed in an open position."
+  },
+  "garden-flow": {
+    "source": "assets/img/bloominbeds/rhino-simulations/ViewCapture20231006_194429.jpg",
+    "alt": "Digital garden-bed model showing an airflow visualization inside a curved cover."
+  },
+  "garden-graph": {
+    "source": "assets/img/bloominbeds/rhino-simulations/Capture4.PNG",
+    "alt": "Grasshopper component setup with annotated inlet and outlet boundary inputs."
+  },
+  "robot": {
+    "source": "assets/img/martian-robot-render.png",
+    "alt": "CAD rendering of a multi-legged robot concept with an articulated excavation arm."
+  },
+  "robot-sequence": {
+    "source": "assets/img/dig-4.png",
+    "alt": "Concept rendering of robots around a buried habitat; an imagined construction scenario, not a field photograph."
+  },
+  "storage-modular": {
+    "source": "assets/img/modular-storage.png",
+    "alt": "Original modular shelf-storage presentation board with cabinet and folding-panel views."
+  },
+  "storage-wearable": {
+    "source": "assets/img/wearable-storage.png",
+    "alt": "Original wearable-storage presentation board with photographs of a fabricated pouch."
+  },
+  "growth": {
+    "source": "assets/img/growth-algorithm-2.png",
+    "alt": "Rhino viewport showing a patterned mesh over a hand and forearm shape."
+  },
+  "growth-graph": {
+    "source": "assets/img/growth-algorithm-1.png",
+    "alt": "Grasshopper node graph from a computational form-development study."
+  },
+  "cafe": {
+    "source": "assets/img/willies-heatmap.png",
+    "alt": "Digital café layout view with table locations and circulation space."
+  },
+  "cafe-plan": {
+    "source": "assets/img/willies-waiting-area.png",
+    "alt": "Plan drawing exploring café seating and a designated waiting area."
+  },
+  "portrait": {
+    "source": "assets/img/mike.jpg",
+    "alt": "Mike Dattolo, from the original portfolio portrait."
+  }
+}

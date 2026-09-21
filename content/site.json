@@ -1,0 +1,98 @@
+{
+  "name": "Mike Dattolo",
+  "formalName": "Michael Dattolo",
+  "url": "https://mike-dattolo.com",
+  "email": "mike.dattolo@yahoo.com",
+  "linkedin": "https://www.linkedin.com/in/michaeldattolo",
+  "location": "Hackettstown, New Jersey",
+  "positioning": "3D Printing & Prototyping | CAD | Physical Product Development",
+  "intro": "I’m Mike Dattolo, an Integrated Product Design graduate with hands-on experience supporting prototype builds, preparing fabrication files, and troubleshooting equipment. I’m interested in helping teams build, test, and improve useful physical products.",
+  "availability": "Seeking a full-time role in additive manufacturing, prototyping, CAD, or physical product development in New Jersey.",
+  "resume": "/assets/documents/Michael_Dattolo_Resume_2026.pdf",
+  "experience": [
+    {
+      "employer": "Techflex",
+      "title": "Special Operations Specialist",
+      "location": "Sparta, NJ",
+      "dates": "June 2025–present",
+      "id": "techflex",
+      "paragraphs": [
+        "I set up and operate spooling, printing, and cutting equipment according to work orders, material requirements, and order specifications.",
+        "My work includes installing, connecting, adjusting, and troubleshooting production equipment while following quality, documentation, and safety requirements."
+      ]
+    },
+    {
+      "employer": "Johnson & Wales University",
+      "title": "Innovation Lab Technician",
+      "location": "Providence, RI",
+      "dates": "August 2021–May 2024",
+      "id": "innovation-lab",
+      "paragraphs": [
+        "I supported student and faculty prototype builds using 3D printers, laser cutters, vinyl cutters, and CNC workflows. I prepared fabrication files, adjusted machine settings, and resolved design or equipment issues affecting output quality.",
+        "I also trained students and new employees on equipment operation, safety procedures, and lab standards."
+      ]
+    },
+    {
+      "employer": "Staples",
+      "title": "Retail Sales Manager",
+      "location": "Hackettstown, NJ",
+      "dates": "July 2024–June 2025",
+      "id": "staples",
+      "paragraphs": [
+        "I led sales-floor operations, coached associates, resolved customer issues, and prepared sales and inventory reports. This experience supports the communication and training side of my technical work."
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "CAD & prototype preparation",
+      "text": "3D modeling and concept development with SolidWorks, Autodesk Inventor, and AutoCAD. Fabrication-file preparation informed by hands-on lab support.",
+      "link": "/about/#innovation-lab",
+      "label": "Innovation Lab experience"
+    },
+    {
+      "name": "3D printing & digital fabrication",
+      "text": "Prototype-build support, print preparation, machine settings, laser cutting, vinyl cutting, and CNC file preparation.",
+      "link": "/work/5-axis-3d-printing-waste-reduction/",
+      "label": "Printing research"
+    },
+    {
+      "name": "Setup & troubleshooting",
+      "text": "Equipment installation, adjustment, and troubleshooting against work orders, material requirements, and output-quality needs.",
+      "link": "/about/#techflex",
+      "label": "Techflex experience"
+    },
+    {
+      "name": "Problem-solving & communication",
+      "text": "User-centered concept development, technical documentation, and training people to use equipment safely and effectively.",
+      "link": "/work/total-ergonomics-micropipette/",
+      "label": "Ergonomic pipetting project"
+    }
+  ],
+  "research": [
+    {
+      "title": "Smart Textile Array Devices for Assistive and Augmented Communication",
+      "date": "2022 · BMES platform presentation",
+      "text": "I contributed as a student co-author to this interdisciplinary assistive-communication project. Dr. Nicole Urban delivered the oral presentation.",
+      "href": "https://web.uri.edu/riinbre/nicole-urban/"
+    },
+    {
+      "title": "Accessible, Game-Based Touch-Sensing Devices for Rotator Cuff and Fine Motor Assessment and Therapy",
+      "date": "2022 · BMES poster presentation",
+      "text": "I contributed as a student co-author to the team’s game-based motor-assessment and therapy-device research.",
+      "href": "https://web.uri.edu/riinbre/nicole-urban/"
+    }
+  ],
+  "redirects": {
+    "/about/resume.txt": "/assets/documents/Michael_Dattolo_Resume_2026.pdf",
+    "/work/edison-ai-assistant/": "/work/archive/",
+    "/work/artificial-magnetic-fields/": "/work/archive/",
+    "/work/jrm-enterprises-feasibility/": "/work/archive/",
+    "/work/edison-ai-assistant": "/work/archive/",
+    "/work/edison-ai-assistant/index.html": "/work/archive/",
+    "/work/artificial-magnetic-fields": "/work/archive/",
+    "/work/artificial-magnetic-fields/index.html": "/work/archive/",
+    "/work/jrm-enterprises-feasibility": "/work/archive/",
+    "/work/jrm-enterprises-feasibility/index.html": "/work/archive/"
+  }
+}

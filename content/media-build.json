@@ -1,0 +1,432 @@
+{
+  "printing-mechanism": {
+    "source": "assets/img/ecoprint-printer-prototype.png",
+    "alt": "Wooden two-pivot mechanism with stepper motors, wiring, and a controller on a workbench.",
+    "width": 1086,
+    "height": 615,
+    "variants": [
+      {
+        "src": "/assets/portfolio/printing-mechanism-480.webp",
+        "width": 480,
+        "height": 272
+      },
+      {
+        "src": "/assets/portfolio/printing-mechanism-960.webp",
+        "width": 960,
+        "height": 544
+      },
+      {
+        "src": "/assets/portfolio/printing-mechanism-1086.webp",
+        "width": 1086,
+        "height": 615
+      }
+    ]
+  },
+  "printing-machine": {
+    "source": "assets/img/ecoprint-5axis-main.jpg",
+    "alt": "Physical printer hardware photographed for the printing research project.",
+    "width": 2400,
+    "height": 3600,
+    "variants": [
+      {
+        "src": "/assets/portfolio/printing-machine-480.webp",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "src": "/assets/portfolio/printing-machine-960.webp",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "/assets/portfolio/printing-machine-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "printing-cad": {
+    "source": "assets/img/ecoprint-printer-cad.png",
+    "alt": "CAD concept of a printer with a detail view of the proposed motion mechanism.",
+    "width": 1086,
+    "height": 636,
+    "variants": [
+      {
+        "src": "/assets/portfolio/printing-cad-480.webp",
+        "width": 480,
+        "height": 281
+      },
+      {
+        "src": "/assets/portfolio/printing-cad-960.webp",
+        "width": 960,
+        "height": 562
+      },
+      {
+        "src": "/assets/portfolio/printing-cad-1086.webp",
+        "width": 1086,
+        "height": 636
+      }
+    ]
+  },
+  "printing-sketch": {
+    "source": "assets/img/ecoprint-sketches.png",
+    "alt": "Early sketches comparing printer motion and print-orientation concepts.",
+    "width": 779,
+    "height": 535,
+    "variants": [
+      {
+        "src": "/assets/portfolio/printing-sketch-480.webp",
+        "width": 480,
+        "height": 330
+      },
+      {
+        "src": "/assets/portfolio/printing-sketch-779.webp",
+        "width": 779,
+        "height": 535
+      }
+    ]
+  },
+  "pipette": {
+    "source": "assets/img/ergonomics-foot-pedal.jpg",
+    "alt": "Blue fabricated Total Ergonomics prototype assembly positioned beside a micropipette.",
+    "width": 2400,
+    "height": 3600,
+    "variants": [
+      {
+        "src": "/assets/portfolio/pipette-480.webp",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "src": "/assets/portfolio/pipette-960.webp",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "/assets/portfolio/pipette-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "pistol": {
+    "source": "assets/img/ergonomics-pistol-grip.jpg",
+    "alt": "White pistol-grip pipetting concept model showing its handle and upper linkage.",
+    "width": 2400,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/assets/portfolio/pistol-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/portfolio/pistol-960.webp",
+        "width": 960,
+        "height": 640
+      },
+      {
+        "src": "/assets/portfolio/pistol-1600.webp",
+        "width": 1600,
+        "height": 1067
+      }
+    ]
+  },
+  "palm": {
+    "source": "assets/img/ergonomics-palm-grip.jpg",
+    "alt": "White palm-grip pipetting concept model with finger contours.",
+    "width": 2400,
+    "height": 3600,
+    "variants": [
+      {
+        "src": "/assets/portfolio/palm-480.webp",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "src": "/assets/portfolio/palm-960.webp",
+        "width": 960,
+        "height": 1440
+      },
+      {
+        "src": "/assets/portfolio/palm-1600.webp",
+        "width": 1600,
+        "height": 2400
+      }
+    ]
+  },
+  "garden": {
+    "source": "assets/img/bloominbeds/research/finalgardenbed.jpg",
+    "alt": "BloominBeds physical garden-bed prototype with a clear hinged cover, circular vents, and wiring.",
+    "width": 4032,
+    "height": 3024,
+    "variants": [
+      {
+        "src": "/assets/portfolio/garden-480.webp",
+        "width": 480,
+        "height": 360
+      },
+      {
+        "src": "/assets/portfolio/garden-960.webp",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "src": "/assets/portfolio/garden-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "garden-mockup": {
+    "source": "assets/img/bloominbeds/research/prototypebed.png",
+    "alt": "Small covered-bed model with a curved clear lid, photographed in an open position.",
+    "width": 324,
+    "height": 240,
+    "variants": [
+      {
+        "src": "/assets/portfolio/garden-mockup-324.webp",
+        "width": 324,
+        "height": 240
+      }
+    ]
+  },
+  "garden-flow": {
+    "source": "assets/img/bloominbeds/rhino-simulations/ViewCapture20231006_194429.jpg",
+    "alt": "Digital garden-bed model showing an airflow visualization inside a curved cover.",
+    "width": 1984,
+    "height": 976,
+    "variants": [
+      {
+        "src": "/assets/portfolio/garden-flow-480.webp",
+        "width": 480,
+        "height": 236
+      },
+      {
+        "src": "/assets/portfolio/garden-flow-960.webp",
+        "width": 960,
+        "height": 472
+      },
+      {
+        "src": "/assets/portfolio/garden-flow-1600.webp",
+        "width": 1600,
+        "height": 787
+      }
+    ]
+  },
+  "garden-graph": {
+    "source": "assets/img/bloominbeds/rhino-simulations/Capture4.PNG",
+    "alt": "Grasshopper component setup with annotated inlet and outlet boundary inputs.",
+    "width": 868,
+    "height": 335,
+    "variants": [
+      {
+        "src": "/assets/portfolio/garden-graph-480.webp",
+        "width": 480,
+        "height": 185
+      },
+      {
+        "src": "/assets/portfolio/garden-graph-868.webp",
+        "width": 868,
+        "height": 335
+      }
+    ]
+  },
+  "robot": {
+    "source": "assets/img/martian-robot-render.png",
+    "alt": "CAD rendering of a multi-legged robot concept with an articulated excavation arm.",
+    "width": 2200,
+    "height": 1238,
+    "variants": [
+      {
+        "src": "/assets/portfolio/robot-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/portfolio/robot-960.webp",
+        "width": 960,
+        "height": 540
+      },
+      {
+        "src": "/assets/portfolio/robot-1600.webp",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "robot-sequence": {
+    "source": "assets/img/dig-4.png",
+    "alt": "Concept rendering of robots around a buried habitat; an imagined construction scenario, not a field photograph.",
+    "width": 2200,
+    "height": 1238,
+    "variants": [
+      {
+        "src": "/assets/portfolio/robot-sequence-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/portfolio/robot-sequence-960.webp",
+        "width": 960,
+        "height": 540
+      },
+      {
+        "src": "/assets/portfolio/robot-sequence-1600.webp",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "storage-modular": {
+    "source": "assets/img/modular-storage.png",
+    "alt": "Original modular shelf-storage presentation board with cabinet and folding-panel views.",
+    "width": 1224,
+    "height": 793,
+    "variants": [
+      {
+        "src": "/assets/portfolio/storage-modular-480.webp",
+        "width": 480,
+        "height": 311
+      },
+      {
+        "src": "/assets/portfolio/storage-modular-960.webp",
+        "width": 960,
+        "height": 622
+      },
+      {
+        "src": "/assets/portfolio/storage-modular-1224.webp",
+        "width": 1224,
+        "height": 793
+      }
+    ]
+  },
+  "storage-wearable": {
+    "source": "assets/img/wearable-storage.png",
+    "alt": "Original wearable-storage presentation board with photographs of a fabricated pouch.",
+    "width": 1224,
+    "height": 792,
+    "variants": [
+      {
+        "src": "/assets/portfolio/storage-wearable-480.webp",
+        "width": 480,
+        "height": 311
+      },
+      {
+        "src": "/assets/portfolio/storage-wearable-960.webp",
+        "width": 960,
+        "height": 621
+      },
+      {
+        "src": "/assets/portfolio/storage-wearable-1224.webp",
+        "width": 1224,
+        "height": 792
+      }
+    ]
+  },
+  "growth": {
+    "source": "assets/img/growth-algorithm-2.png",
+    "alt": "Rhino viewport showing a patterned mesh over a hand and forearm shape.",
+    "width": 1892,
+    "height": 1038,
+    "variants": [
+      {
+        "src": "/assets/portfolio/growth-480.webp",
+        "width": 480,
+        "height": 263
+      },
+      {
+        "src": "/assets/portfolio/growth-960.webp",
+        "width": 960,
+        "height": 527
+      },
+      {
+        "src": "/assets/portfolio/growth-1600.webp",
+        "width": 1600,
+        "height": 878
+      }
+    ]
+  },
+  "growth-graph": {
+    "source": "assets/img/growth-algorithm-1.png",
+    "alt": "Grasshopper node graph from a computational form-development study.",
+    "width": 2048,
+    "height": 1106,
+    "variants": [
+      {
+        "src": "/assets/portfolio/growth-graph-480.webp",
+        "width": 480,
+        "height": 259
+      },
+      {
+        "src": "/assets/portfolio/growth-graph-960.webp",
+        "width": 960,
+        "height": 518
+      },
+      {
+        "src": "/assets/portfolio/growth-graph-1600.webp",
+        "width": 1600,
+        "height": 864
+      }
+    ]
+  },
+  "cafe": {
+    "source": "assets/img/willies-heatmap.png",
+    "alt": "Digital café layout view with table locations and circulation space.",
+    "width": 1251,
+    "height": 968,
+    "variants": [
+      {
+        "src": "/assets/portfolio/cafe-480.webp",
+        "width": 480,
+        "height": 371
+      },
+      {
+        "src": "/assets/portfolio/cafe-960.webp",
+        "width": 960,
+        "height": 743
+      },
+      {
+        "src": "/assets/portfolio/cafe-1251.webp",
+        "width": 1251,
+        "height": 968
+      }
+    ]
+  },
+  "cafe-plan": {
+    "source": "assets/img/willies-waiting-area.png",
+    "alt": "Plan drawing exploring café seating and a designated waiting area.",
+    "width": 1036,
+    "height": 1595,
+    "variants": [
+      {
+        "src": "/assets/portfolio/cafe-plan-480.webp",
+        "width": 480,
+        "height": 739
+      },
+      {
+        "src": "/assets/portfolio/cafe-plan-960.webp",
+        "width": 960,
+        "height": 1478
+      },
+      {
+        "src": "/assets/portfolio/cafe-plan-1036.webp",
+        "width": 1036,
+        "height": 1595
+      }
+    ]
+  },
+  "portrait": {
+    "source": "assets/img/mike.jpg",
+    "alt": "Mike Dattolo, from the original portfolio portrait.",
+    "width": 400,
+    "height": 400,
+    "variants": [
+      {
+        "src": "/assets/portfolio/portrait-400.webp",
+        "width": 400,
+        "height": 400
+      }
+    ]
+  }
+}
