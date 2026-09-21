@@ -1,4 +1,4 @@
-name: Final portfolio review polish
+name: Final portfolio reference check
 on:
   push:
     branches: [portfolio-rebuild-2026-09-21]
@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  polish:
+  review:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -16,63 +16,68 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Replace optional embedded viewer with genuine project artifact
+      - name: Resolve moved primary reference only when its content matches
         run: |
           python - <<'PY'
           from pathlib import Path
-          import json
-          p=Path('scripts/build.mjs');t=p.read_text()
-          old='''<object class="pdf-preview" data="${site.resume}" type="application/pdf" aria-label="Michael Dattolo’s current résumé PDF"><p>Your browser does not display PDFs here. <a href="${site.resume}">Open the résumé PDF</a>.</p></object>'''
-          new='''<figure class="evidence"><a class="image-well" href="/work/5-axis-3d-printing-waste-reduction/" aria-label="Explore the printing research behind the work">${image('printing-cad',{priority:true,sizes:'(max-width: 760px) 92vw, 50vw'})}</a><figcaption>CAD artifact · Printer assembly and proposed motion hardware from my printing research. <a href="/work/5-axis-3d-printing-waste-reduction/">Explore the project</a>.</figcaption></figure>'''
-          assert t.count(old)==1
-          p.write_text(t.replace(old,new))
-          p=Path('content/site.json');s=json.loads(p.read_text());s['capabilities'][1]['link']='/about/#innovation-lab';s['capabilities'][1]['label']='Fabrication & lab experience';p.write_text(json.dumps(s,indent=2,ensure_ascii=False)+'\n')
+          import json,urllib.request
+          old='https://www.jwu.edu/news/stories/magazine/2022/fall/design/index.html'
+          candidates=['https://www.jwu.edu/all-news/form-follows-function/','https://www3.jwu.edu/news/stories/magazine/2022/fall/design/index.html','https://inquire.jwu.edu/news/stories/magazine/2022/fall/design/index.html']
+          results=[];selected=None
+          for url in candidates:
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 Portfolio Link Review'}),timeout=12) as r:
+                      text=r.read().decode('utf-8',errors='replace')
+                      matched=r.status==200 and 'Form Follows Function' in text and 'Dattolo' in text and 'throttle' in text
+                      results.append({'url':url,'status':r.status,'content_matches_original_article':matched,'resolved_url':r.url})
+                      if matched:selected=r.url;break
+              except Exception as e:results.append({'url':url,'error':str(e)})
+          Path('qa-output').mkdir(exist_ok=True)
+          Path('qa-output/reference-resolution.json').write_text(json.dumps({'selected':selected,'checks':results},indent=2))
+          print(json.dumps({'selected':selected,'checks':results},indent=2))
+          assert selected,'No verified replacement; stop rather than publish a guessed source URL.'
+          p=Path('content/projects.json');text=p.read_text();assert text.count(old)==1;p.write_text(text.replace(old,selected))
           PY
           npm run build && npm test
-      - name: Commit reviewed fixes without deployment or workflow changes
+      - name: Commit the verified reference update on review branch only
         run: |
           test "$GITHUB_REF" = "refs/heads/portfolio-rebuild-2026-09-21"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/build.mjs content/site.json
-          git commit -m "Remove fragile PDF embed and link fabrication skills to documented lab experience"
+          git add content/projects.json
+          git commit -m "Update pipetting article to verified working university URL"
           git push origin HEAD:portfolio-rebuild-2026-09-21
       - name: Install browser tooling
         run: |
           python -m pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
-      - name: Test complete final preview
+      - name: Test final preview without deployment
         run: python tests/browser.py
-      - name: Check public reference URL availability (record, do not confuse blocks with broken links)
+      - name: Record public reference availability
         if: always()
         run: |
           python - <<'PY'
-          import json,urllib.request,urllib.error
+          import json,urllib.request
           from pathlib import Path
           from concurrent.futures import ThreadPoolExecutor
-          projects=json.loads(Path('content/projects.json').read_text())
-          site=json.loads(Path('content/site.json').read_text())
+          projects=json.loads(Path('content/projects.json').read_text());site=json.loads(Path('content/site.json').read_text())
           urls=sorted({r['href'] for p in projects for r in p['references']}|{r['href'] for r in site['research']}|{site['linkedin']})
           def check(url):
               try:
-                  request=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 Portfolio Link Review'})
-                  with urllib.request.urlopen(request,timeout=12) as response:
-                      return {'url':url,'status':response.status,'resolved_url':response.url}
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 Portfolio Link Review'}),timeout=12) as r:return {'url':url,'status':r.status,'resolved_url':r.url}
               except Exception as e:return {'url':url,'error':str(e)}
           out=Path('qa-output');out.mkdir(exist_ok=True)
-          results=list(ThreadPoolExecutor(max_workers=8).map(check,urls))
-          (out/'external-availability.json').write_text(json.dumps(results,indent=2))
-          print(json.dumps(results,indent=2))
+          results=list(ThreadPoolExecutor(max_workers=8).map(check,urls));(out/'external-availability.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))
           PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: portfolio-final-preview
+          name: portfolio-release-preview
           path: dist/
           retention-days: 14
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: portfolio-final-qa
+          name: portfolio-release-qa
           path: qa-output/
           retention-days: 14
