@@ -1,308 +1,87 @@
-# Michael Dattolo — Product Design Portfolio
+# Mike Dattolo — portfolio
 
-**Portfolio Version:** v3.0.4
+A static, multi-page portfolio for 3D printing, prototyping, CAD and physical product development. The existing HTML/CSS/JavaScript + Cloudflare approach is retained. A small Node generator keeps content separate from presentation; the browser needs no framework, account, analytics library or API.
 
-A modern, **semantically-structured and recruiter-ready portfolio** featuring 10 case studies across product design, robotics, AI, and emerging technologies — built on a custom "engineering-meets-design" dark theme with a molten-amber signature accent.
+**Review branch:** `portfolio-rebuild-2026-09-21`. Production approval is required before deployment or merging into an automatically deployed production branch.
 
-**Live:** `mike-dattolo.com`
+## Run the complete site locally
 
+Requires Node.js 20 or newer. The build and local server use only Node’s standard library; no package installation is necessary for these commands.
 
-## 📋 Redesign (v3.0.4 — June 2026)
-
-A ground-up visual + discoverability overhaul:
-
-- 🎨 **New design system** — Token-driven dark theme, molten-amber accent, fluid type scale, Space Grotesk / Inter pairing
-- ✨ **Motion & depth** — Animated aurora hero, pointer-driven spotlight cards, animated stat counters, role rotator, tools marquee, scroll reveals (all reduced-motion safe)
-- 🤖 **AI / machine discoverability** — `llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD structured data (`Person`, `WebSite`, `ItemList`, per-project `CreativeWork`), canonical URLs, and a branded Open Graph card
-- ♿ **Accessibility** — WCAG AA contrast, semantic HTML, keyboard nav, visible focus, `prefers-reduced-motion`
-- 📱 **Responsive** — Mobile-first, fluid layouts, no layout shift
-
-**See:** `IMPROVEMENTS_CHANGELOG.md` for prior history.
-
----
-
-## Overview
-
-A **static HTML/CSS/JavaScript site** (no frameworks, no build step) designed for:
-
-- **Recruiter conversion** — Clear CTAs, outcomes-focused project cards, resume access, contact form
-- **Rich case studies** — Detailed narratives, process, and measurable results
-- **Accessibility** — Semantic HTML, keyboard nav, focus states, reduced-motion support, WCAG AA compliance
-- **Maintainability** — Clean code, token-driven CSS, progressive JS enhancements
-
----
-
-## Project Structure
-
-```
-.
-├── index.html                              # Home / featured work
-├── llms.txt                                # Machine-readable site map for LLM/AI agents
-├── robots.txt                              # Crawler directives + sitemap pointer
-├── sitemap.xml                             # XML sitemap
-├── about/
-│   └── index.html                          # About + skills + experience + resume
-├── contact/
-│   └── index.html                          # Contact methods
-├── work/
-│   ├── index.html                          # Work grid + filters
-│   ├── martian-construction-robot/
-│   ├── 5-axis-3d-printing-waste-reduction/
-│   ├── bloominbeds-monitoring-system/
-│   ├── edison-ai-assistant/
-│   ├── total-ergonomics-micropipette/
-│   ├── artificial-magnetic-fields/
-│   ├── willies-cafe-space-study/
-│   ├── growth-algorithm-simulation/
-│   ├── storage-concepts/
-│   ├── jrm-enterprises-feasibility/
-│   └── release-the-beast/
-│       └── (each contains index.html case study)
-├── styles/
-│   ├── tokens.css                          # Design tokens
-│   ├── base.css                            # Global resets, layout
-│   ├── components.css                      # Reusable UI patterns
-│   └── pages.css                           # Page-specific layouts
-├── scripts/
-│   ├── main.js                             # Core JS: year, scroll-reveal, progress
-│   └── filters.js                          # Work grid filtering
-└── assets/
-    ├── img/                                # Project images
-    └── icons/                              # UI icons
+```sh
+npm run build
+npm test
+npm run preview
 ```
 
----
+Open `http://127.0.0.1:4173`. Stop the server with Ctrl+C. On another available port: `PORT=8080 npm run preview` (PowerShell: `$env:PORT=8080; npm run preview`). Serve **dist**, not the repository root. Opening directory pages directly with `file://` is not supported because links are root-relative.
 
-## Architecture
+`npm run build` creates a **noindex preview**. It does not publish anything. `npm run build:production` creates indexable output but also does not deploy.
 
-### HTML & Semantics
+## Editing
 
-- **Landmarks:** `<header>`, `<nav>`, `<main>`, `<footer>`, `<section>`, `<article>`
-- **Navigation:** Unified across all pages (Work, About, Resume, Contact)
-- **Skip link:** Jump to main content  
-- **Progressive enhancement:** Fully functional without JS
+- `content/site.json`: identity, contact details, employment, capabilities and short research entries.
+- `content/projects.json`: project summaries, role/team/stage information, case-study sections, captions, primary references and display order.
+- `content/media.json`: approved original image paths and alternative text.
+- `assets/img/`: original project media retained from the previous repository.
+- `assets/portfolio/`: optimized WebP derivatives and a sharing card, ready to serve.
+- `content/media-build.json`: image dimensions and responsive variants, generated by the optional image-preparation script.
+- `src/site.css`, `src/site.js`: styling and progressive navigation/clipboard behavior.
+- `scripts/build.mjs`: static HTML templates, metadata, sitemap and output allowlist.
+- `assets/documents/Michael_Dattolo_Resume_2026.pdf`: supplied application résumé, unchanged.
 
-### CSS Strategy (Token-Driven)
+To add an image, update `content/media.json`, then run:
 
-**Layer 1: Variables** (`tokens.css`)
-- Colors: dark bg (#0b0f1a), blue accent (#3b82f6), orange (#f97316)
-- Spacing scale, typography, shadows, transitions
-
-**Layer 2: Globals** (`base.css`)
-- Resets, body/heading styles, utilities (.sr-only, focus states)
-- Scroll-reveal animation classes (.will-reveal, .is-revealed)
-- Header/footer, reading progress bar
-
-**Layer 3: Components** (`components.css`)
-- .button, .card, .chip, .callout, .card-media, etc.
-- Reusable across pages
-
-**Layer 4: Page-Specific** (`pages.css`)
-- .hero, .contact-page, .case-study, .rtb-*, etc.
-
-### JavaScript (Progressive Enhancement)
-
-**No external dependencies.** All features degrade gracefully.
-
-1. **Year injection** — Auto-update copyright
-2. **Scroll reveal** — Fade-in cards via IntersectionObserver
-   - Uses CSS classes (not inline styles)
-   - Respects `prefers-reduced-motion`
-3. **Reading progress** — Case study scroll indicator
-4. **Work filters** — Tag-based grid filtering with URL state
-
----
-
-## Case Studies (11 Projects)
-
-| Project | Discipline | Key Outcome |
-|---------|-----------|------------|
-| **M.A.R.T.I.A.N Bot** | Robotics | 8-legged Mars robot, topology-optimized, 5-step autonomous workflow |
-| **EcoPrint — 5-Axis 3D Printing** | Sustainability | ~40% waste reduction via multi-axis toolpath strategy |
-| **BloominBeds Monitoring System** | Health-Tech / IoT | Raspberry Pi sensor network, real-time environmental control |
-| **EDISON AI Assistant** | AI / Software | Offline multi-modal LLM + voice + image gen + RAG |
-| **Total Ergonomics™ Micropipette** | Health-Tech / UX | User-centered redesign for rheumatoid arthritis; foot-pedal validated |
-| **Artificial Magnetic Fields for Mars** | Robotics / Simulation | Parametric EM shield for radiation protection |
-| **Willie's Café Space Study** | Space Design | Data-driven seating analysis, ADA-compliant redesign |
-| **Growth Algorithm Simulation** | Computational | Grasshopper/Rhino generative design with collision detection |
-| **Storage Concepts** | Product Design | Modular + wearable carry unit explorations |
-| **JRM Enterprises Feasibility** | Business | $2M startup plan, market research, tiered pricing |
-| **Release the Beast** | Brand / Apparel | Full identity system: logos, apparel lineup, web assets |
-
----
-
-## Quick Start
-
-### Local Development
-
-No build step needed. Choose any:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# Or Node
-npx http-server
-
-# Or VS Code Live Server (right-click root → "Open with Live Server")
+```sh
+python -m pip install Pillow
+python scripts/prepare-media.py
+npm run build
+npm test
 ```
 
-Then open `http://localhost:8000`
+Commit the optimized images and `content/media-build.json` together. Normal builds do not require Python or Pillow. The script resizes real assets without generating missing visual evidence. Original images are not overwritten. The sharing card combines typography with an existing prototype photograph.
 
-### Deploy to GitHub Pages
+To add a project, add a record to `content/projects.json`, using an existing record’s schema, with a unique slug and approved images. A `featured: true` record appears on Home and Work; others appear in the archive. The generator creates direct `/work/<slug>/index.html` routes and sitemap entries automatically. Keep source attribution and team ownership alongside the relevant section.
 
-1. Ensure repo is pushed to GitHub
-2. **Settings → Pages**
-   - Source: Deploy from a branch
-   - Branch: `main`
-   - Folder: `/ (root)`
-3. Save → deployed in ~1 min
+For a new approved résumé, replace the PDF, calculate its SHA-256, and update the expected checksum in `scripts/build.mjs`. The current checksum check deliberately prevents an unnoticed résumé replacement. Do not remove personal contact details from the supplied PDF without the owner’s permission.
 
-Site available at: `https://<github-username>.github.io/<repo-name>/`
+## Preview and production
 
-### Other Platforms
+The repository’s existing Cloudflare Worker name, compatibility date and deployment approach are retained. The configuration serves only `dist/` using the `ASSETS` binding. Contact uses email links; the former form/SMS submission code is not part of the rebuilt site. No external email or SMS account settings are changed.
 
-- **Vercel/Netlify**: Connect GitHub repo, zero config needed
-- **Traditional host**: Upload entire folder to web server
+Review the complete preview and obtain explicit approval before changing production. A build archive can be served by any static host with directory index support. For Cloudflare, after approval and checking the connected account/project:
 
----
-
-## Navigation
-
-All pages have **consistent header nav:**
-
-```
-Work  |  About  |  Resume  |  Contact
+```sh
+npm install
+PORTFOLIO_PRODUCTION_APPROVED=yes npm run deploy
 ```
 
-- **Resume** links to `/about/#resume` (anchor to Resume section)
-- **Active page** denoted with `aria-current="page"`
-- Mobile-responsive hamburger (if implemented; currently always visible)
+PowerShell: `$env:PORTFOLIO_PRODUCTION_APPROVED='yes'; npm run deploy`.
 
----
+The deployment command is deliberately blocked unless that flag is present. It builds production output and invokes the repository’s Wrangler deployment. **Do not run it merely to preview.** No deploy command is included in the preview CI workflow. Confirm the Cloudflare Git integration’s production branch before merging; its account-level settings are outside this source tree. Do not change DNS or other services.
 
-## Features
+A Cloudflare-hosted staging preview can also use the preview build artifact without assigning the production custom domain. A staging URL is not created merely by building or opening a pull request.
 
-✅ Custom dark theme with molten-amber signature accent  
-✅ Animated aurora hero + pointer-driven spotlight cards  
-✅ Animated stat counters, role rotator, tools marquee  
-✅ Scroll-reveal animations + reading progress bar  
-✅ JSON-LD structured data + `llms.txt` for AI discoverability  
-✅ Branded Open Graph / Twitter card  
-✅ Unified navigation + brand mark across all pages  
-✅ Keyboard accessible + `prefers-reduced-motion` support  
-✅ Contact form with validation (Cloudflare Worker + Resend)  
+## Routes and redirects
 
----
+The printing, pipetting, BloominBeds, robot, storage, computational-form and café project URLs are preserved. `/about/#resume` still reaches résumé actions. `/about/resume.txt` now redirects to the actual current PDF. The older Edison, magnetic-fields and JRM routes redirect to the archive instead of serving unverified case-study claims. Original versions remain in Git history.
 
-## Customization
+The generated `_redirects` is intended for Cloudflare Workers Static Assets. The local preview server implements those same explicit redirects. On another host, translate the file into that host’s redirect format before launch. The site does not require a single-page-app catch-all: every published page has its own HTML file. Unknown routes should return the included `404.html` with a 404 status.
 
-### Change Colors
+Cloudflare references: https://developers.cloudflare.com/workers/static-assets/redirects/ and https://developers.cloudflare.com/workers/static-assets/binding/.
 
-Edit `styles/tokens.css`:
+## Tests and limitations
 
-```css
-:root {
-  --bg: #0a0a0c;            /* Deep graphite canvas */
-  --accent: #ff7a45;        /* Molten amber signature */
-  --accent-bright: #ffb15c; /* Lighter amber */
-  --accent-deep: #ff5a36;   /* Deep orange */
-  --text-heading: #ffffff;  /* Headings */
-  --text-body: #b6b6c0;     /* Body copy */
-  --text-dim: #85858f;      /* Secondary text */
-  /* legacy --color-* aliases are kept and repointed for back-compat */
-}
+`npm test` checks generated HTML, local links/anchors, image dimensions and alt text, required metadata, stale identity/claim strings, and separation of source files from public output. The build verifies the résumé’s exact hash.
+
+`tests/browser.py` uses Playwright to check all published pages at 320, 390, 768 and 1440 pixels, image loading, horizontal overflow, native navigation, route refresh, PDF download/MIME/exact bytes, mobile keyboard navigation, reduced-motion behavior, clipboard success/failure, no-JavaScript rendering, redirects and 404 behavior. It outputs screenshots and `qa-output/browser-report.json`.
+
+```sh
+python -m pip install playwright==1.55.0
+python -m playwright install chromium
+python tests/browser.py
 ```
 
-The accent is also exposed as `--accent-gradient`. All components update automatically.
+A script’s presence does not mean every test has been run successfully. Consult the actual CI run/artifact and delivered QA report. Chromium testing is not testing on a physical iPhone, Safari, Firefox or a screen reader. No WCAG certification, Lighthouse score, real-world performance result, clinical outcome or production deployment is implied. External university/LinkedIn destinations are outside this site’s control.
 
-### Add a Case Study
-
-1. Create `work/<slug>/index.html` (copy from existing case)
-2. Update <title>, metadata, content
-3. Add card to `work/index.html`:
-   ```html
-   <article class="card" data-tags="tag1 tag2">
-     <div class="card-media">
-       <img src="../assets/img/..." alt="..." loading="lazy">
-     </div>
-     <p class="tag-list"><span class="tag">Tag</span></p>
-     <h2><a href="<slug>/">Project Title</a></h2>
-     <p>Brief description highlighting problem & outcome.</p>
-   </article>
-   ```
-4. Add featured card to `index.html` (same structure, class="card card-large")
-5. Push to deploy
-
-### Update Personal Info
-
-Search-replace:
-- Email: `mike.dattolo@yahoo.com`
-- LinkedIn: `mikedattolo`
-- Location: `Hackettstown, NJ`
-- Name: `Michael Dattolo`
-
----
-
-## Accessibility
-
-✅ **WCAG 2.1 Level AA** (target)
-
-- Semantic HTML landmarks
-- Descriptive image alt text
-- Keyboard-navigable (Tab, Enter, arrows work)
-- Visible focus states on all interactive elements
-- Color contrast ≥ 4.5:1 on dark background
-- Respects `prefers-reduced-motion` media query
-- Skip link to main content
-- Proper heading hierarchy (H1 > H2 > H3)
-- Lists use semantic `<ul>`/`<ol>`/`<li>`
-- Buttons/links clearly labeled
-
----
-
-## Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile: iOS Safari, Chrome Mobile (tested to 320px width)
-
----
-
-## Performance Notes
-
-- **No external JS libraries** → faster load
-- **Images optimized** (webp, contain fit)
-- **Minimal CSS** (~900 lines across 4 files)
-- **Lazy loading** on images (`loading="lazy"`)
-- **Single JS bundle** (main.js deferred)
-
-Typical page: <100KB total
-
----
-
-## Notes & Assumptions
-
-- **Image placeholders:** Some project images are placeholders or low-res. Replace with final assets
-- **Metrics:** Case study outcomes use actual data where available; some emphasize process/narrative
-- **No backend:** Contact link sends email client; no form submissions
-- **No analytics default:** Add your own (Google Analytics, Plausible, etc.)
-- **Static-only:** Suitable for static hosting (GitHub Pages, Vercel, Netlify, etc.)
-
----
-
-## Future Enhancements
-
-- Contact form integration (Formspree, Netlify Forms)
-- Dark/light mode toggle
-- Full-text search across case studies
-- Blog/articles section
-- Video embeds
-- Social sharing buttons
-
----
-
-Built with **semantic HTML**, **token-driven CSS**, and **progressive JavaScript.**  
-Optimized for recruiters, clients, and accessibility.
-
+Only generated approved assets and pages are copied to `dist/`. Private editorial registers, unresolved evidence questions and working documents belong outside this public repository and are not part of the deployable website.

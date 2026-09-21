@@ -1,0 +1,360 @@
+[
+  {
+    "slug": "5-axis-3d-printing-waste-reduction",
+    "title": "Reducing Plastic Waste with 5D Printing",
+    "shortTitle": "Rethinking print supports",
+    "eyebrow": "Additive manufacturing research",
+    "date": "2023",
+    "context": "Academic research · Johnson & Wales University",
+    "stage": "Feasibility research + physical prototypes",
+    "role": "Co-author and presenter",
+    "team": "Michael Dattolo, Jonathan Harris, and Walter Zesk. Faculty mentor: Jonathan Harris.",
+    "methods": "Rhino 3D, Grasshopper, concept sketches, CAD, and prototype research",
+    "featured": true,
+    "hero": "printing-mechanism",
+    "summary": "Could a different support material—or a different way of moving the printer—reduce support-related plastic waste?",
+    "contribution": "I co-authored and presented research exploring support-material alternatives and multi-axis printing.",
+    "capability": "Research translated into CAD and physical prototype exploration.",
+    "heroCaption": "Physical prototype photograph · A wooden motion-mechanism mockup with motors, pivots, and a controller.",
+    "sections": [
+      {
+        "heading": "Two routes into the same problem",
+        "paragraphs": [
+          "Support structures are part of the material cost of a print. This academic project explored two possible ways to reduce that waste: a reusable support material and a printer with additional motion axes.",
+          "I co-authored the research with Jonathan Harris and Walter Zesk and presented it at JWU’s 2023 Student Research Design & Innovation Symposium. The research record classifies the work as a prototype."
+        ],
+        "source": 0
+      },
+      {
+        "heading": "From early ideas to a motion concept",
+        "paragraphs": [
+          "The project sketches compare different ways to orient the print and move the mechanism. The CAD study develops one of those ideas into a printer assembly and a closer view of the proposed motion hardware.",
+          "A physical motion mockup brings the mechanism into a tangible form alongside the digital assembly study. Its visible parts include a wooden frame, pivots, motor mounts, and a controller."
+        ],
+        "media": [
+          "printing-sketch",
+          "printing-cad"
+        ],
+        "captions": [
+          "Development sketches · Alternative motion and orientation ideas from the project material.",
+          "CAD concept · Printer assembly with a magnified view of the proposed motion hardware."
+        ]
+      },
+      {
+        "heading": "What the research established",
+        "paragraphs": [
+          "The reported wax-support investigation encountered a temperature-compatibility problem: the wax melted in the material combination explored. The research then examined the feasibility of four- to five-axis printing using Rhino 3D and Grasshopper.",
+          "“5D Printing” is the official research title. In this project, the multi-axis discussion concerns additional machine-motion axes—not additional spatial dimensions. Software coordination remained part of the feasibility question."
+        ],
+        "source": 0,
+        "media": [
+          "printing-machine"
+        ],
+        "captions": [
+          "Project hardware photograph · The printer documented alongside the research and mechanism studies."
+        ]
+      },
+      {
+        "heading": "Stage, limitations & next steps",
+        "paragraphs": [
+          "The work reached feasibility research and physical-prototype exploration. The published research does not establish a measured waste-reduction percentage or a production-ready multi-axis printing process.",
+          "A useful next step would be a repeatable comparison of the same part geometry, material, and print conditions, with part mass and support mass recorded separately. Coordinated motion and print quality would also need to be demonstrated and documented."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "label": "JWU ScholarsArchive · official research record (2023)",
+        "href": "https://scholarsarchive.jwu.edu/innov_symposium/4/"
+      }
+    ]
+  },
+  {
+    "slug": "total-ergonomics-micropipette",
+    "title": "Ergonomic Pipetting Concept",
+    "shortTitle": "A different way to pipette",
+    "eyebrow": "Total Ergonomics · user-centered design",
+    "date": "2022",
+    "context": "Academic team project · Johnson & Wales University",
+    "stage": "Concept development + physical prototypes",
+    "role": "Co-developer with Mathew Hartung",
+    "team": "Michael Dattolo and Mathew Hartung, with user and occupational-therapy input through JWU.",
+    "methods": "Concept development, mechanism exploration, physical prototyping, and user feedback",
+    "featured": true,
+    "hero": "pipette",
+    "summary": "Explore an alternative to repeatedly operating a pipette with the thumb.",
+    "contribution": "I co-developed a foot-pedal pipetting concept with Mathew Hartung, informed by user and occupational-therapy input.",
+    "capability": "User needs connected to a tangible mechanism and prototype.",
+    "heroCaption": "Physical prototype photograph · The team’s blue fabricated assembly positioned beside a micropipette.",
+    "sections": [
+      {
+        "heading": "Start with the person using the tool",
+        "paragraphs": [
+          "The project focused on pipetting for a user who found the conventional hand action difficult. The design opportunity was to reconsider how a person operates the tool, rather than only change its appearance.",
+          "I worked with Mathew Hartung on Total Ergonomics. User needs and occupational-therapy collaboration informed the team’s concept development."
+        ],
+        "source": 0
+      },
+      {
+        "heading": "Explore more than one grip",
+        "paragraphs": [
+          "The retained project photographs show pistol-grip and palm-grip models as well as the blue prototype assembly. They document different physical approaches to how the pipette could be held and operated.",
+          "The foot-pedal concept moves the actuation input away from the thumb. University coverage describes a proposed throttle-cable connection between the pedal and pipette."
+        ],
+        "source": 0,
+        "media": [
+          "pistol",
+          "palm"
+        ],
+        "captions": [
+          "Physical concept model · Pistol-grip arrangement from the team’s development material.",
+          "Physical concept model · Palm-grip arrangement exploring a different contact surface."
+        ]
+      },
+      {
+        "heading": "Feedback & recognition",
+        "paragraphs": [
+          "The university describes a collaborative process that included sketches, rough prototypes, and feedback. The foot-operated direction attracted interest during that process.",
+          "Our Total Ergonomics team earned second place in JWU’s 2022 Sharkfest competition."
+        ],
+        "source": 1
+      },
+      {
+        "heading": "A prototype, with a clear next question",
+        "paragraphs": [
+          "The work reached concept and physical-prototype development. Its contribution is a different actuation approach informed by a real user need.",
+          "Further development would need documented evaluation of dispensing repeatability, pedal force and travel, and usability across different tasks and users before making performance or injury-prevention claims."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "label": "JWU · Form Follows Function (2022)",
+        "href": "https://www.jwu.edu/all-news/form-follows-function/"
+      },
+      {
+        "label": "JWU · 2022 Sharkfest competition results",
+        "href": "https://www.jwu.edu/all-news/hemply-rooted-wins-5000-prize-at-annual-jwu-sharkfest-competition/"
+      }
+    ]
+  },
+  {
+    "slug": "bloominbeds-monitoring-system",
+    "title": "BloominBeds",
+    "shortTitle": "A better environment for a garden bed",
+    "eyebrow": "Physical product development · team project",
+    "date": "2024",
+    "context": "Academic team project · Johnson & Wales University",
+    "stage": "Team prototype + digital development studies",
+    "role": "Academic team contributor",
+    "team": "Joshua Keene, Marshall Hayduk, Michael Dattolo, Keely Doyle, and Mathew Hartung. Faculty mentor: Jonathan Harris.",
+    "methods": "Physical prototyping; Rhino/Grasshopper model and airflow studies in the team’s development material",
+    "featured": true,
+    "hero": "garden",
+    "summary": "Explore environmental monitoring and ventilation for a covered garden bed.",
+    "contribution": "I contributed as a member of the five-person academic project team.",
+    "capability": "Physical prototype development connected to an everyday growing problem.",
+    "heroCaption": "Team prototype photograph · A covered garden bed with visible ventilation openings, wiring, and planted soil.",
+    "sections": [
+      {
+        "heading": "A covered bed brings a design trade-off",
+        "paragraphs": [
+          "A cover can create a protected growing space, but heat can also build up inside it. BloominBeds explored a garden-bed system with environmental monitoring and control.",
+          "I contributed as part of a five-person academic team. JWU’s 2024 research record lists our project as a prototype; Joshua Keene and Marshall Hayduk are listed as its presenters."
+        ],
+        "source": 0
+      },
+      {
+        "heading": "Working across physical and digital models",
+        "paragraphs": [
+          "The retained artifacts include a small covered-bed model, a larger physical prototype, and digital airflow-development views. Together they show the product at different levels: overall enclosure form, a physical assembly, and a model of conditions within the cover.",
+          "These are team artifacts. The digital study provides a way to examine the covered space alongside the physical models; agreement with real conditions would need to be checked against measurements."
+        ],
+        "media": [
+          "garden-mockup",
+          "garden-flow"
+        ],
+        "captions": [
+          "Physical model photograph · A small covered-bed model with the hinged lid open.",
+          "Digital airflow study · Garden-bed geometry with a vector visualization inside the curved cover."
+        ]
+      },
+      {
+        "heading": "Making the model assumptions visible",
+        "paragraphs": [
+          "The Grasshopper setup separates inlet and outlet conditions. Making those assumptions explicit is an important part of interpreting a model and deciding what to measure on a physical prototype."
+        ],
+        "media": [
+          "garden-graph"
+        ],
+        "captions": [
+          "Project-team software artifact · Annotated inlet and outlet boundary inputs in the Grasshopper setup."
+        ]
+      },
+      {
+        "heading": "Outcome & development boundary",
+        "paragraphs": [
+          "The team produced a physical prototype and presented the work through the 2024 JWU symposium. The university recognized BloominBeds in its Creativity & Design award category.",
+          "The case study documents the prototype’s physical form and development studies. A useful next step is to pair logged environmental measurements with defined test conditions before drawing conclusions about growing performance."
+        ],
+        "source": 1
+      }
+    ],
+    "references": [
+      {
+        "label": "JWU ScholarsArchive · BloominBeds team and prototype record",
+        "href": "https://scholarsarchive.jwu.edu/innov_symposium/161/"
+      },
+      {
+        "label": "JWU · 2024 symposium and award coverage",
+        "href": "https://www.jwu.edu/all-news/symposium-highlights-student-research-design-and-innovation/"
+      }
+    ]
+  },
+  {
+    "slug": "martian-construction-robot",
+    "title": "M.A.R.T.I.A.N. Construction Robot",
+    "shortTitle": "Robotics & construction concepts",
+    "eyebrow": "Archive · academic robotics exploration",
+    "date": "2024",
+    "context": "Academic project · Johnson & Wales University",
+    "stage": "Academic robotics concept & prototype study",
+    "role": "Student author and presenter",
+    "team": "Michael Dattolo. Faculty mentor listed in the research record: Jonathan Harris.",
+    "methods": "CAD concept development and visual communication",
+    "featured": false,
+    "hero": "robot",
+    "summary": "An academic exploration of a legged robot for a proposed extraterrestrial construction workflow.",
+    "contribution": "I developed and presented the academic project. The artifacts here show the robot concept and an imagined construction sequence.",
+    "capability": "Mechanical concept development and communication.",
+    "heroCaption": "CAD rendering · The robot concept with an articulated excavation arm.",
+    "sections": [
+      {
+        "heading": "Exploring a mechanical idea",
+        "paragraphs": [
+          "I used this academic project to explore robotics and a proposed construction workflow. The retained CAD image communicates the robot’s form; the habitat image communicates a possible use scenario.",
+          "JWU lists the work as a prototype and recognized it in the 2024 Technology & Innovation award category. The renders shown here explain a proposed form and construction sequence; they are concept visualizations rather than field trials or a demonstration of autonomous excavation."
+        ],
+        "media": [
+          "robot-sequence"
+        ],
+        "captions": [
+          "Concept visualization · An imagined habitat-construction scene, not a photograph or measured simulation result."
+        ],
+        "source": 0
+      }
+    ],
+    "references": [
+      {
+        "label": "JWU ScholarsArchive · M.A.R.T.I.A.N. research record",
+        "href": "https://scholarsarchive.jwu.edu/innov_symposium/132/"
+      },
+      {
+        "label": "JWU · 2024 symposium coverage",
+        "href": "https://www.jwu.edu/all-news/symposium-highlights-student-research-design-and-innovation/"
+      }
+    ]
+  },
+  {
+    "slug": "storage-concepts",
+    "title": "Modular & Wearable Storage",
+    "shortTitle": "Storage studies",
+    "eyebrow": "Archive · physical product concepts",
+    "date": "Academic work",
+    "context": "Product-design studies · Johnson & Wales University",
+    "stage": "Presentation boards and physical / form studies",
+    "role": "Student project work",
+    "team": "Original boards retained from my portfolio.",
+    "methods": "Concept development, physical form exploration, presentation layout",
+    "featured": false,
+    "hero": "storage-modular",
+    "summary": "Two approaches to organizing and carrying everyday objects.",
+    "contribution": "My original project boards document a modular shelf-storage study and a wearable-storage study.",
+    "capability": "Form, construction, and presentation.",
+    "heroCaption": "Original presentation board · Modular shelf-storage study with cabinet and panel views.",
+    "sections": [
+      {
+        "heading": "Two physical approaches",
+        "paragraphs": [
+          "The modular study explores a cabinet with storage compartments and folding panels. The wearable study shows a fabricated pouch with a closure and a flexible body.",
+          "These studies focus on form, construction, and communicating how an object could be used. Production engineering and durability evaluation would be separate development steps."
+        ],
+        "media": [
+          "storage-wearable"
+        ],
+        "captions": [
+          "Original presentation board · Photographs of the wearable-storage study and its construction."
+        ]
+      }
+    ],
+    "references": []
+  },
+  {
+    "slug": "growth-algorithm-simulation",
+    "title": "Computational Form Study",
+    "shortTitle": "Computational form",
+    "eyebrow": "Archive · digital exploration",
+    "date": "Academic work",
+    "context": "Design exploration · Johnson & Wales University",
+    "stage": "Digital model and node-graph study",
+    "role": "Student project work",
+    "team": "Original digital artifacts retained from my portfolio.",
+    "methods": "Rhino 3D and Grasshopper project artifacts",
+    "featured": false,
+    "hero": "growth",
+    "summary": "A digital exploration of patterned geometry over a hand and forearm form.",
+    "contribution": "The retained work includes a patterned model and its Grasshopper development graph.",
+    "capability": "Digital form exploration.",
+    "heroCaption": "Digital model · Patterned geometry over a hand and forearm shape.",
+    "sections": [
+      {
+        "heading": "A form-development exercise",
+        "paragraphs": [
+          "This study explores how a computational pattern can follow a complex surface. The screenshots document digital geometry and a node-based development process.",
+          "The result is a digital form study. Turning this geometry into a useful physical product would require material, fabrication, fit, and performance work beyond the modeling exercise."
+        ],
+        "media": [
+          "growth-graph"
+        ],
+        "captions": [
+          "Software artifact · Grasshopper node graph retained with the form study."
+        ]
+      }
+    ],
+    "references": []
+  },
+  {
+    "slug": "willies-cafe-space-study",
+    "title": "Willie’s Café Space Study",
+    "shortTitle": "Understanding a shared space",
+    "eyebrow": "Archive · academic team study",
+    "date": "2023",
+    "context": "Academic team project · Johnson & Wales University",
+    "stage": "Spatial study and layout proposals",
+    "role": "Academic team contributor",
+    "team": "Michael Dattolo, Mathew Hartung, Marshall Hayduk, Keely Doyle, and Chris Dimovski.",
+    "methods": "Space observation, digital layout studies, and plan drawings",
+    "featured": false,
+    "hero": "cafe",
+    "summary": "Exploring how seating, circulation, and waiting space fit together in a campus café.",
+    "contribution": "I contributed to an academic team study of the café. The retained artifacts show spatial analysis and layout ideas.",
+    "capability": "User-centered observation and clear design communication.",
+    "heroCaption": "Digital layout study · Tables, circulation space, and the café interior.",
+    "sections": [
+      {
+        "heading": "Looking at how a space is used",
+        "paragraphs": [
+          "Our team studied the café as a shared environment and explored different arrangements for seating and waiting. The digital view and plan drawing show the layout work.",
+          "The outcome is a set of layout proposals. Implementation would require further dimensional, access, and operational checks in the actual space."
+        ],
+        "media": [
+          "cafe-plan"
+        ],
+        "captions": [
+          "Plan drawing · A proposed seating and waiting-area arrangement."
+        ]
+      }
+    ],
+    "references": []
+  }
+]

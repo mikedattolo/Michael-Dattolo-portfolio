@@ -3,13 +3,12 @@
   "name": "michaeldattoloportfolio",
   "main": "worker.js",
   "compatibility_date": "2025-09-27",
-  "observability": {
-    "enabled": true
-  },
+  "observability": {"enabled": true},
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
   },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  "compatibility_flags": ["nodejs_compat"]
 }
